@@ -54,19 +54,36 @@ const { chromium } = require('playwright')
         const brandEl = document.querySelector('header span.text-primary-600') || document.querySelector('header a span.font-bold.text-xl:nth-of-type(2)') || document.querySelector('.brand-short')
         const brand = brandEl ? brandEl.textContent.trim() : null
         const images = Array.from(document.querySelectorAll('img')).map(i => i.src)
-        return { lang, dir, brand, images }
+        // Count elements with a computed background-image (not 'none')
+        const bgCount = (() => {
+          try {
+            const els = Array.from(document.querySelectorAll('*'))
+            return els.filter(e => {
+              try {
+                const s = window.getComputedStyle(e)
+                return s && s.backgroundImage && s.backgroundImage !== 'none'
+              } catch (ee) {
+                return false
+              }
+            }).length
+          } catch (e) { return 0 }
+        })()
+        const inlineSvgCount = document.querySelectorAll('svg').length
+        return { lang, dir, brand, images, bgCount, inlineSvgCount }
       })
 
       lang = res.lang
       dir = res.dir
       brand = res.brand
       imgCount = Array.isArray(res.images) ? res.images.length : 0
+      const bgCount = typeof res.bgCount === 'number' ? res.bgCount : 0
+      const inlineSvgCount = typeof res.inlineSvgCount === 'number' ? res.inlineSvgCount : 0
       ok = lang === 'ar' && dir === 'rtl' && /[\u0600-\u06FF]/.test(brand || '')
     } catch (e) {
       err = e && e.message ? e.message : String(e)
     }
 
-    results.push({ path: p, url, ok, lang, dir, brand, imgCount, err })
+    results.push({ path: p, url, ok, lang, dir, brand, imgCount, bgCount, inlineSvgCount, err })
   }
 
   await browser.close()
