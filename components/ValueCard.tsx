@@ -1,17 +1,4 @@
-import React from 'react'
-
-type Props = { titleKey: string; descKey: string }
-
-export default function ValueCard({ titleKey, descKey }: Props){
-  return (
-    <div className="card text-center p-6">
-      <div className="w-16 h-16 bg-primary-100 rounded-full mx-auto flex items-center justify-center text-primary-600">✓</div>
-      <h3 className="text-xl font-semibold mt-4">{titleKey}</h3>
-      <p className="text-muted mt-2">{descKey}</p>
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import { ReactNode } from 'react'
 

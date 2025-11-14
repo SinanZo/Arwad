@@ -1,37 +1,4 @@
-import React from 'react'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Register / Login — ARWAD Trading',
-  description: 'Mock register & login UI (frontend only).'
-}
-
-export default function Register(){
-  return (
-    <div className="section-padding">
-      <div className="container-custom grid md:grid-cols-2 gap-6">
-        <div className="card p-6">
-          <h3 className="text-xl font-semibold">Login</h3>
-          <form className="mt-4 space-y-3">
-            <input className="w-full p-2 border rounded" placeholder="Email" />
-            <input className="w-full p-2 border rounded" placeholder="Password" type="password" />
-            <button className="btn-primary">Login</button>
-          </form>
-        </div>
-        <div className="card p-6">
-          <h3 className="text-xl font-semibold">Register</h3>
-          <form className="mt-4 space-y-3">
-            <input className="w-full p-2 border rounded" placeholder="Name" />
-            <input className="w-full p-2 border rounded" placeholder="Email" />
-            <input className="w-full p-2 border rounded" placeholder="Password" type="password" />
-            <button className="btn-primary">Create Account</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import { useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -107,9 +74,7 @@ export default function Register() {
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative container-custom h-full flex items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                {t('auth.account_details')}
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('auth.account_details')}</h1>
               <p className="text-xl text-primary-100">Welcome back, {user.name}</p>
             </div>
           </div>
@@ -122,62 +87,27 @@ export default function Register() {
               <div>
                 <h2 className="text-2xl font-bold mb-6">Account Information</h2>
                 <div className="space-y-4">
-                  <div className="flex justify-between py-3 border-b border-custom">
-                    <span className="text-secondary">Name:</span>
-                    <span className="font-medium">{user.name}</span>
-                  </div>
-                  <div className="flex justify-between py-3 border-b border-custom">
-                    <span className="text-secondary">Email:</span>
-                    <span className="font-medium">{user.email}</span>
-                  </div>
-                  {user.company && (
-                    <div className="flex justify-between py-3 border-b border-custom">
-                      <span className="text-secondary">Company:</span>
-                      <span className="font-medium">{user.company}</span>
-                    </div>
-                  )}
-                  {user.role && (
-                    <div className="flex justify-between py-3 border-b border-custom">
-                      <span className="text-secondary">Role:</span>
-                      <span className="font-medium">{user.role}</span>
-                    </div>
-                  )}
+                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Name:</span><span className="font-medium">{user.name}</span></div>
+                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Email:</span><span className="font-medium">{user.email}</span></div>
+                  {user.company && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Company:</span><span className="font-medium">{user.company}</span></div>}
+                  {user.role && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Role:</span><span className="font-medium">{user.role}</span></div>}
                 </div>
               </div>
 
               <div className="pt-6 space-y-4">
-                <button
-                  onClick={() => setShowPasswordReset(!showPasswordReset)}
-                  className="btn-outline w-full"
-                >
-                  {t('auth.reset_password')}
-                </button>
+                <button onClick={() => setShowPasswordReset(!showPasswordReset)} className="btn-outline w-full">{t('auth.reset_password')}</button>
 
                 {showPasswordReset && (
                   <div className="card bg-surface space-y-4">
                     <h3 className="font-semibold">Reset Password</h3>
-                    <input
-                      type="password"
-                      placeholder="Current Password"
-                      className="input-field"
-                    />
-                    <input
-                      type="password"
-                      placeholder="New Password"
-                      className="input-field"
-                    />
-                    <input
-                      type="password"
-                      placeholder="Confirm New Password"
-                      className="input-field"
-                    />
+                    <input type="password" placeholder="Current Password" className="input-field" />
+                    <input type="password" placeholder="New Password" className="input-field" />
+                    <input type="password" placeholder="Confirm New Password" className="input-field" />
                     <button className="btn-primary w-full">Update Password</button>
                   </div>
                 )}
 
-                <button onClick={handleLogout} className="btn-secondary w-full">
-                  {t('auth.logout')}
-                </button>
+                <button onClick={handleLogout} className="btn-secondary w-full">{t('auth.logout')}</button>
               </div>
             </div>
           </div>
@@ -193,12 +123,8 @@ export default function Register() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container-custom h-full flex items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {activeTab === 'login' ? t('auth.login') : t('auth.register')}
-            </h1>
-            <p className="text-xl text-primary-100">
-              Access your account or create a new one
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{activeTab === 'login' ? t('auth.login') : t('auth.register')}</h1>
+            <p className="text-xl text-primary-100">Access your account or create a new one</p>
           </div>
         </div>
       </section>
@@ -208,79 +134,32 @@ export default function Register() {
         <div className="container-custom max-w-md">
           {/* Tabs */}
           <div className="flex space-x-2 rtl:space-x-reverse mb-8">
-            <button
-              onClick={() => setActiveTab('login')}
-              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all ${
-                activeTab === 'login'
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-surface text-secondary hover:bg-surface-hover'
-              }`}
-            >
+            <button onClick={() => setActiveTab('login')} className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all ${activeTab === 'login' ? 'bg-primary-600 text-white' : 'bg-surface text-secondary hover:bg-surface-hover'}`}>
               {t('auth.login')}
             </button>
-            <button
-              onClick={() => setActiveTab('register')}
-              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all ${
-                activeTab === 'register'
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-surface text-secondary hover:bg-surface-hover'
-              }`}
-            >
+            <button onClick={() => setActiveTab('register')} className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all ${activeTab === 'register' ? 'bg-primary-600 text-white' : 'bg-surface text-secondary hover:bg-surface-hover'}`}>
               {t('auth.register')}
             </button>
           </div>
 
-          {error && (
-            <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">
-              {error}
-            </div>
-          )}
+          {error && <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">{error}</div>}
 
           {/* Login Form */}
           {activeTab === 'login' && (
             <form onSubmit={handleLogin} className="card space-y-6">
               <div>
-                <label htmlFor="login-email" className="block text-sm font-medium mb-2">
-                  {t('auth.email')}
-                </label>
-                <input
-                  id="login-email"
-                  type="email"
-                  value={loginData.email}
-                  onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                  className="input-field"
-                  required
-                />
+                <label htmlFor="login-email" className="block text-sm font-medium mb-2">{t('auth.email')}</label>
+                <input id="login-email" type="email" value={loginData.email} onChange={(e) => setLoginData({ ...loginData, email: e.target.value })} className="input-field" required />
               </div>
 
               <div>
-                <label htmlFor="login-password" className="block text-sm font-medium mb-2">
-                  {t('auth.password')}
-                </label>
-                <input
-                  id="login-password"
-                  type="password"
-                  value={loginData.password}
-                  onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                  className="input-field"
-                  required
-                />
+                <label htmlFor="login-password" className="block text-sm font-medium mb-2">{t('auth.password')}</label>
+                <input id="login-password" type="password" value={loginData.password} onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} className="input-field" required />
               </div>
 
-              <button type="submit" className="btn-primary w-full">
-                {t('auth.login_btn')}
-              </button>
+              <button type="submit" className="btn-primary w-full">{t('auth.login_btn')}</button>
 
-              <p className="text-center text-sm text-secondary">
-                {t('auth.no_account')}{' '}
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('register')}
-                  className="text-primary-600 dark:text-primary-400 hover:underline"
-                >
-                  {t('auth.register')}
-                </button>
-              </p>
+              <p className="text-center text-sm text-secondary">{t('auth.no_account')}{' '}<button type="button" onClick={() => setActiveTab('register')} className="text-primary-600 dark:text-primary-400 hover:underline">{t('auth.register')}</button></p>
             </form>
           )}
 
@@ -288,92 +167,33 @@ export default function Register() {
           {activeTab === 'register' && (
             <form onSubmit={handleRegister} className="card space-y-6">
               <div>
-                <label htmlFor="register-name" className="block text-sm font-medium mb-2">
-                  {t('auth.name')}
-                </label>
-                <input
-                  id="register-name"
-                  type="text"
-                  value={registerData.name}
-                  onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })}
-                  className="input-field"
-                  required
-                />
+                <label htmlFor="register-name" className="block text-sm font-medium mb-2">{t('auth.name')}</label>
+                <input id="register-name" type="text" value={registerData.name} onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })} className="input-field" required />
               </div>
 
               <div>
-                <label htmlFor="register-email" className="block text-sm font-medium mb-2">
-                  {t('auth.email')}
-                </label>
-                <input
-                  id="register-email"
-                  type="email"
-                  value={registerData.email}
-                  onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
-                  className="input-field"
-                  required
-                />
+                <label htmlFor="register-email" className="block text-sm font-medium mb-2">{t('auth.email')}</label>
+                <input id="register-email" type="email" value={registerData.email} onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })} className="input-field" required />
               </div>
 
               <div>
-                <label htmlFor="register-password" className="block text-sm font-medium mb-2">
-                  {t('auth.password')}
-                </label>
-                <input
-                  id="register-password"
-                  type="password"
-                  value={registerData.password}
-                  onChange={(e) =>
-                    setRegisterData({ ...registerData, password: e.target.value })
-                  }
-                  className="input-field"
-                  required
-                />
+                <label htmlFor="register-password" className="block text-sm font-medium mb-2">{t('auth.password')}</label>
+                <input id="register-password" type="password" value={registerData.password} onChange={(e) => setRegisterData({ ...registerData, password: e.target.value })} className="input-field" required />
               </div>
 
               <div>
-                <label htmlFor="register-company" className="block text-sm font-medium mb-2">
-                  {t('auth.company')}
-                </label>
-                <input
-                  id="register-company"
-                  type="text"
-                  value={registerData.company}
-                  onChange={(e) =>
-                    setRegisterData({ ...registerData, company: e.target.value })
-                  }
-                  className="input-field"
-                />
+                <label htmlFor="register-company" className="block text-sm font-medium mb-2">{t('auth.company')}</label>
+                <input id="register-company" type="text" value={registerData.company} onChange={(e) => setRegisterData({ ...registerData, company: e.target.value })} className="input-field" />
               </div>
 
               <div>
-                <label htmlFor="register-role" className="block text-sm font-medium mb-2">
-                  {t('auth.role')}
-                </label>
-                <input
-                  id="register-role"
-                  type="text"
-                  value={registerData.role}
-                  onChange={(e) => setRegisterData({ ...registerData, role: e.target.value })}
-                  className="input-field"
-                  placeholder="e.g., Procurement Manager"
-                />
+                <label htmlFor="register-role" className="block text-sm font-medium mb-2">{t('auth.role')}</label>
+                <input id="register-role" type="text" value={registerData.role} onChange={(e) => setRegisterData({ ...registerData, role: e.target.value })} className="input-field" placeholder="e.g., Procurement Manager" />
               </div>
 
-              <button type="submit" className="btn-primary w-full">
-                {t('auth.register_btn')}
-              </button>
+              <button type="submit" className="btn-primary w-full">{t('auth.register_btn')}</button>
 
-              <p className="text-center text-sm text-secondary">
-                {t('auth.have_account')}{' '}
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('login')}
-                  className="text-primary-600 dark:text-primary-400 hover:underline"
-                >
-                  {t('auth.login')}
-                </button>
-              </p>
+              <p className="text-center text-sm text-secondary">{t('auth.have_account')}{' '}<button type="button" onClick={() => setActiveTab('login')} className="text-primary-600 dark:text-primary-400 hover:underline">{t('auth.login')}</button></p>
             </form>
           )}
         </div>
@@ -381,3 +201,4 @@ export default function Register() {
     </>
   )
 }
+ 

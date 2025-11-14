@@ -1,59 +1,42 @@
-import React from 'react'
-import SectionTitle from '../../components/SectionTitle'
-import ServiceCard from '../../components/ServiceCard'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Services — ARWAD Trading',
-  description: 'Our services include procurement, automation, assessment and more.'
-}
-
-export default function Services(){
-  return (
-    <div className="section-padding">
-      <div className="container-custom">
-        <SectionTitle titleKey="services.title" subtitleKey="services.subtitle" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {['procurement','customized','automation','assessment'].map((s)=> (
-            <ServiceCard key={s} titleKey={`services.${s}.title`} descKey={`services.${s}.description`} />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import SectionTitle from '@/components/SectionTitle'
 import ServiceCard from '@/components/ServiceCard'
 import ValueCard from '@/components/ValueCard'
+import React from 'react'
 
-const Heart = () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>;
-const Users = () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 12H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
-const CheckCircle = () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+const Heart = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+)
+const Users = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 12H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+)
+const CheckCircle = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+)
 
 export default function OurServices() {
   const { t } = useLanguage()
 
   return (
     <>
-      {/* Hero Banner */}
       <section className="relative h-64 bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-900 text-white">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container-custom h-full flex items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t('services.title')}
-            </h1>
-            <p className="text-xl text-primary-100">
-              {t('services.subtitle')}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('services.title')}</h1>
+            <p className="text-xl text-primary-100">{t('services.subtitle')}</p>
           </div>
         </div>
       </section>
 
-      {/* Value Proposition */}
       <section className="section-padding bg-surface">
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-8">
@@ -76,21 +59,16 @@ export default function OurServices() {
         </div>
       </section>
 
-      {/* Procurement Service */}
       <section id="procurement" className="section-padding bg-background scroll-mt-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">
-                {t('services.procurement.title')}
-              </h2>
+              <h2 className="text-3xl font-bold mb-6">{t('services.procurement.title')}</h2>
+              <p className="text-secondary leading-relaxed mb-6">{t('services.procurement.description')}</p>
               <p className="text-secondary leading-relaxed mb-6">
-                {t('services.procurement.description')}
-              </p>
-              <p className="text-secondary leading-relaxed mb-6">
-                Our procurement specialists leverage deep market knowledge and established 
-                supplier relationships to secure competitive pricing without compromising 
-                on quality. We handle everything from initial sourcing through delivery, 
+                Our procurement specialists leverage deep market knowledge and established
+                supplier relationships to secure competitive pricing without compromising
+                on quality. We handle everything from initial sourcing through delivery,
                 providing complete visibility and control throughout the process.
               </p>
               <div className="space-y-3">
@@ -117,21 +95,16 @@ export default function OurServices() {
         </div>
       </section>
 
-      {/* Customized Solutions */}
       <section id="customized" className="section-padding bg-surface scroll-mt-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="md:order-2">
-              <h2 className="text-3xl font-bold mb-6">
-                {t('services.customized.title')}
-              </h2>
+              <h2 className="text-3xl font-bold mb-6">{t('services.customized.title')}</h2>
+              <p className="text-secondary leading-relaxed mb-6">{t('services.customized.description')}</p>
               <p className="text-secondary leading-relaxed mb-6">
-                {t('services.customized.description')}
-              </p>
-              <p className="text-secondary leading-relaxed mb-6">
-                Our engineering team works closely with clients to understand operational 
-                challenges and develop innovative solutions. From custom fabrication to 
-                system integration, we deliver results that improve efficiency and reduce 
+                Our engineering team works closely with clients to understand operational
+                challenges and develop innovative solutions. From custom fabrication to
+                system integration, we deliver results that improve efficiency and reduce
                 long-term operating costs.
               </p>
               <div className="space-y-3">
@@ -158,21 +131,16 @@ export default function OurServices() {
         </div>
       </section>
 
-      {/* Automation */}
       <section id="automation" className="section-padding bg-background scroll-mt-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">
-                {t('services.automation.title')}
-              </h2>
+              <h2 className="text-3xl font-bold mb-6">{t('services.automation.title')}</h2>
+              <p className="text-secondary leading-relaxed mb-6">{t('services.automation.description')}</p>
               <p className="text-secondary leading-relaxed mb-6">
-                {t('services.automation.description')}
-              </p>
-              <p className="text-secondary leading-relaxed mb-6">
-                We implement proven automation technologies that deliver measurable 
-                improvements in productivity, quality, and safety. Our solutions range 
-                from simple control upgrades to comprehensive SCADA systems and Industry 
+                We implement proven automation technologies that deliver measurable
+                improvements in productivity, quality, and safety. Our solutions range
+                from simple control upgrades to comprehensive SCADA systems and Industry
                 4.0 implementations.
               </p>
               <div className="space-y-3">
@@ -199,21 +167,16 @@ export default function OurServices() {
         </div>
       </section>
 
-      {/* Process Assessment */}
       <section id="assessment" className="section-padding bg-surface scroll-mt-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="md:order-2">
-              <h2 className="text-3xl font-bold mb-6">
-                {t('services.assessment.title')}
-              </h2>
+              <h2 className="text-3xl font-bold mb-6">{t('services.assessment.title')}</h2>
+              <p className="text-secondary leading-relaxed mb-6">{t('services.assessment.description')}</p>
               <p className="text-secondary leading-relaxed mb-6">
-                {t('services.assessment.description')}
-              </p>
-              <p className="text-secondary leading-relaxed mb-6">
-                Our assessment methodology combines data analysis, field observation, 
-                and industry best practices to identify actionable improvements. We 
-                deliver practical recommendations with clear ROI projections and 
+                Our assessment methodology combines data analysis, field observation,
+                and industry best practices to identify actionable improvements. We
+                deliver practical recommendations with clear ROI projections and
                 implementation roadmaps.
               </p>
               <div className="space-y-3">
@@ -240,24 +203,17 @@ export default function OurServices() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="card text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Transform Your Operations?
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Operations?</h2>
             <p className="text-secondary mb-8">
-              Our service experts are ready to discuss your specific requirements and 
+              Our service experts are ready to discuss your specific requirements and
               develop solutions that deliver real business value.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/quote-order" className="btn-primary">
-                Request Service Quote
-              </a>
-              <a href="/contact" className="btn-outline">
-                Schedule Consultation
-              </a>
+              <a href="/quote-order" className="btn-primary">Request Service Quote</a>
+              <a href="/contact" className="btn-outline">Schedule Consultation</a>
             </div>
           </div>
         </div>

@@ -1,16 +1,4 @@
-import React from 'react'
-
-type Props = { titleKey: string }
-
-export default function ProductCard({ titleKey }: Props){
-  return (
-    <div className="card">
-      <div className="h-36 bg-gradient-to-br from-accent-100 to-accent-200 rounded mb-3"></div>
-      <h4 className="font-semibold">{titleKey}</h4>
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import Link from 'next/link'
 

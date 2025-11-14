@@ -1,42 +1,4 @@
 "use client"
-import React from 'react'
-
-export default function Footer(){
-  return (
-    <footer className="bg-gray-50 border-t border-gray-200 mt-12">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center space-x-3 rtl:space-x-reverse"><div className="w-10 h-10 bg-primary-600 rounded flex items-center justify-center text-white font-bold">A</div><div className="font-bold">ARWAD</div></div>
-            <p className="text-sm text-muted mt-4">footer.about</p>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-3">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted">
-              <li><a href="/about">About</a></li>
-              <li><a href="/industries">Industries</a></li>
-              <li><a href="/products">Products</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-3">Contact</h3>
-            <p className="text-sm text-muted">Business Bay, Dubai, UAE</p>
-            <p className="text-sm text-muted">info@arwad.org</p>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-3">Hours</h3>
-            <p className="text-sm text-muted">Sun - Thu: 8:00 - 18:00</p>
-          </div>
-        </div>
-        <div className="mt-8 border-t border-gray-200 pt-6 flex items-center justify-between text-sm text-muted">
-          <div>© 2025 ARWAD Trading. All rights reserved.</div>
-          <div>Powered by Jawareer</div>
-        </div>
-      </div>
-    </footer>
-  )
-}
-'use client'
 
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'

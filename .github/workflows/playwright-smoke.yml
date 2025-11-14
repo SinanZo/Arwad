@@ -1,0 +1,43 @@
+name: Playwright Smoke Tests
+
+on:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Start server
+        run: |
+          pnpm start &
+          for i in $(seq 1 30); do
+            if curl -sSf http://localhost:3000/ >/dev/null; then
+              echo "server ready"; break
+            fi
+            echo "waiting for server... $i"; sleep 1
+          done
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run smoke tests
+        run: node scripts/playwright/smoke-test-pages.js http://localhost:3000/

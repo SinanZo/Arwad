@@ -1,0 +1,18 @@
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:4000
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.3s (569 modules)
+ GET / 200 in 4502ms
+ ✓ Compiled in 311ms (279 modules)
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 3.1s (556 modules)
+ GET /contact 200 in 3169ms
+ ✓ Compiled /our-services in 196ms (562 modules)
+ GET /our-services 200 in 257ms
+ ✓ Compiled /products in 163ms (568 modules)
+ GET /products 200 in 300ms
+[?25h
+Terminate batch job (Y/N)? 

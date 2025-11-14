@@ -1,33 +1,10 @@
-import React from 'react'
-import SectionTitle from '../../components/SectionTitle'
-import ProductCard from '../../components/ProductCard'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Products — ARWAD Trading',
-  description: 'Products catalog and solutions.'
-}
-
-export default function Products(){
-  return (
-    <div className="section-padding">
-      <div className="container-custom">
-        <SectionTitle titleKey="products.title" subtitleKey="products.subtitle" />
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-          {['ventilators','inspection','cooling','desalination','heavy','measurement'].map((p)=> (
-            <ProductCard key={p} titleKey={`products.${p}`} />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import { useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import SectionTitle from '@/components/SectionTitle'
 import ProductCard from '@/components/ProductCard'
+import React from 'react'
 
 export default function Products() {
   const { t } = useLanguage()
@@ -110,37 +87,30 @@ export default function Products() {
 
   return (
     <>
-      {/* Hero Banner */}
       <section className="relative h-64 bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-800 dark:to-accent-900 text-white">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container-custom h-full flex items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t('products.title')}
-            </h1>
-            <p className="text-xl text-accent-100">
-              {t('products.subtitle')}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('products.title')}</h1>
+            <p className="text-xl text-accent-100">{t('products.subtitle')}</p>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-secondary leading-relaxed">
-              {t('brand.name')} maintains an extensive inventory of industrial components, 
-              spare parts, and equipment across all major categories. Our partnerships 
-              with leading global manufacturers ensure access to genuine OEM parts, 
-              while our aftermarket options provide cost-effective alternatives without 
+              {t('brand.name')} maintains an extensive inventory of industrial components,
+              spare parts, and equipment across all major categories. Our partnerships
+              with leading global manufacturers ensure access to genuine OEM parts,
+              while our aftermarket options provide cost-effective alternatives without
               compromising quality or reliability.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Category Filter */}
       <section className="bg-surface py-8 sticky top-20 z-40 border-b border-custom">
         <div className="container-custom">
           <div className="flex flex-wrap gap-3 justify-center">
@@ -161,7 +131,6 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Products Grid */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -184,7 +153,6 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Product Features */}
       <section className="section-padding bg-surface">
         <div className="container-custom">
           <SectionTitle
@@ -230,24 +198,17 @@ export default function Products() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="card text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Cannot Find What You Need?
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Cannot Find What You Need?</h2>
             <p className="text-secondary mb-8">
-              Our extensive supplier network can source specialized parts and equipment 
+              Our extensive supplier network can source specialized parts and equipment
               for virtually any industrial application. Contact us with your requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/quote-order" className="btn-primary">
-                Submit Custom Request
-              </a>
-              <a href="/contact" className="btn-outline">
-                Speak to Expert
-              </a>
+              <a href="/quote-order" className="btn-primary">Submit Custom Request</a>
+              <a href="/contact" className="btn-outline">Speak to Expert</a>
             </div>
           </div>
         </div>
