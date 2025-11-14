@@ -1,0 +1,414 @@
+{
+  "brand": { "name": "ARWAD Trading", "short": "ARWAD" },
+  "nav": { "home": "Home", "about": "About", "industries": "Industries", "products": "Products", "services": "Services", "contact": "Contact", "register":"Register","quote":"Quote" },
+  "hero": { "title": "Availability. Reliability. Ownership.", "subtitle": "We deliver MRO solutions and dependable supply chain services.", "cta_quote":"Request a Quote","cta_industries":"View Industries" },
+  "about": { "title": "About Us", "subtitle": "Trusted MRO partner", "description": "ARWAD Trading overview..." },
+  "values": { "title": "Our Core Values", "subtitle":"What we stand for", "ownership": { "title":"Ownership", "description":"We take responsibility." }, "availability": { "title":"Availability", "description":"Parts when you need them." }, "reliability": { "title":"Reliability", "description":"Trusted solutions." }},
+  "industries": { "title":"Industries","subtitle":"Sectors we serve","water":{"title":"Water"},"power":{"title":"Power"},"manufacturing":{"title":"Manufacturing"},"petrochemical":{"title":"Petrochemical"},"mining":{"title":"Mining"},"infrastructure":{"title":"Infrastructure"}},
+  "services": { "title":"Services","subtitle":"How we help","procurement":{"title":"Procurement","description":"Strategic sourcing"},"customized":{"title":"Customized Solutions","description":"Tailored to your needs"},"automation":{"title":"Automation","description":"Control systems"},"assessment":{"title":"Assessment","description":"Efficiency audits"}},
+  "products": { "title":"Products","subtitle":"Our product categories","ventilators":"Ventilators","inspection":"Inspection","cooling":"Cooling","desalination":"Desalination","heavy":"Heavy Machinery","measurement":"Measurement"},
+  "contact": { "title":"Contact Us","subtitle":"Get in touch" },
+  "quote": { "title":"Request a Quote","subtitle":"Submit RFQ items" }
+}
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "industries": "Industries",
+    "products": "Products",
+    "services": "Our Services",
+    "contact": "Contact",
+    "register": "Register",
+    "quote": "Request Quote",
+    "login": "Login",
+    "logout": "Logout",
+    "account": "Account"
+  },
+  "brand": {
+    "name": "ARWAD Trading",
+    "short": "ARWAD"
+  },
+  "hero": {
+    "title": "Availability. Reliability. Ownership.",
+    "subtitle": "Your trusted regional partner for MRO solutions, spare parts procurement, and supply chain excellence across industrial and infrastructure sectors.",
+    "cta_quote": "Request a Quote",
+    "cta_industries": "View Industries",
+    "slide_one": {
+      "title": "Expert MRO Solutions",
+      "description": "Serving regional industries with precision and excellence"
+    },
+    "slide_two": {
+      "title": "24/7 Support & Availability",
+      "description": "Round-the-clock assistance for your critical operations"
+    },
+    "slide_three": {
+      "title": "Trusted Supply Chain Partner",
+      "description": "Proven reliability across diverse industrial sectors"
+    }
+  },
+  "about": {
+    "title": "About ARWAD Trading",
+    "subtitle": "Excellence in MRO & Supply Chain Management",
+    "description": "ARWAD Trading is a leading regional provider of MRO solutions, spare parts, and supply chain management services. We partner with industrial and infrastructure sectors to maximize uptime, optimize operational costs, and deliver reliability when it matters most.",
+    "overview": "With over a decade of experience in the Middle Eastern industrial sector, ARWAD Trading has established itself as a premier provider of Maintenance, Repair, and Operations (MRO) solutions. Our commitment to excellence, backed by a robust network of international suppliers and local expertise, ensures that our clients receive the highest quality components and services.",
+    "vision_title": "Our Vision",
+    "vision_text": "To become the most trusted regional leader in supply chain management and MRO services, supporting industrial excellence across the Middle East and beyond.",
+    "mission_title": "Our Mission",
+    "mission_text": "Delivering the right part, at the right time, with technical excellence and an unparalleled supplier network. We empower our clients to focus on their core operations while we handle the complexity of procurement and maintenance support.",
+    "why_choose": "Why Choose ARWAD?",
+    "expertise": "Industry Expertise",
+    "network": "Global Network",
+    "innovation": "Innovation & Technology",
+    "support": "Dedicated Support",
+    "quality": "Quality Assurance"
+  },
+  "values": {
+    "title": "Our Core Values",
+    "subtitle": "The principles that guide everything we do",
+    "ownership": {
+      "title": "Ownership",
+      "description": "We take full responsibility for our commitments, treating every project as our own and ensuring accountability at every step."
+    },
+    "availability": {
+      "title": "Availability",
+      "description": "Round-the-clock support and rapid response times ensure that critical parts and services are always within reach."
+    },
+    "reliability": {
+      "title": "Reliability",
+      "description": "Consistent quality and on-time delivery build the foundation of trust with our partners and clients."
+    },
+    "competence": {
+      "title": "Competence",
+      "description": "Deep technical expertise and industry knowledge drive our ability to solve complex challenges."
+    },
+    "knowledge": {
+      "title": "Knowledge",
+      "description": "Continuous learning and information sharing keep us at the forefront of industry developments."
+    },
+    "integrity": {
+      "title": "Integrity",
+      "description": "Honest communication and ethical business practices are non-negotiable principles in everything we do."
+    }
+  },
+  "statistics": {
+    "clients": "Active Clients",
+    "industries": "Industries Served",
+    "uptime": "Average Uptime",
+    "experience": "Years of Experience"
+  },
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Specialized solutions across diverse sectors",
+    "description": "ARWAD Trading serves a wide range of industrial sectors with tailored MRO solutions and supply chain expertise.",
+    "water": {
+      "title": "Water & Desalination",
+      "description": "Comprehensive support for water treatment plants, desalination facilities, and distribution networks with critical spare parts and technical expertise.",
+      "details": "Our water and desalination division specializes in high-pressure pumps, membrane systems, chemical dosing equipment, and monitoring solutions. We understand the critical nature of water infrastructure and provide rapid response support.",
+      "supplies": [
+        "High-pressure pumps and valves",
+        "Membrane modules and cartridges",
+        "Chemical dosing systems",
+        "Distribution components",
+        "Monitoring and control systems"
+      ]
+    },
+    "power": {
+      "title": "Power Generation & Distribution",
+      "description": "Reliable procurement solutions for power plants, substations, and electrical distribution systems ensuring continuous energy delivery.",
+      "details": "We supply critical components for conventional and renewable power generation facilities, ensuring continuous energy production and distribution.",
+      "supplies": [
+        "Turbine and generator parts",
+        "Transformers and switchgear",
+        "Protection and control systems",
+        "Insulators and conductors",
+        "SCADA and monitoring solutions"
+      ]
+    },
+    "manufacturing": {
+      "title": "Manufacturing",
+      "description": "Complete MRO support for FMCG, chemicals, and packaging industries, minimizing downtime and maximizing production efficiency.",
+      "details": "From production lines to packaging equipment, we provide comprehensive maintenance and repair solutions for manufacturing operations.",
+      "supplies": [
+        "Production line components",
+        "Packaging machinery parts",
+        "Conveyor systems",
+        "Quality control instruments",
+        "Automation components"
+      ]
+    },
+    "petrochemical": {
+      "title": "Petrochemicals",
+      "description": "Specialized solutions for refineries, chemical plants, and processing facilities with stringent safety and quality requirements.",
+      "details": "Our petrochemical division handles high-temperature, high-pressure applications with specialized materials and strict compliance standards.",
+      "supplies": [
+        "High-temperature valves and fittings",
+        "Pressure vessels and heat exchangers",
+        "Compressor parts and seals",
+        "Fire and gas detection systems",
+        "Specialized alloys and materials"
+      ]
+    },
+    "mining": {
+      "title": "Mining",
+      "description": "Heavy-duty equipment support and spare parts for mining operations, ensuring productivity in demanding environments.",
+      "details": "We provide heavy-duty equipment support for mining operations, with expertise in wear-resistant components and bulk material handling.",
+      "supplies": [
+        "Crusher and mill components",
+        "Conveyor systems",
+        "Hydraulic systems",
+        "Wear-resistant linings",
+        "Dust collection systems"
+      ]
+    },
+    "infrastructure": {
+      "title": "Buildings & Infrastructure",
+      "description": "End-to-end solutions for commercial buildings, airports, ports, and major infrastructure projects.",
+      "details": "Supporting large-scale infrastructure projects with comprehensive HVAC, electrical, and safety systems maintenance.",
+      "supplies": [
+        "HVAC systems",
+        "Electrical distribution equipment",
+        "Fire protection systems",
+        "Plumbing and water systems",
+        "Building automation"
+      ]
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions tailored to your needs",
+    "description": "ARWAD Trading offers a complete range of MRO services designed to optimize your operations and reduce downtime.",
+    "procurement": {
+      "title": "Procurement & Supply Chain",
+      "description": "Strategic sourcing and logistics management that reduces costs while maintaining quality and reliability.",
+      "features": [
+        "Global supplier network",
+        "Competitive pricing",
+        "Fast turnaround times",
+        "Quality assurance",
+        "Inventory management"
+      ]
+    },
+    "customized": {
+      "title": "Customized Solutions",
+      "description": "Tailored engineering solutions designed to meet unique operational requirements and technical specifications.",
+      "features": [
+        "Technical consultation",
+        "Custom engineering",
+        "Specialized equipment",
+        "Integration support",
+        "Training and documentation"
+      ]
+    },
+    "automation": {
+      "title": "Automation & Control Systems",
+      "description": "Modern automation systems and control solutions that enhance efficiency and reduce manual intervention.",
+      "features": [
+        "SCADA systems",
+        "PLC programming",
+        "HMI interfaces",
+        "System integration",
+        "Maintenance support"
+      ]
+    },
+    "assessment": {
+      "title": "Process Assessment & Optimization",
+      "description": "Comprehensive evaluation of manufacturing and maintenance processes to identify optimization opportunities.",
+      "features": [
+        "Process audits",
+        "Efficiency analysis",
+        "Optimization recommendations",
+        "Implementation support",
+        "Performance tracking"
+      ]
+    },
+    "technical": {
+      "title": "Technical Support & Training",
+      "description": "Expert guidance and hands-on training to maximize equipment performance and staff competency.",
+      "features": [
+        "On-site technical support",
+        "Remote assistance",
+        "Staff training programs",
+        "Documentation and manuals",
+        "24/7 hotline support"
+      ]
+    },
+    "logistics": {
+      "title": "Logistics & Emergency Services",
+      "description": "Fast and reliable delivery network with emergency response capabilities for critical situations.",
+      "features": [
+        "Express delivery",
+        "Emergency response",
+        "Warehousing services",
+        "Inventory solutions",
+        "Tracking and visibility"
+      ]
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Comprehensive inventory of industrial components",
+    "description": "Browse our extensive catalog of industrial components, equipment, and spare parts.",
+    "ventilators": {
+      "title": "Central Ventilators & Air Filters",
+      "description": "High-performance air handling and filtration systems for industrial environments"
+    },
+    "inspection": {
+      "title": "Inspection & Testing Equipment",
+      "description": "Advanced diagnostic and quality control instruments"
+    },
+    "spare_parts": {
+      "title": "Industrial Spare Parts",
+      "description": "Comprehensive range of replacement parts for industrial equipment"
+    },
+    "cooling": {
+      "title": "Water Cooling & Heating Equipment",
+      "description": "Thermal management systems for industrial processes"
+    },
+    "desalination": {
+      "title": "Desalination & Treatment Equipment",
+      "description": "Water treatment and purification technologies"
+    },
+    "heavy": {
+      "title": "Heavy Equipment & Machinery Parts",
+      "description": "Durable components for heavy industrial machinery"
+    },
+    "measurement": {
+      "title": "Measurement & Control Systems",
+      "description": "Precision instruments for process monitoring and control"
+    },
+    "factory": {
+      "title": "Factory & Plant Components",
+      "description": "Standard and custom components for manufacturing facilities"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "description": "We're here to help! Reach out to us via phone, email, or our contact form below.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Working Hours",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Please fill in all required fields."
+    },
+    "sales": "Sales Inquiries",
+    "support": "Technical Support",
+    "follow": "Follow Us On"
+  },
+  "quote": {
+    "title": "Request a Quote",
+    "subtitle": "Tell us what you need",
+    "desc": "Get a personalized quote from our expert team. Fill in your details and specify the parts or services you require.",
+    "step_one": "Company Information",
+    "step_two": "Quote Details",
+    "step_three": "Review & Submit",
+    "company": "Company Name",
+    "contact_person": "Contact Person",
+    "email": "Email",
+    "phone": "Phone",
+    "industry": "Industry",
+    "items": "Quote Items",
+    "add_item": "Add Item",
+    "part_number": "Part Number",
+    "part_desc": "Description",
+    "manufacturer": "Manufacturer",
+    "quantity": "Quantity",
+    "category": "Category",
+    "submit": "Submit Request",
+    "success": "Your quote request has been submitted successfully! We'll review it and contact you shortly.",
+    "error": "Please complete all required fields.",
+    "remove": "Remove Item",
+    "reference": "Reference Number"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "name": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "company": "Company",
+    "role": "Role",
+    "login_btn": "Sign In",
+    "register_btn": "Create Account",
+    "have_account": "Already have an account?",
+    "no_account": "Don't have an account?",
+    "reset_password": "Reset Password",
+    "account_details": "Account Details",
+    "logout_confirm": "Are you sure you want to logout?",
+    "welcome": "Welcome back",
+    "profile": "Profile",
+    "settings": "Settings",
+    "preferences": "Preferences"
+  },
+  "footer": {
+    "about": "ARWAD Trading is your trusted partner for industrial MRO solutions and supply chain excellence across the Middle East.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Information",
+    "company": "Company",
+    "services": "Services",
+    "support": "Support",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "powered_by": "Powered by Jawareer",
+    "rights": "All rights reserved.",
+    "social": "Follow Us",
+    "address": "Dubai, UAE",
+    "business_hours": "Business Hours"
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "view_all": "View All",
+    "get_started": "Get Started",
+    "read_more": "Read More",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "no_results": "No results found",
+    "loading_more": "Loading more...",
+    "or": "or",
+    "and": "and",
+    "all": "All"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "language": {
+    "english": "English",
+    "arabic": "العربية",
+    "toggle": "Switch Language"
+  },
+  "messages": {
+    "welcome": "Welcome to ARWAD Trading",
+    "thank_you": "Thank you for choosing ARWAD Trading",
+    "error_occurred": "An error occurred. Please try again.",
+    "please_wait": "Please wait...",
+    "required_field": "This field is required",
+    "invalid_email": "Please enter a valid email address",
+    "password_mismatch": "Passwords do not match",
+    "login_failed": "Login failed. Please check your credentials.",
+    "register_success": "Account created successfully!",
+    "logout_success": "You have been logged out successfully."
+  }
+}

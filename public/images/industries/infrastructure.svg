@@ -1,0 +1,89 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#infra-gradient)"/>
+  
+  <!-- City Skyline -->
+  <g opacity="0.9">
+    <!-- Building 1 -->
+    <rect x="50" y="250" width="100" height="250" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+    <g fill="#3b82f6" opacity="0.5">
+      <rect x="65" y="270" width="20" height="20" rx="2"/>
+      <rect x="95" y="270" width="20" height="20" rx="2"/>
+      <rect x="125" y="270" width="20" height="20" rx="2"/>
+      <rect x="65" y="310" width="20" height="20" rx="2"/>
+      <rect x="95" y="310" width="20" height="20" rx="2"/>
+      <rect x="125" y="310" width="20" height="20" rx="2"/>
+      <rect x="65" y="350" width="20" height="20" rx="2"/>
+      <rect x="95" y="350" width="20" height="20" rx="2"/>
+      <rect x="125" y="350" width="20" height="20" rx="2"/>
+    </g>
+    
+    <!-- Building 2 (Tall) -->
+    <rect x="180" y="150" width="120" height="350" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+    <g fill="#3b82f6" opacity="0.6">
+      <rect x="195" y="170" width="25" height="25" rx="2"/>
+      <rect x="230" y="170" width="25" height="25" rx="2"/>
+      <rect x="265" y="170" width="25" height="25" rx="2"/>
+      <rect x="195" y="210" width="25" height="25" rx="2"/>
+      <rect x="230" y="210" width="25" height="25" rx="2"/>
+      <rect x="265" y="210" width="25" height="25" rx="2"/>
+      <rect x="195" y="250" width="25" height="25" rx="2"/>
+      <rect x="230" y="250" width="25" height="25" rx="2"/>
+      <rect x="265" y="250" width="25" height="25" rx="2"/>
+    </g>
+    
+    <!-- Building 3 -->
+    <rect x="330" y="220" width="110" height="280" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+    <g fill="#3b82f6" opacity="0.5">
+      <rect x="345" y="240" width="22" height="22" rx="2"/>
+      <rect x="375" y="240" width="22" height="22" rx="2"/>
+      <rect x="405" y="240" width="22" height="22" rx="2"/>
+      <rect x="345" y="280" width="22" height="22" rx="2"/>
+      <rect x="375" y="280" width="22" height="22" rx="2"/>
+      <rect x="405" y="280" width="22" height="22" rx="2"/>
+    </g>
+    
+    <!-- Building 4 -->
+    <rect x="470" y="280" width="90" height="220" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+    <g fill="#3b82f6" opacity="0.5">
+      <rect x="485" y="300" width="20" height="20" rx="2"/>
+      <rect x="515" y="300" width="20" height="20" rx="2"/>
+      <rect x="485" y="340" width="20" height="20" rx="2"/>
+      <rect x="515" y="340" width="20" height="20" rx="2"/>
+    </g>
+    
+    <!-- Building 5 -->
+    <rect x="590" y="240" width="100" height="260" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+    <g fill="#3b82f6" opacity="0.6">
+      <rect x="605" y="260" width="20" height="20" rx="2"/>
+      <rect x="635" y="260" width="20" height="20" rx="2"/>
+      <rect x="665" y="260" width="20" height="20" rx="2"/>
+      <rect x="605" y="300" width="20" height="20" rx="2"/>
+      <rect x="635" y="300" width="20" height="20" rx="2"/>
+      <rect x="665" y="300" width="20" height="20" rx="2"/>
+    </g>
+  </g>
+  
+  <!-- Bridge/Road -->
+  <g stroke="#6366f1" stroke-width="4" opacity="0.7">
+    <line x1="0" y1="480" x2="800" y2="480"/>
+    <line x1="0" y1="490" x2="800" y2="490"/>
+  </g>
+  
+  <!-- Support Pillars -->
+  <g fill="#1a1f2e" stroke="#6366f1" stroke-width="2">
+    <rect x="150" y="480" width="20" height="20"/>
+    <rect x="400" y="480" width="20" height="20"/>
+    <rect x="650" y="480" width="20" height="20"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect y="500" width="800" height="100" fill="#0f172a" opacity="0.8"/>
+  
+  <defs>
+    <linearGradient id="infra-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#075985;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
