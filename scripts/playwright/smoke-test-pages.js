@@ -26,6 +26,8 @@ const { chromium } = require('playwright')
     let dir = null
     let brand = null
     let imgCount = 0
+    let bgCountRes = 0
+    let inlineSvgCount = 0
     let err = null
 
     try {
@@ -76,8 +78,8 @@ const { chromium } = require('playwright')
       dir = res.dir
       brand = res.brand
       imgCount = Array.isArray(res.images) ? res.images.length : 0
-      const bgCountRes = typeof res.bgCount === 'number' ? res.bgCount : 0
-      const inlineSvgCount = typeof res.inlineSvgCount === 'number' ? res.inlineSvgCount : 0
+      bgCountRes = typeof res.bgCount === 'number' ? res.bgCount : 0
+      inlineSvgCount = typeof res.inlineSvgCount === 'number' ? res.inlineSvgCount : 0
       ok = lang === 'ar' && dir === 'rtl' && /[\u0600-\u06FF]/.test(brand || '')
     } catch (e) {
       err = e && e.message ? e.message : String(e)
