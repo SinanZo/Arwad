@@ -1,16 +1,4 @@
-import React from 'react'
-
-type Props = { titleKey: string; descKey?: string }
-
-export default function ServiceCard({ titleKey, descKey }: Props){
-  return (
-    <div className="card h-full">
-      <h4 className="font-semibold">{titleKey}</h4>
-      {descKey && <p className="text-muted mt-2">{descKey}</p>}
-    </div>
-  )
-}
-'use client'
+"use client"
 
 import Link from 'next/link'
 

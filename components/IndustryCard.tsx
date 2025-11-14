@@ -1,17 +1,4 @@
-import React from 'react'
-
-type Props = { titleKey: string; descKey?: string }
-
-export default function IndustryCard({ titleKey, descKey }: Props){
-  return (
-    <a className="card block hover:shadow-custom transition-shadow" href="#">
-      <div className="h-40 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4"></div>
-      <h4 className="font-semibold">{titleKey}</h4>
-      {descKey && <p className="text-muted text-sm mt-2">{descKey}</p>}
-    </a>
-  )
-}
-'use client'
+"use client"
 
 import Link from 'next/link'
 import { ReactNode } from 'react'

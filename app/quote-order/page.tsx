@@ -1,41 +1,15 @@
 "use client"
+
 import React, { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import SectionTitle from '../../components/SectionTitle'
 import QuoteItemRow from '../../components/QuoteItemRow'
-import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Request a Quote — ARWAD Trading',
-  description: 'Submit an RFQ with dynamic items.'
-}
-
-export default function QuoteOrder(){
-  const [items, setItems] = useState<number[]>([0])
-
-  return (
-    <div className="section-padding">
-      <div className="container-custom">
-        <SectionTitle titleKey="quote.title" subtitleKey="quote.subtitle" />
-        <div className="mt-6 space-y-4">
-          {items.map((i, idx)=> (
-            <QuoteItemRow key={idx} index={idx} onRemove={() => setItems(items.filter((_,j)=>j!==idx))} />
-          ))}
-          <div className="flex gap-3">
-            <button onClick={()=>setItems([...items, items.length])} className="btn-outline">Add Item</button>
-            <button className="btn-primary">Submit RFQ</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-'use client'
-
-import { useState } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
-import QuoteItemRow from '@/components/QuoteItemRow'
-
-const Plus = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>;
+const Plus = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+  </svg>
+)
 
 interface QuoteItem {
   id: string
@@ -126,9 +100,7 @@ export default function QuoteOrder() {
     }
 
     // Validate at least one item with basic info
-    const validItems = items.filter(
-      (item) => item.partNumber || item.description
-    )
+    const validItems = items.filter((item) => item.partNumber || item.description)
     if (validItems.length === 0) {
       setStatus('error')
       return
@@ -180,12 +152,8 @@ export default function QuoteOrder() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container-custom h-full flex items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t('quote.title')}
-            </h1>
-            <p className="text-xl text-accent-100">
-              {t('quote.subtitle')}
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('quote.title')}</h1>
+            <p className="text-xl text-accent-100">{t('quote.subtitle')}</p>
           </div>
         </div>
       </section>
@@ -214,9 +182,7 @@ export default function QuoteOrder() {
                     id="company"
                     type="text"
                     value={formData.company}
-                    onChange={(e) =>
-                      setFormData({ ...formData, company: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="input-field"
                     required
                   />
@@ -230,9 +196,7 @@ export default function QuoteOrder() {
                     id="contactPerson"
                     type="text"
                     value={formData.contactPerson}
-                    onChange={(e) =>
-                      setFormData({ ...formData, contactPerson: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
                     className="input-field"
                     required
                   />
@@ -246,9 +210,7 @@ export default function QuoteOrder() {
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="input-field"
                     required
                   />
@@ -262,9 +224,7 @@ export default function QuoteOrder() {
                     id="phone"
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="input-field"
                     required
                   />
@@ -277,16 +237,12 @@ export default function QuoteOrder() {
                   <select
                     id="industry"
                     value={formData.industry}
-                    onChange={(e) =>
-                      setFormData({ ...formData, industry: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
                     className="input-field"
                   >
                     <option value="">Select your industry</option>
                     {industries.map((industry) => (
-                      <option key={industry} value={industry}>
-                        {industry}
-                      </option>
+                      <option key={industry} value={industry}>{industry}</option>
                     ))}
                   </select>
                 </div>
@@ -297,11 +253,7 @@ export default function QuoteOrder() {
             <div className="card">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold">{t('quote.items')}</h2>
-                <button
-                  type="button"
-                  onClick={addItem}
-                  className="btn-outline flex items-center space-x-2 rtl:space-x-reverse"
-                >
+                <button type="button" onClick={addItem} className="btn-outline flex items-center space-x-2 rtl:space-x-reverse">
                   <Plus />
                   <span>{t('quote.add_item')}</span>
                 </button>
@@ -309,35 +261,23 @@ export default function QuoteOrder() {
 
               <div className="space-y-4">
                 {items.map((item) => (
-                  <QuoteItemRow
-                    key={item.id}
-                    item={item}
-                    onUpdate={updateItem}
-                    onRemove={removeItem}
-                    categories={categories}
-                  />
+                  <QuoteItemRow key={item.id} item={item} onUpdate={updateItem} onRemove={removeItem} categories={categories} />
                 ))}
               </div>
             </div>
 
             {/* Status Messages */}
             {status === 'success' && (
-              <div className="p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
-                {t('quote.success')}
-              </div>
+              <div className="p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">{t('quote.success')}</div>
             )}
 
             {status === 'error' && (
-              <div className="p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">
-                {t('quote.error')}
-              </div>
+              <div className="p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg">{t('quote.error')}</div>
             )}
 
             {/* Submit Button */}
             <div className="flex justify-center">
-              <button type="submit" className="btn-primary px-12">
-                {t('quote.submit')}
-              </button>
+              <button type="submit" className="btn-primary px-12">{t('quote.submit')}</button>
             </div>
           </form>
         </div>
@@ -350,31 +290,19 @@ export default function QuoteOrder() {
             <h2 className="text-2xl font-bold mb-4">What Happens Next?</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-8">
               <div>
-                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  1
-                </div>
+                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
                 <h3 className="font-semibold mb-2">Review</h3>
-                <p className="text-sm text-secondary">
-                  Our team reviews your requirements and sources the best options
-                </p>
+                <p className="text-sm text-secondary">Our team reviews your requirements and sources the best options</p>
               </div>
               <div>
-                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  2
-                </div>
+                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
                 <h3 className="font-semibold mb-2">Quote</h3>
-                <p className="text-sm text-secondary">
-                  You receive a detailed quotation with pricing and delivery terms
-                </p>
+                <p className="text-sm text-secondary">You receive a detailed quotation with pricing and delivery terms</p>
               </div>
               <div>
-                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  3
-                </div>
+                <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
                 <h3 className="font-semibold mb-2">Delivery</h3>
-                <p className="text-sm text-secondary">
-                  Upon approval, we process your order and coordinate delivery
-                </p>
+                <p className="text-sm text-secondary">Upon approval, we process your order and coordinate delivery</p>
               </div>
             </div>
           </div>

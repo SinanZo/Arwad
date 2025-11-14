@@ -1,37 +1,4 @@
 "use client"
-import React from 'react'
-import Link from 'next/link'
-import ThemeToggle from './ThemeToggle'
-import LanguageToggle from './LanguageToggle'
-
-export default function Header(){
-  return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-      <nav className="container-custom flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold">A</div>
-          <div className="font-bold text-lg text-primary-600">ARWAD</div>
-        </Link>
-        <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/industries">Industries</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/our-services">Services</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-        <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <ThemeToggle />
-          <LanguageToggle />
-          <div className="lg:hidden">
-            <button aria-label="Open menu">☰</button>
-          </div>
-        </div>
-      </nav>
-    </header>
-  )
-}
-'use client'
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'

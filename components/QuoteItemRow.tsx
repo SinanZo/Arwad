@@ -1,19 +1,4 @@
 "use client"
-import React from 'react'
-
-type Props = { index:number; onRemove?:()=>void }
-
-export default function QuoteItemRow({ index, onRemove }: Props){
-  return (
-    <div className="flex gap-2 items-center">
-      <input placeholder="Item description" className="flex-1 p-2 border rounded" />
-      <input placeholder="Qty" className="w-24 p-2 border rounded" />
-      <input placeholder="Unit" className="w-24 p-2 border rounded" />
-      <button onClick={onRemove} className="p-2 bg-red-500 text-white rounded">Remove</button>
-    </div>
-  )
-}
-'use client'
 
 import { useState } from 'react'
 

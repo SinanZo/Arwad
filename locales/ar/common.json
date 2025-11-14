@@ -1,16 +1,4 @@
 {
-  "brand": { "name": "أرواد", "short": "أرواد" },
-  "nav": { "home": "الرئيسية", "about": "من نحن", "industries": "الصناعات", "products": "المنتجات", "services": "الخدمات", "contact": "اتصل بنا", "register":"التسجيل","quote":"طلب سعر" },
-  "hero": { "title": "التوافر. الاعتمادية. المسؤولية.", "subtitle": "نوفر حلول الصيانة والإمداد وسلاسل الإمداد الموثوقة.", "cta_quote":"اطلب عرض سعر","cta_industries":"عرض الصناعات" },
-  "about": { "title": "من نحن", "subtitle": "شريك موثوق", "description": "نظرة عامة عن أرواد..." },
-  "values": { "title": "قيمنا الأساسية", "subtitle":"ما نؤمن به", "ownership": { "title":"المسؤولية", "description":"نأخذ المسؤولية" }, "availability": { "title":"التوافر", "description":"الأجزاء عند الحاجة" }, "reliability": { "title":"الاعتمادية", "description":"حلول موثوقة" }},
-  "industries": { "title":"الصناعات","subtitle":"القطاعات التي نخدمها","water":{"title":"المياه"},"power":{"title":"الطاقة"},"manufacturing":{"title":"التصنيع"},"petrochemical":{"title":"البتروكيماويات"},"mining":{"title":"التعدين"},"infrastructure":{"title":"البنية التحتية"}},
-  "services": { "title":"الخدمات","subtitle":"كيف نساعد","procurement":{"title":"المشتريات","description":"المشتريات الاستراتيجية"},"customized":{"title":"حلول مخصصة","description":"مصممة لاحتياجاتك"},"automation":{"title":"الأتمتة","description":"أنظمة التحكم"},"assessment":{"title":"التقييم","description":"تدقيق الكفاءة"}},
-  "products": { "title":"المنتجات","subtitle":"فئات المنتجات","ventilators":"مراوح تهوية","inspection":"تفتيش","cooling":"تكييف/تبريد","desalination":"تحلية","heavy":"معدات ثقيلة","measurement":"أجهزة قياس"},
-  "contact": { "title":"اتصل بنا","subtitle":"تواصل معنا" },
-  "quote": { "title":"طلب عرض سعر","subtitle":"إرسال عناصر الطلب" }
-}
-{
   "nav": {
     "home": "الرئيسية",
     "about": "عن الشركة",
@@ -81,7 +69,7 @@
       "description": "الخبرة التقنية العميقة والمعرفة الصناعية تدفع قدرتنا على حل التحديات المعقدة."
     },
     "knowledge": {
-      "title": "المعرفة",
+      "title": "المالمحة",
       "description": "التعلم المستمر ومشاركة المعلومات يبقياننا في طليعة التطورات الصناعية."
     },
     "integrity": {
