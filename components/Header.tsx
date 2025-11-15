@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { brandAssets, getActiveLogo } from "@/config/brand";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 const MenuIcon = () => (
   <svg
@@ -141,6 +142,8 @@ export default function Header() {
                 className="h-10 w-auto object-contain"
                 onError={() => setLogoError(true)}
                 priority
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
             ) : (
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl font-bold text-white">
