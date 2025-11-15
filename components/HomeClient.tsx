@@ -161,45 +161,25 @@ export default function HomeClient() {
             <ServiceCard
               title={t('services.procurement.title')}
               description={t('services.procurement.description')}
-              features={[
-                'Strategic sourcing',
-                'Vendor management',
-                'Logistics optimization',
-                'Cost reduction strategies',
-              ]}
+              features={t('services.procurement.features') as unknown as string[]}
               href="/our-services#procurement"
             />
             <ServiceCard
               title={t('services.customized.title')}
               description={t('services.customized.description')}
-              features={[
-                'Engineering design',
-                'Custom fabrication',
-                'Technical consulting',
-                'Solution integration',
-              ]}
+              features={t('services.customized.features') as unknown as string[]}
               href="/our-services#customized"
             />
             <ServiceCard
               title={t('services.automation.title')}
               description={t('services.automation.description')}
-              features={[
-                'Control systems',
-                'SCADA integration',
-                'Process automation',
-                'IoT solutions',
-              ]}
+              features={t('services.automation.features') as unknown as string[]}
               href="/our-services#automation"
             />
             <ServiceCard
               title={t('services.assessment.title')}
               description={t('services.assessment.description')}
-              features={[
-                'Process analysis',
-                'Efficiency audits',
-                'Performance optimization',
-                'Best practice recommendations',
-              ]}
+              features={t('services.assessment.features') as unknown as string[]}
               href="/our-services#assessment"
             />
           </div>
@@ -283,10 +263,10 @@ export default function HomeClient() {
       <section className="section-padding bg-primary-600 dark:bg-primary-800 text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Optimize Your Supply Chain?
+            {t('cta.home_title')}
           </h2>
           <p className="text-xl text-primary-100 dark:text-primary-200 mb-8 max-w-2xl mx-auto">
-            Contact our team today to discuss your MRO requirements and discover how {t('brand.short')} can support your operations.
+            {t('cta.home_subtitle').replace('{brand}', t('brand.short'))}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/quote-order" className="btn-secondary">

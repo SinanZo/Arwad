@@ -34,6 +34,10 @@
       "description": "Proven reliability across diverse industrial sectors"
     }
   },
+  "cta": {
+    "home_title": "Ready to Optimize Your Supply Chain?",
+    "home_subtitle": "Contact our team today to discuss your MRO requirements and discover how {brand} can support your operations."
+  },
   "about": {
     "title": "About ARWAD Trading",
     "subtitle": "Excellence in MRO & Supply Chain Management",
@@ -99,43 +103,123 @@
         "Distribution components",
         "Monitoring and control systems"
       ]
+    },
+    "power": {
+      "title": "Power Generation & Distribution",
+      "description": "Reliable procurement solutions for power plants, substations, and electrical distribution systems to ensure continuous energy delivery.",
+      "details": "We supply critical components for thermal power plants, combined cycle facilities, and electrical substations. Our expertise includes transformers, switchgear, control systems, and protection equipment with rapid emergency response capabilities.",
+      "supplies": [
+        "Transformers and switchgear",
+        "Circuit breakers and relays",
+        "Turbine components",
+        "Generator parts and excitation systems",
+        "SCADA and control equipment"
+      ]
+    },
+    "manufacturing": {
+      "title": "Manufacturing",
+      "description": "Complete MRO support for consumer goods, chemicals, and packaging industries, minimizing downtime and maximizing production efficiency.",
+      "details": "Our manufacturing solutions cover production lines, processing equipment, and material handling systems. We provide preventive maintenance support, emergency spares, and technical consultation to keep your operations running smoothly.",
+      "supplies": [
+        "Conveyor systems and belts",
+        "Motors and drives",
+        "Bearings and seals",
+        "Hydraulic and pneumatic components",
+        "Process control instrumentation"
+      ]
+    },
+    "petrochemical": {
+      "title": "Petrochemicals & Refining",
+      "description": "Specialized solutions for refineries, chemical plants, and processing facilities with stringent safety and quality requirements.",
+      "details": "We understand the demanding environments of petrochemical operations. Our portfolio includes high-grade materials, explosion-proof equipment, and certified components that meet international safety standards.",
+      "supplies": [
+        "High-temperature valves and flanges",
+        "Corrosion-resistant piping",
+        "Safety and relief valves",
+        "Heat exchangers",
+        "Analytical instrumentation"
+      ]
+    },
+    "mining": {
+      "title": "Mining & Heavy Equipment",
+      "description": "Heavy equipment support and spare parts for mining operations, ensuring productivity in demanding environments.",
+      "details": "We supply wear parts, structural components, and critical systems for mining equipment including crushers, conveyers, and extraction machinery. Our inventory includes OEM and high-quality aftermarket parts.",
+      "supplies": [
+        "Crusher wear parts",
+        "Conveyor components",
+        "Heavy-duty bearings",
+        "Hydraulic cylinders and pumps",
+        "Lubrication systems"
+      ]
+    },
+    "infrastructure": {
+      "title": "Buildings & Infrastructure",
+      "description": "Comprehensive solutions for commercial buildings, airports, seaports, and major infrastructure projects.",
+      "details": "From HVAC systems to fire protection, we provide the components and technical support needed for large-scale infrastructure. Our expertise covers mechanical, electrical, and plumbing systems with 24/7 emergency support.",
+      "supplies": [
+        "HVAC equipment and controls",
+        "Fire protection systems",
+        "Electrical distribution components",
+        "Plumbing fixtures and systems",
+        "Building automation systems"
+      ]
     }
   },
   "products": {
     "title": "Our Products",
     "subtitle": "Comprehensive inventory of industrial components",
     "description": "Browse our extensive catalog of industrial components, equipment, and spare parts.",
-    "ventilators": {
-      "title": "Central Ventilators & Air Filters",
-      "description": "High-performance air handling and filtration systems for industrial environments"
+    "ventilators": "Central Ventilators & Air Filters",
+    "inspection": "Inspection & Testing Equipment",
+    "spare_parts": "Industrial Spare Parts",
+    "cooling": "Water Cooling & Heating Equipment",
+    "desalination": "Desalination & Treatment Equipment",
+    "heavy": "Heavy Equipment & Machinery Parts",
+    "measurement": "Measurement & Control Systems",
+    "factory": "Factory & Plant Components"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions tailored to your needs",
+    "procurement": {
+      "title": "Procurement & Supply Chain",
+      "description": "Strategic sourcing and logistics management that reduces costs while maintaining quality and reliability.",
+      "features": [
+        "Strategic sourcing",
+        "Vendor management",
+        "Logistics optimization",
+        "Cost reduction strategies"
+      ]
     },
-    "inspection": {
-      "title": "Inspection & Testing Equipment",
-      "description": "Advanced diagnostic and quality control instruments"
+    "customized": {
+      "title": "Customized Solutions",
+      "description": "Tailored engineering solutions designed to meet unique operational requirements and technical specifications.",
+      "features": [
+        "Engineering design",
+        "Custom fabrication",
+        "Technical consulting",
+        "Solution integration"
+      ]
     },
-    "spare_parts": {
-      "title": "Industrial Spare Parts",
-      "description": "Comprehensive range of replacement parts for industrial equipment"
+    "automation": {
+      "title": "Automation",
+      "description": "Modern automation systems and control solutions that enhance efficiency and reduce manual intervention.",
+      "features": [
+        "Control systems",
+        "SCADA integration",
+        "Process automation",
+        "IoT solutions"
+      ]
     },
-    "cooling": {
-      "title": "Water Cooling & Heating Equipment",
-      "description": "Thermal management systems for industrial processes"
-    },
-    "desalination": {
-      "title": "Desalination & Treatment Equipment",
-      "description": "Water treatment and purification technologies"
-    },
-    "heavy": {
-      "title": "Heavy Equipment & Machinery Parts",
-      "description": "Durable components for heavy industrial machinery"
-    },
-    "measurement": {
-      "title": "Measurement & Control Systems",
-      "description": "Precision instruments for process monitoring and control"
-    },
-    "factory": {
-      "title": "Factory & Plant Components",
-      "description": "Standard and custom components for manufacturing facilities"
+    "assessment": {
+      "title": "Process Assessment",
+      "description": "Comprehensive evaluation of manufacturing and maintenance processes to identify improvement opportunities.",
+      "features": [
+        "Process analysis",
+        "Efficiency audits",
+        "Performance optimization",
+        "Best practice recommendations"
+      ]
     }
   },
   "contact": {

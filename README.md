@@ -329,3 +329,24 @@ For questions or support, contact the development team.
 ## License
 
 © 2024 ARWAD Trading (أرواد). All rights reserved.
+
+## Smoke tests & Troubleshooting
+
+- **Run smoke tests (wrapper):** the wrapper waits for the dev server and writes UTF-8 output to `tmp_smoke_out.txt`.
+
+```powershell
+powershell -File .\scripts\playwright\run-smoke-with-wait.ps1 http://localhost:4000/ 60
+```
+
+- **If you see garbled Arabic (mojibake)**: open `tmp_smoke_out.txt` in a UTF-8-aware editor (VS Code, Notepad++). The wrapper writes UTF-8 but some consoles may render Arabic incorrectly.
+
+- **Locked log files / Node processes:** if `git` operations fail because files are locked (e.g. `next_dev.log`), terminate the Node process or reboot. To inspect/kill a process in an elevated PowerShell (replace PID):
+
+```powershell
+Get-CimInstance Win32_Process -Filter "ProcessId=114776" | Select-Object ProcessId,ParentProcessId,CommandLine,ExecutablePath
+Stop-Process -Id 114776 -Force
+taskkill /PID 114776 /F
+```
+
+Rebooting also clears locked processes if you prefer not to run as Administrator.
+
