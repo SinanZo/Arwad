@@ -40,6 +40,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       images: brandAssets.ogImage ? [{ url: brandAssets.ogImage }] : undefined,
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: brandAssets.ogImage ? [brandAssets.ogImage] : undefined,
+    },
     icons: brandAssets.icon ? { icon: brandAssets.icon } : undefined,
   }
 }
