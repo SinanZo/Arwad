@@ -11,6 +11,7 @@ import { headers } from 'next/headers'
 import { pickLangFromHeader, loadMessages } from '@/lib/i18n'
 import { TranslationProvider } from '@/components/TranslationProvider'
 import type { Metadata } from 'next'
+import { brandAssets } from '@/config/brand'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -37,7 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: translations.brand?.name ?? 'ARWAD Trading',
       locale: isArabic ? 'ar' : 'en_US',
       type: 'website',
+      images: brandAssets.ogImage ? [{ url: brandAssets.ogImage }] : undefined,
     },
+    icons: brandAssets.icon ? { icon: brandAssets.icon } : undefined,
   }
 }
 

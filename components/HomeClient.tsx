@@ -3,6 +3,7 @@
 import React from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import HeroSlider, { Slide } from '@/components/HeroSlider'
+import { brandAssets } from '@/config/brand'
 import SectionTitle from '@/components/SectionTitle'
 import ValueCard from '@/components/ValueCard'
 import IndustryCard from '@/components/IndustryCard'
@@ -41,8 +42,8 @@ export default function HomeClient() {
         label: t('hero.cta_industries'),
         href: '/industries',
       },
-      mediaType: 'image',
-      mediaSrc: '/images/home/hero-industrial-1.svg',
+      mediaType: brandAssets.heroVideo ? 'video' : 'image',
+      mediaSrc: brandAssets.heroVideo || brandAssets.heroPoster,
     },
   ]
 

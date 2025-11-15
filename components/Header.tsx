@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { brandAssets, getActiveLogo } from "@/config/brand";
+import Image from "next/image";
 
 const MenuIcon = () => (
   <svg
@@ -90,6 +92,7 @@ const GlobeIcon = () => (
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const { language: lang, setLanguage: setLang, dir, t } = useLanguage();
   const { theme, setTheme } = useTheme();
@@ -128,16 +131,23 @@ export default function Header() {
       <nav className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 rtl:space-x-reverse"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl font-bold text-white">
-              A
-            </div>
-            <span className="text-xl font-bold text-primary dark:text-primary-light">
-              ARWAD
-            </span>
+          <Link href="/" className="flex items-center space-x-2 rtl:space-x-reverse">
+            {(!logoError && (brandAssets.logoLight || brandAssets.logoDark)) ? (
+              <Image
+                src={getActiveLogo(theme === 'dark')}
+                alt="Arwad Logo"
+                width={140}
+                height={40}
+                className="h-10 w-auto object-contain"
+                onError={() => setLogoError(true)}
+                priority
+              />
+            ) : (
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl font-bold text-white">
+                A
+              </div>
+            )}
+            <span className="text-xl font-bold text-primary dark:text-primary-light">ARWAD</span>
           </Link>
 
           {/* Desktop Navigation */}
