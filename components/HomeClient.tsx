@@ -161,25 +161,25 @@ export default function HomeClient() {
             <ServiceCard
               title={t('services.procurement.title')}
               description={t('services.procurement.description')}
-              features={t('services.procurement.features') as unknown as string[]}
+              features={t('services.procurement.features')}
               href="/our-services#procurement"
             />
             <ServiceCard
               title={t('services.customized.title')}
               description={t('services.customized.description')}
-              features={t('services.customized.features') as unknown as string[]}
+              features={t('services.customized.features')}
               href="/our-services#customized"
             />
             <ServiceCard
               title={t('services.automation.title')}
               description={t('services.automation.description')}
-              features={t('services.automation.features') as unknown as string[]}
+              features={t('services.automation.features')}
               href="/our-services#automation"
             />
             <ServiceCard
               title={t('services.assessment.title')}
               description={t('services.assessment.description')}
-              features={t('services.assessment.features') as unknown as string[]}
+              features={t('services.assessment.features')}
               href="/our-services#assessment"
             />
           </div>

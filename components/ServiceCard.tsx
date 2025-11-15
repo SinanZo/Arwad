@@ -15,6 +15,9 @@ export default function ServiceCard({
   features,
   href,
 }: ServiceCardProps) {
+  // Ensure features is an array
+  const featuresList = Array.isArray(features) ? features : []
+  
   const CardContent = (
     <div className="card group hover:border-primary-500 dark:hover:border-primary-400 h-full">
       <h3 className="text-xl font-semibold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
@@ -22,7 +25,7 @@ export default function ServiceCard({
       </h3>
       <p className="text-secondary mb-4">{description}</p>
       <ul className="space-y-2">
-        {features.map((feature, index) => (
+        {featuresList.map((feature, index) => (
           <li key={index} className="flex items-start space-x-2 rtl:space-x-reverse text-sm text-secondary">
             <span className="text-primary-600 dark:text-primary-400 mt-1">•</span>
             <span>{feature}</span>

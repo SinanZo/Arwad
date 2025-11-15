@@ -47,14 +47,15 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
 
   const setLanguage = (lang: Language) => setLanguageState(lang)
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const parts = key.split(".")
     let curr: any = translations
     for (const p of parts) {
       if (curr && typeof curr === "object" && p in curr) curr = curr[p]
       else return key
     }
-    return typeof curr === "string" ? curr : key
+    // Return the value as-is (string, array, or object)
+    return curr !== undefined ? curr : key
   }
 
   const dir = language === "ar" ? "rtl" : "ltr"
