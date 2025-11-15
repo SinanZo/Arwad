@@ -53,7 +53,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Providers>
           <TranslationProvider locale={lang} messages={messages}>
             <ThemeProvider>
-              <LanguageProvider>
+              <LanguageProvider initialLanguage={lang}>
                 <AuthProvider>
                   <div className="flex flex-col min-h-screen">
                     <Header />

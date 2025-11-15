@@ -166,7 +166,7 @@ export default function Header() {
               aria-label={t("language.toggle" as any)}
             >
               <GlobeIcon />
-              <span>{lang === "en" ? "EN" : "العربية"}</span>
+                <span>{mounted && (lang === "en" ? "EN" : "العربية")}</span>
             </button>
 
             {/* Theme Toggle (only after mount to avoid hydration issues) */}

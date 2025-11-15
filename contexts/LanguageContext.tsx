@@ -13,8 +13,10 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+export function LanguageProvider({ children, initialLanguage }: { children: ReactNode; initialLanguage?: Language }) {
   const [language, setLanguageState] = useState<Language>(() => {
+    // Prefer server-provided initialLanguage when present to keep SSR and hydration consistent
+    if (typeof initialLanguage !== 'undefined') return initialLanguage
     try {
       if (typeof window !== "undefined") {
         const saved = localStorage.getItem("language") as Language | null
