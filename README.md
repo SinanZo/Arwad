@@ -277,16 +277,32 @@ All text content is managed through:
 ### Styling
 
 Global styles: `app/globals.css`
-Component-specific styles: Use Tailwind utility classes
+### Branding
 
-## Browser Support
+Centralize brand assets via `config/brand.ts` using environment variables.
 
+- Public env vars (set in `.env.local` or hosting):
+  - `NEXT_PUBLIC_BRAND_LOGO_LIGHT`
+  - `NEXT_PUBLIC_BRAND_LOGO_DARK`
+  - `NEXT_PUBLIC_BRAND_OG_IMAGE`
+  - `NEXT_PUBLIC_BRAND_ICON`
+  - `NEXT_PUBLIC_BRAND_HERO_VIDEO` (optional)
+  - `NEXT_PUBLIC_BRAND_HERO_POSTER`
+
+If unset, the app falls back to placeholders in `/public/images`.
+
+Also see `docs/BRANDING.md` for examples and domain configuration.
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
-- Edge (latest)
+All image paths are placeholders by default. To add real images:
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
+## SEO & Deployment
+
+- Open Graph and Twitter metadata use brand assets
+- `app/sitemap.ts` and `app/robots.ts` are included
+- Canonical URL and `metadataBase` set to `https://arwad.org`
 ## Performance
 
 - Automatic code splitting
