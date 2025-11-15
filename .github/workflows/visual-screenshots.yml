@@ -33,7 +33,7 @@ jobs:
 
       - name: Start server
         run: |
-          nohup pnpm start -- -p 4000 > server.log 2>&1 &
+          nohup pnpm exec next start -p 4000 > server.log 2>&1 &
           npx wait-on http://localhost:4000/ -t 120000 || (
             echo "Server did not become ready in time. Dumping server.log (truncated):";
             sed -n '1,200p' server.log || true;
