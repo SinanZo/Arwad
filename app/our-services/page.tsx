@@ -90,7 +90,14 @@ export default function OurServices() {
                 </ul>
               </div>
             </div>
-            <div className="relative h-96 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-2xl shadow-custom-lg" />
+            <div className="relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
+              <img
+                src="/images/home/company-overview.svg"
+                alt="Procurement Services"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -126,7 +133,14 @@ export default function OurServices() {
                 </ul>
               </div>
             </div>
-            <div className="md:order-1 relative h-96 bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900 dark:to-accent-800 rounded-2xl shadow-custom-lg" />
+            <div className="md:order-1 relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
+              <img
+                src="/images/products/sensor.svg"
+                alt="Customized Solutions"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -162,7 +176,14 @@ export default function OurServices() {
                 </ul>
               </div>
             </div>
-            <div className="relative h-96 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-2xl shadow-custom-lg" />
+            <div className="relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
+              <img
+                src="/images/products/motor.svg"
+                alt="Automation Solutions"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -198,7 +219,14 @@ export default function OurServices() {
                 </ul>
               </div>
             </div>
-            <div className="md:order-1 relative h-96 bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900 dark:to-accent-800 rounded-2xl shadow-custom-lg" />
+            <div className="md:order-1 relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
+              <img
+                src="/images/products/valve.svg"
+                alt="Assessment Services"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
+            </div>
           </div>
         </div>
       </section>

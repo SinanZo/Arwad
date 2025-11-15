@@ -124,7 +124,7 @@ export default function Header() {
       : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-md dark:border-slate-800 dark:bg-bgDark/90">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/95">
       <nav className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
@@ -162,7 +162,7 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="rounded-lg bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-100 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-900/50 transition-colors"
+              className="rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors"
               aria-label={t("language.toggle" as any)}
             >
               {mounted && (lang === "en" ? "EN" : "AR")}
@@ -172,12 +172,13 @@ export default function Header() {
             {mounted && (
               <button
                 onClick={toggleTheme}
-                className="rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
+                className="rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200"
                 aria-label={t("theme.toggle" as any)}
               >
                 {theme === "dark" ? <SunIcon /> : <MoonIcon />}
               </button>
             )}
+
 
             {/* Mobile Menu Toggle */}
             <button

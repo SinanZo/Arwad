@@ -56,9 +56,19 @@ export default function Contact() {
           </div>
 
           <div>
-            {/* Placeholder for map or other info */}
-            <div className="h-96 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-2xl shadow-custom-lg flex items-center justify-center text-secondary">
-              <p>{t('contact.map_placeholder') || 'Map placeholder - Integrate Google Maps or similar service'}</p>
+            {/* Google Maps Embed */}
+            <div className="h-96 rounded-2xl shadow-custom-lg overflow-hidden border border-custom">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1907397967754!2d55.26254731501477!3d25.197196383886965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682829c85bf%3A0xa5bbe3a0e7db2fb0!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Arwad Location Map"
+                className="grayscale-[30%] dark:grayscale-[70%]"
+              />
             </div>
           </div>
         </div>
