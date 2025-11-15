@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { BLUR_DATA_URL } from '@/lib/blur'
 import { ReactNode } from 'react'
 
 interface IndustryCardProps {
@@ -28,6 +29,8 @@ export default function IndustryCard({
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-300"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
           priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />

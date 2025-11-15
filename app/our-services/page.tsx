@@ -6,6 +6,7 @@ import ServiceCard from '@/components/ServiceCard'
 import ValueCard from '@/components/ValueCard'
 import React from 'react'
 import Image from 'next/image'
+import { BLUR_DATA_URL } from '@/lib/blur'
 
 const Heart = () => (
   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,6 +100,8 @@ export default function OurServices() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority={false}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
             </div>
@@ -145,6 +148,8 @@ export default function OurServices() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority={false}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
             </div>
@@ -191,6 +196,8 @@ export default function OurServices() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority={false}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
             </div>
@@ -237,6 +244,8 @@ export default function OurServices() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority={false}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
             </div>

@@ -6,6 +6,7 @@ import SectionTitle from '@/components/SectionTitle'
 import ProductCard from '@/components/ProductCard'
 import React from 'react'
 import Image from 'next/image'
+import { BLUR_DATA_URL } from '@/lib/blur'
 
 export default function Products() {
   const { t } = useLanguage()
@@ -148,6 +149,8 @@ export default function Products() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-contain p-4"
                       priority={false}
+                      placeholder="blur"
+                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none" />
                   </div>
