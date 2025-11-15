@@ -22,6 +22,12 @@ const Building2 = () => <svg className="w-full h-full" fill="none" stroke="curre
 
 export default function HomeClient() {
   const { t } = useLanguage()
+  
+  // Helper to safely get array from translations
+  const getArray = (key: string): string[] => {
+    const value = t(key)
+    return Array.isArray(value) ? value : []
+  }
 
   const slides: Slide[] = [
     {
@@ -161,25 +167,25 @@ export default function HomeClient() {
             <ServiceCard
               title={t('services.procurement.title')}
               description={t('services.procurement.description')}
-              features={t('services.procurement.features')}
+              features={getArray('services.procurement.features')}
               href="/our-services#procurement"
             />
             <ServiceCard
               title={t('services.customized.title')}
               description={t('services.customized.description')}
-              features={t('services.customized.features')}
+              features={getArray('services.customized.features')}
               href="/our-services#customized"
             />
             <ServiceCard
               title={t('services.automation.title')}
               description={t('services.automation.description')}
-              features={t('services.automation.features')}
+              features={getArray('services.automation.features')}
               href="/our-services#automation"
             />
             <ServiceCard
               title={t('services.assessment.title')}
               description={t('services.assessment.description')}
-              features={t('services.assessment.features')}
+              features={getArray('services.assessment.features')}
               href="/our-services#assessment"
             />
           </div>

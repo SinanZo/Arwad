@@ -54,6 +54,16 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
       if (curr && typeof curr === "object" && p in curr) curr = curr[p]
       else return key
     }
+    
+    // Debug logging for features keys
+    if (key.includes('features')) {
+      console.log(`t('${key}'):`, {
+        type: typeof curr,
+        isArray: Array.isArray(curr),
+        value: curr
+      })
+    }
+    
     // Return the value as-is (string, array, or object)
     return curr !== undefined ? curr : key
   }
