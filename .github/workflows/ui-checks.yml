@@ -2,6 +2,8 @@ name: UI Checks
 
 on:
   pull_request:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -50,6 +52,26 @@ jobs:
 
       - name: Meta verify
         run: node scripts/verify-meta.js http://localhost:4000/ > tmp_verify_meta.json 2>&1 || true
+
+      - name: Summarize results
+        run: |
+          echo "### UI Checks Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f tmp_verify_meta.json ]; then
+            META_STATUS=$(node -e "const f=require('fs');let s='N/A';try{const j=JSON.parse(f.readFileSync('tmp_verify_meta.json','utf8'));s=j.allOk?'pass':'fail'}catch(e){};console.log(s)")
+            echo "- Meta verify: ${META_STATUS}" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f tmp_run_smoke.json ]; then
+            SMOKE_STATUS=$(node -e "const f=require('fs');let s='N/A';try{const j=JSON.parse(f.readFileSync('tmp_run_smoke.json','utf8'));const ok=(j.results||[]).every(r=>r.ok===true);s=ok?'pass':'warn'}catch(e){};console.log(s)")
+            echo "- Smoke: ${SMOKE_STATUS}" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f tmp_run_a11y.json ]; then
+            echo "- A11y: see artifact json files" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -d tmp_screenshots ]; then
+            COUNT=$(ls -1 tmp_screenshots | wc -l)
+            echo "- Screenshots: ${COUNT} files" >> $GITHUB_STEP_SUMMARY
+          fi
 
       - name: Upload JSON outputs
         if: always()
