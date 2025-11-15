@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
-import { brandAssets, getActiveLogo } from '@/config/brand'
+import { brandAssets, getActiveLogo, siteContacts, socialLinks } from '@/config/brand'
 import { BLUR_DATA_URL } from '@/lib/blur'
 
 const Mail = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
@@ -59,34 +59,26 @@ export default function Footer() {
               {t('footer.about')}
             </p>
             <div className="flex space-x-4 rtl:space-x-reverse">
-              <a
-                href="#"
-                className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook />
-              </a>
-              <a
-                href="#"
-                className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter />
-              </a>
-              <a
-                href="#"
-                className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin />
-              </a>
-              <a
-                href="#"
-                className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram />
-              </a>
+              {socialLinks.facebook ? (
+                <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Facebook">
+                  <Facebook />
+                </a>
+              ) : null}
+              {socialLinks.twitter ? (
+                <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Twitter">
+                  <Twitter />
+                </a>
+              ) : null}
+              {socialLinks.linkedin ? (
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="LinkedIn">
+                  <Linkedin />
+                </a>
+              ) : null}
+              {socialLinks.instagram ? (
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Instagram">
+                  <Instagram />
+                </a>
+              ) : null}
             </div>
           </div>
 
@@ -113,15 +105,19 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 rtl:space-x-reverse text-sm text-secondary">
                 <MapPin />
-                <span>Business Bay, Dubai, UAE</span>
+                <span>{siteContacts.address}</span>
               </li>
               <li className="flex items-center space-x-3 rtl:space-x-reverse text-sm text-secondary">
                 <Phone />
-                <span>+971 4 123 4567</span>
+                <a href={`tel:${(siteContacts.phone || '').replace(/\s+/g,'')}`} className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  {siteContacts.phone}
+                </a>
               </li>
               <li className="flex items-center space-x-3 rtl:space-x-reverse text-sm text-secondary">
                 <Mail />
-                <span>info@arwad.org</span>
+                <a href={`mailto:${siteContacts.email}`} className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  {siteContacts.email}
+                </a>
               </li>
             </ul>
           </div>

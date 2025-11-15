@@ -24,6 +24,24 @@ NEXT_PUBLIC_BRAND_HERO_VIDEO=https://cdn.example.com/hero.mp4
 NEXT_PUBLIC_BRAND_HERO_POSTER=https://cdn.example.com/hero-poster.webp
 ```
 
+## Contact & Social
+
+Public contact info and social links can be set via env vars:
+
+```
+NEXT_PUBLIC_SITE_EMAIL=info@arwad.org
+NEXT_PUBLIC_SITE_PHONE=+971 4 123 4567
+NEXT_PUBLIC_SITE_ADDRESS=Business Bay, Dubai, UAE
+
+NEXT_PUBLIC_SOCIAL_FACEBOOK=https://facebook.com/yourpage
+NEXT_PUBLIC_SOCIAL_TWITTER=https://x.com/yourhandle
+NEXT_PUBLIC_SOCIAL_LINKEDIN=https://linkedin.com/company/yourcompany
+NEXT_PUBLIC_SOCIAL_INSTAGRAM=https://instagram.com/yourbrand
+NEXT_PUBLIC_SOCIAL_YOUTUBE=https://youtube.com/@yourchannel
+```
+
+Footer will automatically render these links when provided.
+
 ## Remote Images
 
 `next.config.js` allows common remote domains, including `arwad.org`. If you host assets elsewhere, add the domain there as needed.
