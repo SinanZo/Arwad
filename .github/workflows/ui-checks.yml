@@ -48,6 +48,9 @@ jobs:
       - name: A11y test
         run: node scripts/playwright/a11y-test.js http://localhost:4000/ > tmp_run_a11y.json 2>&1 || true
 
+      - name: Meta verify
+        run: node scripts/verify-meta.js http://localhost:4000/ > tmp_verify_meta.json 2>&1 || true
+
       - name: Upload JSON outputs
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,6 +60,7 @@ jobs:
             tmp_run_smoke.json
             tmp_run_screenshots.json
             tmp_run_a11y.json
+            tmp_verify_meta.json
             .next-server.log
 
       - name: Upload screenshots

@@ -38,6 +38,7 @@ try {
   $smokeOut = "tmp_run_smoke.json"
   $shotsOut = "tmp_run_screenshots.json"
   $a11yOut  = "tmp_run_a11y.json"
+  $metaOut  = "tmp_verify_meta.json"
 
   try {
     pnpm exec playwright install chromium 2>&1 | Out-Null
@@ -64,9 +65,17 @@ try {
     "{`"error`":`"a11y failed: $($_.Exception.Message)`"}" | Out-File -FilePath $a11yOut -Encoding utf8
   }
 
+  try {
+    node scripts/verify-meta.js $url 2>&1 | Out-File -FilePath $metaOut -Encoding utf8
+  } catch {
+    $errCount++
+    "{`"error`":`"meta verify failed: $($_.Exception.Message)`"}" | Out-File -FilePath $metaOut -Encoding utf8
+  }
+
   Write-Output "Smoke output saved: $smokeOut"
   Write-Output "Screenshots output saved: $shotsOut"
   Write-Output "A11y output saved: $a11yOut"
+  Write-Output "Meta output saved: $metaOut"
 } catch {
   Write-Error $_
   $exitCode = 1
