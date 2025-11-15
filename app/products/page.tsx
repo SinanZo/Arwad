@@ -138,8 +138,15 @@ export default function Products() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
               <div key={product.id} id={product.id} className="scroll-mt-32">
-                <div className="card h-full">
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800" />
+                <div className="card h-full hover:shadow-xl transition-shadow">
+                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-full object-contain p-4"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none" />
+                  </div>
                   <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
                   <p className="text-secondary mb-4">{product.description}</p>
                   <a

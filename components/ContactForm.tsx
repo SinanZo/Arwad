@@ -20,13 +20,29 @@ export default function ContactForm(){
   }
 
   return (
-    <form className="space-y-4 max-w-xl" onSubmit={handleSubmit}>
-      <input required value={name} onChange={(e)=>setName(e.target.value)} placeholder="Name" className="w-full p-3 border rounded" />
-      <input required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" type="email" className="w-full p-3 border rounded" />
-      <textarea required value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Message" className="w-full p-3 border rounded h-32" />
+    <form className="space-y-6 max-w-xl" onSubmit={handleSubmit}>
       <div>
-        <button type="submit" className="btn-primary">{status==='sending'?'Sending...':status==='sent'?'Sent':'Send Message'}</button>
+        <label className="block text-sm font-medium mb-2">Name</label>
+        <input required value={name} onChange={(e)=>setName(e.target.value)} placeholder="Your full name" className="input-field" />
       </div>
+      <div>
+        <label className="block text-sm font-medium mb-2">Email</label>
+        <input required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="your@email.com" type="email" className="input-field" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-2">Message</label>
+        <textarea required value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="How can we help you?" className="input-field h-32 resize-none" />
+      </div>
+      <div>
+        <button type="submit" disabled={status==='sending'} className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
+          {status==='sending'?'Sending...':status==='sent'?'✓ Message Sent':'Send Message'}
+        </button>
+      </div>
+      {status==='sent' && (
+        <div className="p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
+          Thank you! We&apos;ll get back to you soon.
+        </div>
+      )}
     </form>
   )
 }

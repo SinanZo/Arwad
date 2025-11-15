@@ -19,11 +19,17 @@ export default function IndustryCard({
   icon,
 }: IndustryCardProps) {
   return (
-    <Link href={href} className="card group cursor-pointer hover:border-primary-500 dark:hover:border-primary-400">
-      <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800">
+    <Link href={href} className="card group cursor-pointer hover:border-primary-500 dark:hover:border-primary-400 hover:shadow-xl transition-all">
+      <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
         {icon && (
-          <div className="absolute inset-0 flex items-center justify-center text-primary-600 dark:text-primary-400 opacity-20 group-hover:opacity-30 transition-opacity">
-            <div className="w-32 h-32">
+          <div className="absolute inset-0 flex items-center justify-center text-white opacity-80 group-hover:opacity-90 transition-opacity">
+            <div className="w-24 h-24 drop-shadow-lg">
               {icon}
             </div>
           </div>

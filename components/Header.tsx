@@ -165,7 +165,7 @@ export default function Header() {
               className="rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors"
               aria-label={t("language.toggle" as any)}
             >
-              {mounted && (lang === "en" ? "EN" : "AR")}
+              {mounted && (lang === "en" ? "AR" : "EN")}
             </button>
 
             {/* Theme Toggle (only after mount to avoid hydration issues) */}
