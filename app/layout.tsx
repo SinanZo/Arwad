@@ -19,6 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const h = headers()
   const accept = h.get('accept-language') || ''
   const isArabic = accept.includes('ar')
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://arwad.org'
 
   const translations = isArabic
     ? (await import('@/locales/ar/common.json')).default
@@ -28,14 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = translations.about?.description ?? 'Leading regional provider of MRO solutions, spare parts, and supply chain management services.'
 
   return {
-    metadataBase: new URL('https://arwad.org'),
+    metadataBase: new URL(siteUrl),
     title,
     description,
     keywords: 'MRO, spare parts, supply chain, industrial, maintenance, procurement, desalination, power generation, manufacturing',
     openGraph: {
       title,
       description,
-      url: 'https://arwad.org',
+      url: siteUrl,
       siteName: translations.brand?.name ?? 'ARWAD Trading',
       locale: isArabic ? 'ar' : 'en_US',
       type: 'website',
@@ -48,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: brandAssets.ogImage ? [brandAssets.ogImage] : undefined,
     },
     alternates: {
-      canonical: 'https://arwad.org',
+      canonical: siteUrl,
     },
     icons: brandAssets.icon ? { icon: brandAssets.icon } : undefined,
   }
