@@ -6,6 +6,7 @@ Centralize brand assets via environment variables, with safe fallbacks to local 
 
 Set these in `.env.local` (or hosting provider dashboard). All are optional.
 
+- `NEXT_PUBLIC_SITE_URL`: The canonical site URL used for `metadataBase`, canonical links, robots sitemap, and sitemap entries (e.g., `https://arwad.org`).
 - `NEXT_PUBLIC_BRAND_LOGO_LIGHT`: Absolute or public path to light logo (SVG/PNG/WebP)
 - `NEXT_PUBLIC_BRAND_LOGO_DARK`: Absolute or public path to dark logo
 - `NEXT_PUBLIC_BRAND_OG_IMAGE`: Absolute or public path used for Open Graph/social cards
@@ -16,6 +17,7 @@ Set these in `.env.local` (or hosting provider dashboard). All are optional.
 Examples:
 
 ```
+NEXT_PUBLIC_SITE_URL=https://www.arwad.org
 NEXT_PUBLIC_BRAND_LOGO_LIGHT=https://www.arwad.org/assets/brand/logo-light.svg
 NEXT_PUBLIC_BRAND_LOGO_DARK=https://www.arwad.org/assets/brand/logo-dark.svg
 NEXT_PUBLIC_BRAND_OG_IMAGE=https://www.arwad.org/assets/og/cover.png
