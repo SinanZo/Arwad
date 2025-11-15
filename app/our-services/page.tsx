@@ -5,6 +5,7 @@ import SectionTitle from '@/components/SectionTitle'
 import ServiceCard from '@/components/ServiceCard'
 import ValueCard from '@/components/ValueCard'
 import React from 'react'
+import Image from 'next/image'
 
 const Heart = () => (
   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,10 +92,13 @@ export default function OurServices() {
               </div>
             </div>
             <div className="relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
-              <img
+              <Image
                 src="/images/home/company-overview.svg"
                 alt="Procurement Services"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
             </div>
@@ -134,10 +138,13 @@ export default function OurServices() {
               </div>
             </div>
             <div className="md:order-1 relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
-              <img
+              <Image
                 src="/images/products/sensor.svg"
                 alt="Customized Solutions"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
             </div>
@@ -177,10 +184,13 @@ export default function OurServices() {
               </div>
             </div>
             <div className="relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
-              <img
+              <Image
                 src="/images/products/motor.svg"
                 alt="Automation Solutions"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent" />
             </div>
@@ -220,10 +230,13 @@ export default function OurServices() {
               </div>
             </div>
             <div className="md:order-1 relative h-96 rounded-2xl shadow-custom-lg overflow-hidden">
-              <img
+              <Image
                 src="/images/products/valve.svg"
                 alt="Assessment Services"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-900/50 to-transparent" />
             </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ReactNode } from 'react'
 
 interface IndustryCardProps {
@@ -21,10 +22,13 @@ export default function IndustryCard({
   return (
     <Link href={href} className="card group cursor-pointer hover:border-primary-500 dark:hover:border-primary-400 hover:shadow-xl transition-all">
       <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
-        <img
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
         {icon && (

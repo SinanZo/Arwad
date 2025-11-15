@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface ProductCardProps {
   title: string
@@ -20,10 +21,12 @@ export default function ProductCard({
   return (
     <Link href={href} className="card group cursor-pointer hover:border-primary-500 dark:hover:border-primary-400 hover:shadow-xl transition-all">
       <div className="relative h-40 mb-4 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
-        <img
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-contain p-3"
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-contain p-3"
         />
         <div className="absolute top-2 right-2 rtl:right-auto rtl:left-2 bg-primary-600 text-white text-xs px-3 py-1 rounded-full shadow-md">
           {category}

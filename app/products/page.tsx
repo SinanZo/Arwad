@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import SectionTitle from '@/components/SectionTitle'
 import ProductCard from '@/components/ProductCard'
 import React from 'react'
+import Image from 'next/image'
 
 export default function Products() {
   const { t } = useLanguage()
@@ -140,10 +141,13 @@ export default function Products() {
               <div key={product.id} id={product.id} className="scroll-mt-32">
                 <div className="card h-full hover:shadow-xl transition-shadow">
                   <div className="relative h-48 mb-4 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
-                    <img
+                    <Image
                       src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-contain p-4"
+                      alt={product.title as string}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-contain p-4"
+                      priority={false}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none" />
                   </div>

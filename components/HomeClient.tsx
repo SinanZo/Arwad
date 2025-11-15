@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import HeroSlider, { Slide } from '@/components/HeroSlider'
 import { brandAssets } from '@/config/brand'
@@ -69,10 +70,13 @@ export default function HomeClient() {
               </div>
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-custom-lg">
-              <img 
-                src="/images/home/company-overview.svg" 
-                alt="Company Overview" 
-                className="w-full h-full object-cover"
+              <Image
+                src="/images/home/company-overview.svg"
+                alt="Company Overview"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-primary-800/20" />
             </div>
