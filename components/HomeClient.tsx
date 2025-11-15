@@ -67,7 +67,13 @@ export default function HomeClient() {
                 </a>
               </div>
             </div>
-            <div className="relative h-96 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-2xl shadow-custom-lg">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-custom-lg">
+              <img 
+                src="/images/home/company-overview.svg" 
+                alt="Company Overview" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-primary-800/20" />
             </div>
           </div>
         </div>
@@ -96,6 +102,31 @@ export default function HomeClient() {
               title={t('values.reliability.title')}
               description={t('values.reliability.description')}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Banner */}
+      <section className="relative py-20 bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-950 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/home/hero-supply-chain.svg')] opacity-10 bg-cover bg-center" />
+        <div className="relative container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+            <div className="space-y-2">
+              <div className="text-5xl font-bold">500+</div>
+              <div className="text-primary-100 text-sm uppercase tracking-wide">Active Clients</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-5xl font-bold">6</div>
+              <div className="text-primary-100 text-sm uppercase tracking-wide">Industries Served</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-5xl font-bold">99.8%</div>
+              <div className="text-primary-100 text-sm uppercase tracking-wide">Uptime Rate</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-5xl font-bold">15+</div>
+              <div className="text-primary-100 text-sm uppercase tracking-wide">Years Experience</div>
+            </div>
           </div>
         </div>
       </section>
@@ -266,21 +297,41 @@ export default function HomeClient() {
         </div>
       </section>
 
-      <section className="section-padding bg-primary-600 dark:bg-primary-800 text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      {/* Trust Banner */}
+      <section className="py-16 bg-surface">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Trusted by Industry Leaders</h2>
+            <p className="text-secondary max-w-2xl mx-auto">
+              We partner with leading organizations across the Middle East to deliver excellence in MRO solutions and supply chain management
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-20 bg-background rounded-lg flex items-center justify-center text-muted font-semibold">
+                Partner Logo
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative section-padding bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 dark:from-primary-800 dark:via-primary-900 dark:to-accent-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/home/hero-industrial-2.svg')] opacity-10 bg-cover bg-center" />
+        <div className="relative container-custom text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             {t('cta.home_title')}
           </h2>
-          <p className="text-xl text-primary-100 dark:text-primary-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {t('cta.home_subtitle').replace('{brand}', t('brand.short'))}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/quote-order" className="btn-secondary">
+            <a href="/quote-order" className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
               {t('hero.cta_quote')}
             </a>
             <a
               href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-primary-600"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-flex items-center justify-center"
             >
               {t('nav.contact')}
             </a>

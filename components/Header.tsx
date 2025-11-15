@@ -162,18 +162,17 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 rtl:space-x-reverse rounded-lg border border-slate-200 px-3 py-2 text-xs font-medium hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+              className="rounded-lg bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-100 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-900/50 transition-colors"
               aria-label={t("language.toggle" as any)}
             >
-              <GlobeIcon />
-                <span>{mounted && (lang === "en" ? "EN" : "العربية")}</span>
+              {mounted && (lang === "en" ? "EN" : "AR")}
             </button>
 
             {/* Theme Toggle (only after mount to avoid hydration issues) */}
             {mounted && (
               <button
                 onClick={toggleTheme}
-                className="rounded-lg border border-slate-200 p-2 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+                className="rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
                 aria-label={t("theme.toggle" as any)}
               >
                 {theme === "dark" ? <SunIcon /> : <MoonIcon />}

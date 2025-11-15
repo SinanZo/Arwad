@@ -61,12 +61,17 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
             <source src={slide.mediaSrc} type="video/mp4" />
           </video>
         ) : (
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.mediaSrc})` }}
-          />
+          <div className="w-full h-full">
+            <div 
+              className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900"
+            />
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-20"
+              style={{ backgroundImage: `url(${slide.mediaSrc})` }}
+            />
+          </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
       </div>
 
       {/* Content */}
