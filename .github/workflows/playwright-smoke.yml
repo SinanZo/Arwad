@@ -40,6 +40,7 @@ jobs:
         uses: microsoft/playwright-github-action@v1
         with:
           install-deps: true
+          browsers: all
 
       - name: Run smoke tests
         run: node scripts/playwright/smoke-test-pages.js http://localhost:3000/
