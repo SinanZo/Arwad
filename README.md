@@ -1,5 +1,7 @@
 # ARWAD Trading — Next.js App Router Starter
 
+![UI Checks](https://github.com/SinanZo/Arwad/actions/workflows/ui-checks.yml/badge.svg)
+
 This project is a minimal corporate website scaffold using Next.js 14 (App Router), TypeScript and TailwindCSS with `next-themes` and bilingual EN/AR support (RTL).
 
 Run locally:
@@ -138,6 +140,12 @@ Or:
 pnpm dev
 ```
 
+Or to use the same port as CI/scripts (4000):
+
+```powershell
+pnpm dev:4000
+```
+
 3. **Open your browser:**
 
 Navigate to [http://localhost:3000](http://localhost:3000)
@@ -159,15 +167,23 @@ npm run start
 ```
 
 ## Environment Setup
+Branding and contact/social data are driven via public env vars. Copy `.env.example` to `.env.local` and fill in values.
 
-No environment variables are required for the basic setup. The application runs entirely on the frontend with mock data for authentication and form submissions.
+Quick check for envs:
 
-For production deployment, you would typically add:
+```powershell
+pnpm verify:env
+```
 
-- Database connection strings
-- Email service API keys (for contact forms)
-- Authentication service credentials
-- CDN URLs for images
+Recommended keys:
+
+- `NEXT_PUBLIC_BRAND_LOGO_LIGHT`, `NEXT_PUBLIC_BRAND_LOGO_DARK`
+- `NEXT_PUBLIC_BRAND_OG_IMAGE`, `NEXT_PUBLIC_BRAND_ICON`
+- `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SITE_EMAIL`, `NEXT_PUBLIC_SITE_PHONE`
+- Optional: `NEXT_PUBLIC_SOCIAL_TWITTER`, `NEXT_PUBLIC_SOCIAL_LINKEDIN`, `NEXT_PUBLIC_SOCIAL_INSTAGRAM`
+- Optional: `NEXT_PUBLIC_BRAND_HERO_VIDEO`, `NEXT_PUBLIC_BRAND_HERO_POSTER`
+
+See `docs/BRANDING.md` for details.
 
 ## Key Routes
 
@@ -197,6 +213,16 @@ Example:
 const { t } = useLanguage()
 return <h1>{t('hero.title')}</h1>
 ```
+
+## Local UI Checks
+
+Run dev on 4000 and perform smoke, screenshots, and a11y checks. Artifacts will be written to the project root.
+
+```powershell
+pnpm check:local
+```
+
+In CI, the workflow `UI Checks` runs on pull requests and uploads artifacts.
 
 ## Theme System
 
