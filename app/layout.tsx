@@ -28,6 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = translations.about?.description ?? 'Leading regional provider of MRO solutions, spare parts, and supply chain management services.'
 
   return {
+    metadataBase: new URL('https://arwad.org'),
     title,
     description,
     keywords: 'MRO, spare parts, supply chain, industrial, maintenance, procurement, desalination, power generation, manufacturing',
@@ -45,6 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: brandAssets.ogImage ? [brandAssets.ogImage] : undefined,
+    },
+    alternates: {
+      canonical: 'https://arwad.org',
     },
     icons: brandAssets.icon ? { icon: brandAssets.icon } : undefined,
   }
