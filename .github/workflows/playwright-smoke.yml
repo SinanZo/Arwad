@@ -36,10 +36,9 @@ jobs:
           )
 
       - name: Install Playwright browsers and dependencies
-        uses: microsoft/playwright-github-action@v1
-        with:
-          install-deps: true
-          browsers: all
+        run: |
+          npm ci --no-audit --prefer-offline || true
+          npx playwright install --with-deps
 
       - name: Run smoke tests
         run: node scripts/playwright/smoke-test-pages.js http://localhost:3000/
