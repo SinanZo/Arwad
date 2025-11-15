@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Enable pnpm
         run: |
@@ -28,13 +28,12 @@ jobs:
 
       - name: Start server
         run: |
-          pnpm start &
-          for i in $(seq 1 30); do
-            if curl -sSf http://localhost:3000/ >/dev/null; then
-              echo "server ready"; break
-            fi
-            echo "waiting for server... $i"; sleep 1
-          done
+          nohup pnpm start -- -p 3000 > server.log 2>&1 &
+          npx wait-on http://localhost:3000/ -t 120000 || (
+            echo "Server did not become ready in time. Dumping server.log (truncated):";
+            sed -n '1,200p' server.log || true;
+            exit 1
+          )
 
       - name: Install Playwright browsers and dependencies
         uses: microsoft/playwright-github-action@v1
