@@ -15,7 +15,7 @@ module.exports = {
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'arwad.org', 'www.arwad.org', 'res.cloudinary.com', 'images.unsplash.com'],
     unoptimized: true,
   },
   experimental: {
