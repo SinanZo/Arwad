@@ -169,6 +169,8 @@
     "title": "Our Products",
     "subtitle": "Comprehensive inventory of industrial components",
     "description": "Browse our extensive catalog of industrial components, equipment, and spare parts.",
+    "tagline": "Comprehensive inventory for industrial applications",
+    "overview": "{brand} maintains an extensive inventory of industrial components, spare parts, and equipment across all major categories. Our partnerships with leading global manufacturers ensure access to genuine OEM parts, while our aftermarket options provide cost-effective alternatives without compromising quality or reliability.",
     "ventilators": "Central Ventilators & Air Filters",
     "inspection": "Inspection & Testing Equipment",
     "spare_parts": "Industrial Spare Parts",
@@ -176,7 +178,42 @@
     "desalination": "Desalination & Treatment Equipment",
     "heavy": "Heavy Equipment & Machinery Parts",
     "measurement": "Measurement & Control Systems",
-    "factory": "Factory & Plant Components"
+    "factory": "Factory & Plant Components",
+    "desc": {
+      "ventilators": "Industrial ventilation systems, air handling units, HEPA filters, ducting components, and air quality monitoring equipment.",
+      "inspection": "NDT equipment, ultrasonic testers, vibration analyzers, thermal imaging cameras, and calibration tools.",
+      "cooling": "Cooling towers, chillers, heat exchangers, thermal control systems, and temperature management solutions.",
+      "desalination": "RO membranes, high-pressure pumps, water quality analyzers, chemical dosing systems, and filtration units.",
+      "heavy": "Hydraulic cylinders, power transmission components, bearings, seals, and heavy-duty mechanical parts.",
+      "measurement": "Pressure transmitters, flow meters, level sensors, temperature controllers, and PLCs.",
+      "factory": "Motor components, electrical panels, pneumatic systems, conveyor parts, and production line equipment.",
+      "spare_parts": "Comprehensive inventory of OEM and aftermarket parts for pumps, valves, motors, and industrial equipment."
+    },
+    "categories": {
+      "all": "All Products",
+      "hvac": "HVAC & Ventilation",
+      "testing": "Testing & Inspection",
+      "thermal": "Thermal Systems",
+      "water": "Water Treatment",
+      "machinery": "Heavy Machinery",
+      "instrumentation": "Instrumentation",
+      "spares": "Spare Parts"
+    },
+    "why_choose": "Why Choose {brand} for Your Parts?",
+    "usp": {
+      "oem_title": "Genuine OEM Parts",
+      "oem_desc": "Direct partnerships with manufacturers ensure authenticity and warranty coverage",
+      "delivery_title": "Rapid Delivery",
+      "delivery_desc": "Strategic inventory and logistics network enable fast turnaround times",
+      "support_title": "Technical Support",
+      "support_desc": "Expert guidance on part selection, compatibility, and installation"
+    },
+    "help": {
+      "title": "Cannot Find What You Need?",
+      "desc": "Our extensive supplier network can source specialized parts and equipment for virtually any industrial application. Contact us with your requirements.",
+      "submit": "Submit Custom Request",
+      "expert": "Speak to Expert"
+    }
   },
   "services": {
     "title": "Our Services",
@@ -264,11 +301,18 @@
     "manufacturer": "Manufacturer",
     "quantity": "Quantity",
     "category": "Category",
+    "industry_placeholder": "Select your industry",
     "submit": "Submit Request",
     "success": "Your quote request has been submitted successfully! We'll review it and contact you shortly.",
     "error": "Please complete all required fields.",
     "remove": "Remove Item",
-    "reference": "Reference Number"
+    "reference": "Reference Number",
+    "next": {
+      "title": "What Happens Next?",
+      "review": {"title": "Review", "desc": "Our team reviews your requirements and sources the best options"},
+      "quote": {"title": "Quote", "desc": "You receive a detailed quotation with pricing and delivery terms"},
+      "delivery": {"title": "Delivery", "desc": "Upon approval, we process your order and coordinate delivery"}
+    }
   },
   "auth": {
     "login": "Login",
@@ -278,12 +322,25 @@
     "password": "Password",
     "company": "Company",
     "role": "Role",
+    "role_placeholder": "e.g., Procurement Manager",
     "login_btn": "Sign In",
     "register_btn": "Create Account",
     "have_account": "Already have an account?",
     "no_account": "Don't have an account?",
     "reset_password": "Reset Password",
     "account_details": "Account Details",
+    "account_info": "Account Information",
+    "field_name": "Name",
+    "field_email": "Email",
+    "field_company": "Company",
+    "field_role": "Role",
+    "access_prompt": "Access your account or create a new one",
+    "welcome_user": "Welcome back, {name}",
+    "current_password": "Current Password",
+    "new_password": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "update_password": "Update Password",
+    "logout": "Logout",
     "logout_confirm": "Are you sure you want to logout?",
     "welcome": "Welcome back",
     "profile": "Profile",

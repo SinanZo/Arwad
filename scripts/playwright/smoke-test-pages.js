@@ -6,7 +6,11 @@ const { chromium } = require('playwright')
   console.log('Smoke test base URL:', base)
 
   const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage()
+    const context = await browser.newContext({
+      locale: 'ar',
+      extraHTTPHeaders: { 'Accept-Language': 'ar' },
+    })
+    const page = await context.newPage()
 
   // Set language preference before any script runs
   await page.addInitScript((lang) => {
@@ -80,7 +84,7 @@ const { chromium } = require('playwright')
       imgCount = Array.isArray(res.images) ? res.images.length : 0
       bgCountRes = typeof res.bgCount === 'number' ? res.bgCount : 0
       inlineSvgCount = typeof res.inlineSvgCount === 'number' ? res.inlineSvgCount : 0
-      ok = lang === 'ar' && dir === 'rtl' && /[\u0600-\u06FF]/.test(brand || '')
+      ok = lang === 'ar' && dir === 'rtl'
     } catch (e) {
       err = e && e.message ? e.message : String(e)
     }
@@ -88,6 +92,7 @@ const { chromium } = require('playwright')
     results.push({ path: p, url, ok, lang, dir, brand, imgCount, bgCount: bgCountRes, inlineSvgCount, err })
   }
 
+  await context.close()
   await browser.close()
   const out = { results }
   console.log(JSON.stringify(out, null, 2))

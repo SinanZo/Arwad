@@ -76,7 +76,7 @@ export default function Register() {
           <div className="relative container-custom h-full flex items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('auth.account_details')}</h1>
-              <p className="text-xl text-primary-100">Welcome back, {user.name}</p>
+              <p className="text-xl text-primary-100">{t('auth.welcome_user', { name: user.name })}</p>
             </div>
           </div>
         </section>
@@ -86,12 +86,12 @@ export default function Register() {
           <div className="container-custom max-w-2xl">
             <div className="card space-y-6">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Account Information</h2>
+                <h2 className="text-2xl font-bold mb-6">{t('auth.account_info')}</h2>
                 <div className="space-y-4">
-                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Name:</span><span className="font-medium">{user.name}</span></div>
-                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Email:</span><span className="font-medium">{user.email}</span></div>
-                  {user.company && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Company:</span><span className="font-medium">{user.company}</span></div>}
-                  {user.role && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">Role:</span><span className="font-medium">{user.role}</span></div>}
+                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">{t('auth.field_name')}:</span><span className="font-medium">{user.name}</span></div>
+                  <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">{t('auth.field_email')}:</span><span className="font-medium">{user.email}</span></div>
+                  {user.company && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">{t('auth.field_company')}:</span><span className="font-medium">{user.company}</span></div>}
+                  {user.role && <div className="flex justify-between py-3 border-b border-custom"><span className="text-secondary">{t('auth.field_role')}:</span><span className="font-medium">{user.role}</span></div>}
                 </div>
               </div>
 
@@ -100,11 +100,11 @@ export default function Register() {
 
                 {showPasswordReset && (
                   <div className="card bg-surface space-y-4">
-                    <h3 className="font-semibold">Reset Password</h3>
-                    <input type="password" placeholder="Current Password" className="input-field" />
-                    <input type="password" placeholder="New Password" className="input-field" />
-                    <input type="password" placeholder="Confirm New Password" className="input-field" />
-                    <button className="btn-primary w-full">Update Password</button>
+                    <h3 className="font-semibold">{t('auth.reset_password')}</h3>
+                    <input type="password" placeholder={t('auth.current_password')} className="input-field" />
+                    <input type="password" placeholder={t('auth.new_password')} className="input-field" />
+                    <input type="password" placeholder={t('auth.confirm_new_password')} className="input-field" />
+                    <button className="btn-primary w-full">{t('auth.update_password')}</button>
                   </div>
                 )}
 
@@ -126,7 +126,7 @@ export default function Register() {
         <div className="relative container-custom h-full flex items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{activeTab === 'login' ? t('auth.login') : t('auth.register')}</h1>
-            <p className="text-xl text-primary-100">Access your account or create a new one</p>
+            <p className="text-xl text-primary-100">{t('auth.access_prompt')}</p>
           </div>
         </div>
       </section>
@@ -190,7 +190,7 @@ export default function Register() {
 
               <div>
                 <label htmlFor="register-role" className="block text-sm font-medium mb-2">{t('auth.role')}</label>
-                <input id="register-role" type="text" value={registerData.role} onChange={(e) => setRegisterData({ ...registerData, role: e.target.value })} className="input-field" placeholder="e.g., Procurement Manager" />
+                <input id="register-role" type="text" value={registerData.role} onChange={(e) => setRegisterData({ ...registerData, role: e.target.value })} className="input-field" placeholder={t('auth.role_placeholder')} />
               </div>
 
               <button type="submit" className="btn-primary w-full">{t('auth.register_btn')}</button>

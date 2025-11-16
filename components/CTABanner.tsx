@@ -12,7 +12,7 @@ export default function CTABanner(){
           <p className="mt-2 text-blue-100">{t('cta.subtitle') || 'Contact our team today to discuss your MRO requirements.'}</p>
         </div>
         <div className="flex gap-3 mt-6 md:mt-0">
-          <a href="/quote-order" className="btn-secondary">{t('cta.cta_quote') || 'Request Quote'}</a>
+          <a href="/quote-order" className="btn-secondary">{t('hero.cta_quote') || t('nav.quote') || 'Request Quote'}</a>
           <a href="/contact" className="btn-outline">{t('cta.cta_contact') || 'Contact Us'}</a>
         </div>
       </div>
