@@ -9,6 +9,7 @@ const Icon = ({ children }: { children: React.ReactNode }) => (
 
 export default function Industries() {
 	const { t } = useLanguage()
+	const [expandedId, setExpandedId] = React.useState<string | null>(null)
 
 	const industries = [
 		{ id: 'water', icon: (<Icon><svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg></Icon>), title: t('industries.water.title'), description: t('industries.water.description') },
@@ -18,6 +19,12 @@ export default function Industries() {
 		{ id: 'mining', icon: (<Icon><svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20h12M6 20L3 17m0 0l3-3m-3 3l6-6m6 6l3 3m0 0l3-3m-3 3l-6-6" /></svg></Icon>), title: t('industries.mining.title'), description: t('industries.mining.description') },
 		{ id: 'infrastructure', icon: (<Icon><svg className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" /></svg></Icon>), title: t('industries.infrastructure.title'), description: t('industries.infrastructure.description') },
 	]
+
+	const getSupplies = (id: string) => {
+		const key = `industries.${id}.supplies`
+		const value = t(key)
+		return Array.isArray(value) ? value : []
+	}
 
 	return (
 		<main>
@@ -34,13 +41,41 @@ export default function Industries() {
 			<section className="section-padding bg-surface">
 				<div className="container-custom">
 					<div className="grid md:grid-cols-3 gap-6">
-						{industries.map((ind) => (
-							<div key={ind.id} className="card p-6">
-								<div className="mb-4">{ind.icon}</div>
-								<h3 className="font-bold text-lg mb-2">{ind.title}</h3>
-								<p className="text-secondary">{ind.description}</p>
-							</div>
-						))}
+						{industries.map((ind) => {
+							const supplies = getSupplies(ind.id)
+							const isExpanded = expandedId === ind.id
+							return (
+								<div key={ind.id} className="card p-6 transition-all hover:shadow-xl">
+									<div className="mb-4">{ind.icon}</div>
+									<h3 className="font-bold text-lg mb-2">{ind.title}</h3>
+									<p className="text-secondary mb-4">{ind.description}</p>
+									
+									{supplies.length > 0 && (
+										<>
+											<button
+												onClick={() => setExpandedId(isExpanded ? null : ind.id)}
+												className="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1"
+											>
+												{isExpanded ? 'Hide' : 'View'} Key Supplies
+												<svg className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+												</svg>
+											</button>
+											{isExpanded && (
+												<ul className="mt-3 space-y-2 text-sm text-secondary border-t border-custom pt-3">
+													{supplies.map((supply, idx) => (
+														<li key={idx} className="flex items-start gap-2">
+															<span className="text-primary-600 dark:text-primary-400 mt-0.5">•</span>
+															<span>{supply}</span>
+														</li>
+													))}
+												</ul>
+											)}
+										</>
+									)}
+								</div>
+							)
+						})}
 					</div>
 				</div>
 			</section>

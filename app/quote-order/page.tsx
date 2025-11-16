@@ -44,23 +44,23 @@ export default function QuoteOrder() {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const industries = [
-    'Water & Desalination',
-    'Power Generation & Distribution',
-    'Manufacturing',
-    'Petrochemicals',
-    'Mining',
-    'Buildings & Infrastructure',
+    t('industries.water.title'),
+    t('industries.power.title'),
+    t('industries.manufacturing.title'),
+    t('industries.petrochemical.title'),
+    t('industries.mining.title'),
+    t('industries.infrastructure.title'),
   ]
 
   const categories = [
-    'Central Ventilators & Air Filters',
-    'Inspection & Testing Equipment',
-    'Spare Parts',
-    'Water Cooling & Heating Equipment',
-    'Water Desalination & Treatment Equipment',
-    'Heavy Equipment & Machinery Spare Parts',
-    'Measurement & Control Systems',
-    'Industrial Plant & Factory Spare Parts',
+    t('products.ventilators'),
+    t('products.inspection'),
+    t('products.spare_parts'),
+    t('products.cooling'),
+    t('products.desalination'),
+    t('products.heavy'),
+    t('products.measurement'),
+    t('products.factory'),
   ]
 
   const addItem = () => {
@@ -148,12 +148,14 @@ export default function QuoteOrder() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative h-64 bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-800 dark:to-accent-900 text-white">
+      <section className="relative h-72 bg-gradient-to-r from-accent-600 via-accent-700 to-accent-800 dark:from-accent-800 dark:to-accent-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 opacity-10" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}} />
         <div className="relative container-custom h-full flex items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('quote.title')}</h1>
             <p className="text-xl text-accent-100">{t('quote.subtitle')}</p>
+            <p className="text-accent-200 mt-2">{t('quote.desc')}</p>
           </div>
         </div>
       </section>
@@ -162,17 +164,13 @@ export default function QuoteOrder() {
       <section className="section-padding bg-background">
         <div className="container-custom max-w-6xl">
           <div className="mb-8">
-            <p className="text-secondary leading-relaxed">
-              Complete the form below with your requirements. Our team will review 
-              your request and respond with a detailed quotation within 24-48 hours. 
-              For urgent requests, please contact us directly by phone.
-            </p>
+            <p className="text-secondary leading-relaxed">{t('quote.desc')}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div className="card">
-              <h2 className="text-2xl font-bold mb-6">Company Information</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('quote.step_one')}</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium mb-2">
@@ -240,7 +238,7 @@ export default function QuoteOrder() {
                     onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
                     className="input-field"
                   >
-                    <option value="">Select your industry</option>
+                    <option value="">{t('quote.industry_placeholder')}</option>
                     {industries.map((industry) => (
                       <option key={industry} value={industry}>{industry}</option>
                     ))}
@@ -287,22 +285,22 @@ export default function QuoteOrder() {
       <section className="section-padding bg-surface">
         <div className="container-custom max-w-4xl">
           <div className="card text-center">
-            <h2 className="text-2xl font-bold mb-4">What Happens Next?</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('quote.next.title')}</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-8">
               <div>
                 <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-                <h3 className="font-semibold mb-2">Review</h3>
-                <p className="text-sm text-secondary">Our team reviews your requirements and sources the best options</p>
+                <h3 className="font-semibold mb-2">{t('quote.next.review.title')}</h3>
+                <p className="text-sm text-secondary">{t('quote.next.review.desc')}</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-                <h3 className="font-semibold mb-2">Quote</h3>
-                <p className="text-sm text-secondary">You receive a detailed quotation with pricing and delivery terms</p>
+                <h3 className="font-semibold mb-2">{t('quote.next.quote.title')}</h3>
+                <p className="text-sm text-secondary">{t('quote.next.quote.desc')}</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-                <h3 className="font-semibold mb-2">Delivery</h3>
-                <p className="text-sm text-secondary">Upon approval, we process your order and coordinate delivery</p>
+                <h3 className="font-semibold mb-2">{t('quote.next.delivery.title')}</h3>
+                <p className="text-sm text-secondary">{t('quote.next.delivery.desc')}</p>
               </div>
             </div>
           </div>
