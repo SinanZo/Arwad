@@ -224,6 +224,20 @@ pnpm check:local
 
 In CI, the workflow `UI Checks` runs on pull requests and uploads artifacts.
 
+### Production UI Checks (local)
+
+Run the same checks against a production build on port 4000:
+
+```powershell
+pnpm build
+pnpm check:prod
+```
+
+Outputs:
+- `tmp_run_smoke.json`, `tmp_run_a11y.json`, `tmp_verify_meta.json`
+- `tmp_screenshots/` and `tmp_a11y/` directories
+- Server is started/stopped automatically by the script
+
 ## Theme System
 
 Light/Dark mode is managed by `next-themes` with CSS variables defined in `app/globals.css`.

@@ -25,6 +25,12 @@ jobs:
         with:
           version: 8
 
+      - name: Cache Playwright binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-ms-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -105,3 +111,15 @@ jobs:
         if: always()
         run: |
           if [ -f .next-server.pid ]; then kill $(cat .next-server.pid) || true; fi
+      
+      - name: Post PR summary comment
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: node scripts/post-ui-checks-comment.js
+
+      - name: Enforce pass criteria
+        if: always()
+        run: |
+          node -e "const fs=require('fs');let ok=true;try{const s=JSON.parse(fs.readFileSync('tmp_run_smoke.json','utf8'));ok=ok&&(s.results||[]).every(r=>r.ok===true)}catch(e){};try{const m=JSON.parse(fs.readFileSync('tmp_verify_meta.json','utf8'));ok=ok&&m.allOk===true}catch(e){};try{const a=JSON.parse(fs.readFileSync('tmp_run_a11y.json','utf8'));ok=ok&&(a.results||[]).every(r=>r.ok===true)}catch(e){};if(!ok){console.error('UI checks failed: see artifacts');process.exit(1)}else{console.log('UI checks passed')}}"
