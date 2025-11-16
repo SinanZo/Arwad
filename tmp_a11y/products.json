@@ -13,7 +13,7 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2025-11-16T00:27:35.858Z",
+  "timestamp": "2025-11-16T01:04:52.153Z",
   "url": "http://localhost:4000/products",
   "toolOptions": {
     "runOnly": {
@@ -83,6 +83,23 @@
       "description": "Ensure every ARIA button, link and menuitem has an accessible name",
       "help": "ARIA commands must have an accessible name",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-command-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-deprecated-role",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure elements do not use deprecated roles",
+      "help": "Deprecated ARIA roles must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-deprecated-role?application=axeAPI",
       "nodes": []
     },
     {
@@ -159,6 +176,23 @@
       "nodes": []
     },
     {
+      "id": "aria-required-attr",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+      "help": "Required ARIA attributes must be provided",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
       "id": "aria-required-children",
       "impact": null,
       "tags": [
@@ -190,6 +224,23 @@
       "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
       "help": "Certain ARIA roles must be contained by particular parents",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-parent?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-roles",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure all elements with a role attribute use a valid value",
+      "help": "ARIA roles used must conform to valid values",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-roles?application=axeAPI",
       "nodes": []
     },
     {
@@ -789,7 +840,7 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -815,38 +866,9 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-allowed-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attributes are used correctly for the defined role"
-            }
-          ],
-          "none": [
-            {
-              "id": "aria-unsupported-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute is supported"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -880,7 +902,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -898,69 +920,9 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-conditional-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "ARIA attribute is allowed"
-            }
-          ],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-deprecated-role",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure elements do not use deprecated roles",
-      "help": "Deprecated ARIA roles must not be used",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-deprecated-role?application=axeAPI",
-      "nodes": [
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "deprecatedrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "minor",
-              "message": "ARIA role is not deprecated"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1032,7 +994,7 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -1050,122 +1012,9 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
-          ]
-        },
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "aria-prohibited-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "ARIA attribute is allowed"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-required-attr",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
-      "help": "Required ARIA attributes must be provided",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-attr?application=axeAPI",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "aria-required-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "All required ARIA attributes are present"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-roles",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure all elements with a role attribute use a valid value",
-      "help": "ARIA roles used must conform to valid values",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-roles?application=axeAPI",
-      "nodes": [
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "invalidrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA role is valid"
-            },
-            {
-              "id": "abstractrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Abstract roles are not used"
-            },
-            {
-              "id": "unsupportedrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA role is supported"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1213,7 +1062,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -1245,44 +1094,9 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-valid-attr-value",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute values are valid"
-            },
-            {
-              "id": "aria-errormessage",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
-            },
-            {
-              "id": "aria-level",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "aria-level values are valid"
-            }
-          ],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1316,7 +1130,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -1334,30 +1148,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "aria-valid-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute name is valid"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1386,13 +1179,6 @@
         {
           "any": [
             {
-              "id": "button-has-visible-text",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Element has inner text that is visible to screen readers"
-            },
-            {
               "id": "aria-label",
               "data": null,
               "relatedNodes": [],
@@ -1403,7 +1189,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -1421,9 +1207,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
+            ".p-2"
           ]
         },
         {
@@ -1439,7 +1225,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">All Products</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">products.categories.all</button>",
           "target": [
             ".bg-primary-600"
           ]
@@ -1457,7 +1243,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">HVAC &amp; Ventilation</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.hvac</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(2)"
           ]
@@ -1475,7 +1261,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Testing &amp; Inspection</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.testing</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(3)"
           ]
@@ -1493,7 +1279,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Thermal Systems</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.thermal</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(4)"
           ]
@@ -1511,7 +1297,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Water Treatment</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.water</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(5)"
           ]
@@ -1529,7 +1315,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Heavy Machinery</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.machinery</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(6)"
           ]
@@ -1547,7 +1333,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Instrumentation</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.instrumentation</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(7)"
           ]
@@ -1565,7 +1351,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Spare Parts</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.spares</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(8)"
           ]
@@ -1599,103 +1385,103 @@
               "data": null,
               "relatedNodes": [
                 {
-                  "html": "<h1 class=\"text-4xl md:text-5xl font-bold mb-4\">Our Products</h1>",
+                  "html": "<h1 class=\"text-4xl md:text-5xl font-bold mb-4\">products.title</h1>",
                   "target": [
                     "h1"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Central Ventilators &amp; Air Filters</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.ventilators</h3>",
                   "target": [
                     "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Inspection &amp; Testing Equipment</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.inspection</h3>",
                   "target": [
                     "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Water Cooling &amp; Heating Equipment</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.cooling</h3>",
                   "target": [
                     "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Desalination &amp; Treatment Equipment</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.desalination</h3>",
                   "target": [
                     "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Heavy Equipment &amp; Machinery Parts</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.heavy</h3>",
                   "target": [
                     "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Measurement &amp; Control Systems</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.measurement</h3>",
                   "target": [
                     "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Factory &amp; Plant Components</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.factory</h3>",
                   "target": [
                     "#factory > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-xl font-semibold mb-3\">Industrial Spare Parts</h3>",
+                  "html": "<h3 class=\"text-xl font-semibold mb-3\">products.spare_parts</h3>",
                   "target": [
                     "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
                   ]
                 },
                 {
-                  "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">Why Choose {brand} for Your Parts?</h2>",
+                  "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">products.why_choose</h2>",
                   "target": [
                     ".text-3xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-lg font-semibold mb-2\">Genuine OEM Parts</h3>",
+                  "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.oem_title</h3>",
                   "target": [
                     ".card.text-center:nth-child(1) > .mb-2.text-lg"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-lg font-semibold mb-2\">Rapid Delivery</h3>",
+                  "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.delivery_title</h3>",
                   "target": [
                     ".card.text-center:nth-child(2) > .mb-2.text-lg"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"text-lg font-semibold mb-2\">Technical Support</h3>",
+                  "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.support_title</h3>",
                   "target": [
                     ".card.text-center:nth-child(3) > .mb-2.text-lg"
                   ]
                 },
                 {
-                  "html": "<h2 class=\"text-2xl md:text-3xl font-bold mb-4\">Cannot Find What You Need?</h2>",
+                  "html": "<h2 class=\"text-2xl md:text-3xl font-bold mb-4\">products.help.title</h2>",
                   "target": [
                     ".text-2xl"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Quick Links</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.quick_links</h3>",
                   "target": [
                     ".grid-cols-1 > div:nth-child(2) > .text-lg"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Contact Information</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.contact_info</h3>",
                   "target": [
                     ".grid-cols-1 > div:nth-child(3) > .text-lg"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Working Hours</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">contact.hours</h3>",
                   "target": [
                     "div:nth-child(4) > .text-lg"
                   ]
@@ -1753,722 +1539,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "3:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"text-xl font-bold text-primary dark:text-primary-light\">ARWAD</span>",
-          "target": [
-            ".space-x-2.rtl\\:space-x-reverse[href=\"/\"] > .dark\\:text-primary-light"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">Home</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href=\"/\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">About</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href$=\"about\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">Industries</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href$=\"industries\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/products\">Products</a>",
-          "target": [
-            ".dark\\:text-primary-light.text-primary[href$=\"products\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">Our Services</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href$=\"our-services\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/contact\">Contact</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href$=\"contact\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">Register</a>",
-          "target": [
-            "a[href$=\"register\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#475569",
-                "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">Request Quote</a>",
-          "target": [
-            ".text-slate-600.hover\\:text-primary[href$=\"quote-order\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#003886",
-                "bgColor": "#b3d1ff",
-                "contrastRatio": 7.05,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.05"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
-          "target": [
-            ".text-primary-700"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-lg text-secondary leading-relaxed\">",
-          "target": [
-            ".leading-relaxed"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#0047b3",
-                "contrastRatio": 8.22,
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 8.22"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">All Products</button>",
-          "target": [
-            ".bg-primary-600"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">HVAC &amp; Ventilation</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(2)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Testing &amp; Inspection</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(3)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Thermal Systems</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(4)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Water Treatment</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Heavy Machinery</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(6)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Instrumentation</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(7)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Spare Parts</button>",
-          "target": [
-            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(8)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Central Ventilators &amp; Air Filters</h3>",
-          "target": [
-            "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Industrial ventilation systems, air handling units, HEPA filters, ducting components, and air quality monitoring equipment.</p>",
-          "target": [
-            "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > p"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Inspection &amp; Testing Equipment</h3>",
-          "target": [
-            "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">NDT equipment, ultrasonic testers, vibration analyzers, thermal imaging cameras, and calibration tools.</p>",
-          "target": [
-            "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > p"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Water Cooling &amp; Heating Equipment</h3>",
-          "target": [
-            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Cooling towers, chillers, heat exchangers, thermal control systems, and temperature management solutions.</p>",
-          "target": [
-            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > p"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Desalination &amp; Treatment Equipment</h3>",
-          "target": [
-            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">RO membranes, high-pressure pumps, water quality analyzers, chemical dosing systems, and filtration units.</p>",
-          "target": [
-            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > p"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Heavy Equipment &amp; Machinery Parts</h3>",
-          "target": [
-            "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Hydraulic cylinders, power transmission components, bearings, seals, and heavy-duty mechanical parts.</p>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.heavy</p>",
           "target": [
             "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > p"
           ]
@@ -2478,22 +1564,47 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Measurement &amp; Control Systems</h3>",
+          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">nav.quote</a>",
+          "target": [
+            "a[href=\"/quote-order?category=heavy\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 21"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.measurement</h3>",
           "target": [
             "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
           ]
@@ -2503,22 +1614,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Pressure transmitters, flow meters, level sensors, temperature controllers, and PLCs.</p>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.measurement</p>",
           "target": [
             "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > p"
           ]
@@ -2528,22 +1639,47 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Factory &amp; Plant Components</h3>",
+          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">nav.quote</a>",
+          "target": [
+            "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 21"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.factory</h3>",
           "target": [
             "#factory > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
           ]
@@ -2553,22 +1689,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Motor components, electrical panels, pneumatic systems, conveyor parts, and production line equipment.</p>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.factory</p>",
           "target": [
             "#factory > .hover\\:shadow-xl.transition-shadow.h-full > p"
           ]
@@ -2578,22 +1714,47 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "15.0pt (20px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-xl font-semibold mb-3\">Industrial Spare Parts</h3>",
+          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">nav.quote</a>",
+          "target": [
+            "a[href=\"/quote-order?category=factory\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 21"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.spare_parts</h3>",
           "target": [
             "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
           ]
@@ -2603,22 +1764,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary mb-4\">Comprehensive inventory of OEM and aftermarket parts for pumps, valves, motors, and industrial equipment.</p>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.spare_parts</p>",
           "target": [
             "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > p"
           ]
@@ -2628,22 +1789,47 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "27.0pt (36px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "3:1"
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">Why Choose {brand} for Your Parts?</h2>",
+          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">nav.quote</a>",
+          "target": [
+            "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "18.0pt (24px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 21"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">products.why_choose</h2>",
           "target": [
             ".text-3xl"
           ]
@@ -2653,22 +1839,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-lg font-semibold mb-2\">Genuine OEM Parts</h3>",
+          "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.oem_title</h3>",
           "target": [
             ".card.text-center:nth-child(1) > .mb-2.text-lg"
           ]
@@ -2678,22 +1864,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary\">Direct partnerships with manufacturers ensure authenticity and warranty coverage</p>",
+          "html": "<p class=\"text-secondary\">products.usp.oem_desc</p>",
           "target": [
             ".md\\:grid-cols-3 > .card.text-center:nth-child(1) > p"
           ]
@@ -2703,22 +1889,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-lg font-semibold mb-2\">Rapid Delivery</h3>",
+          "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.delivery_title</h3>",
           "target": [
             ".card.text-center:nth-child(2) > .mb-2.text-lg"
           ]
@@ -2728,22 +1914,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary\">Strategic inventory and logistics network enable fast turnaround times</p>",
+          "html": "<p class=\"text-secondary\">products.usp.delivery_desc</p>",
           "target": [
             ".card.text-center:nth-child(2) > p"
           ]
@@ -2753,22 +1939,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"text-lg font-semibold mb-2\">Technical Support</h3>",
+          "html": "<h3 class=\"text-lg font-semibold mb-2\">products.usp.support_title</h3>",
           "target": [
             ".card.text-center:nth-child(3) > .mb-2.text-lg"
           ]
@@ -2778,22 +1964,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary\">Expert guidance on part selection, compatibility, and installation</p>",
+          "html": "<p class=\"text-secondary\">products.usp.support_desc</p>",
           "target": [
             ".card.text-center:nth-child(3) > p"
           ]
@@ -2803,22 +1989,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "22.5pt (30px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "18.0pt (24px)",
                 "fontWeight": "bold",
                 "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2 class=\"text-2xl md:text-3xl font-bold mb-4\">Cannot Find What You Need?</h2>",
+          "html": "<h2 class=\"text-2xl md:text-3xl font-bold mb-4\">products.help.title</h2>",
           "target": [
             ".text-2xl"
           ]
@@ -2828,22 +2014,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-secondary mb-8\">Our extensive supplier network can source specialized parts and equipment for virtually any industrial application. Contact us with your requirements.</p>",
+          "html": "<p class=\"text-secondary mb-8\">products.help.desc</p>",
           "target": [
             ".mb-8"
           ]
@@ -2853,22 +2039,47 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#0047b3",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 7.66,
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.66"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/contact\" class=\"btn-outline\">Speak to Expert</a>",
+          "html": "<a href=\"/quote-order\" class=\"btn-primary\">products.help.submit</a>",
+          "target": [
+            ".btn-primary[href$=\"quote-order\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 9.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<a href=\"/contact\" class=\"btn-outline\">products.help.expert</a>",
           "target": [
             ".btn-outline"
           ]
@@ -2878,22 +2089,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#0047b3",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 7.86,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "3:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.86"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"font-bold text-xl text-primary-600 dark:text-primary-400\">ARWAD</span>",
+          "html": "<span class=\"font-bold text-xl text-primary-600 dark:text-primary-400\">brand.short</span>",
           "target": [
             ".space-y-4 > .space-x-2.rtl\\:space-x-reverse.items-center > span"
           ]
@@ -2903,22 +2114,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">ARWAD Trading is your trusted partner for industrial MRO solutions and supply chain excellence across the Middle East.</p>",
+          "html": "<p class=\"text-sm text-secondary\">footer.about</p>",
           "target": [
             ".grid-cols-1 > .space-y-4 > p"
           ]
@@ -2928,22 +2139,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Quick Links</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.quick_links</h3>",
           "target": [
             ".grid-cols-1 > div:nth-child(2) > .text-lg"
           ]
@@ -2953,22 +2164,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"about\"]"
           ]
@@ -2978,22 +2189,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"industries\"]"
           ]
@@ -3003,22 +2214,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"products\"]"
           ]
@@ -3028,22 +2239,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"our-services\"]"
           ]
@@ -3053,22 +2264,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"contact\"]"
           ]
@@ -3078,22 +2289,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"quote-order\"]"
           ]
@@ -3103,22 +2314,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Contact Information</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.contact_info</h3>",
           "target": [
             ".grid-cols-1 > div:nth-child(3) > .text-lg"
           ]
@@ -3128,16 +2339,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3153,16 +2364,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
@@ -3178,16 +2389,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
@@ -3203,22 +2414,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Working Hours</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">contact.hours</h3>",
           "target": [
             "div:nth-child(4) > .text-lg"
           ]
@@ -3228,16 +2439,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3253,16 +2464,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3278,16 +2489,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3303,16 +2514,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3328,16 +2539,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#4b5563",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 7.22,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.22"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -3353,22 +2564,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">© <!-- -->2025<!-- --> <!-- -->ARWAD Trading<!-- -->. <!-- -->All rights reserved.</p>",
+          "html": "<p class=\"text-sm text-secondary\">© <!-- -->2025<!-- --> <!-- -->brand.name<!-- -->. <!-- -->footer.rights</p>",
           "target": [
             ".md\\:flex-row > p:nth-child(1)"
           ]
@@ -3378,22 +2589,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">Powered by Jawareer</p>",
+          "html": "<p class=\"text-sm text-secondary\">footer.powered_by</p>",
           "target": [
             ".md\\:flex-row > p:nth-child(2)"
           ]
@@ -3560,7 +2771,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-contain\" style=\"color: transparent;\" src=\"http://localhost:4000/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-c...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-10"
           ]
@@ -3586,9 +2797,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Central Ventilators &amp; Air Filters\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/valve.svg\">",
+          "html": "<img alt=\"products.ventilators\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/val...\">",
           "target": [
-            "img[src$=\"valve.svg\"]"
+            "img[alt=\"products.ventilators\"]"
           ]
         },
         {
@@ -3612,9 +2823,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Inspection &amp; Testing Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/sensor.svg\">",
+          "html": "<img alt=\"products.inspection\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/sen...\">",
           "target": [
-            "img[alt=\"Inspection & Testing Equipment\"]"
+            "img[alt=\"products.inspection\"]"
           ]
         },
         {
@@ -3638,9 +2849,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Water Cooling &amp; Heating Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/motor.svg\">",
+          "html": "<img alt=\"products.cooling\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/mot...\">",
           "target": [
-            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[src$=\"motor.svg\"][data-nimg=\"fill\"]"
+            "img[alt=\"products.cooling\"]"
           ]
         },
         {
@@ -3664,9 +2875,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Desalination &amp; Treatment Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.desalinatio...\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[data-nimg=\"fill\"][loading=\"lazy\"]"
+            "img[alt=\"products.desalination\"]"
           ]
         },
         {
@@ -3690,9 +2901,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Heavy Equipment &amp; Machinery Parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/motor.svg\">",
+          "html": "<img alt=\"products.heavy\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/mot...\">",
           "target": [
-            "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[src$=\"motor.svg\"][data-nimg=\"fill\"]"
+            "img[alt=\"products.heavy\"]"
           ]
         },
         {
@@ -3716,9 +2927,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Measurement &amp; Control Systems\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/sensor.svg\">",
+          "html": "<img alt=\"products.measurement\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/sen...\">",
           "target": [
-            "img[alt=\"Measurement & Control Systems\"]"
+            "img[alt=\"products.measurement\"]"
           ]
         },
         {
@@ -3742,9 +2953,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Factory &amp; Plant Components\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.factory\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "img[alt=\"Factory & Plant Components\"]"
+            "img[alt=\"products.factory\"]"
           ]
         },
         {
@@ -3768,9 +2979,9 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Industrial Spare Parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.spare_parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "img[alt=\"Industrial Spare Parts\"]"
+            "img[alt=\"products.spare_parts\"]"
           ]
         },
         {
@@ -3794,7 +3005,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-contain\" style=\"color: transparent;\" src=\"/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-co...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-9"
           ]
@@ -3839,7 +3050,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -3864,7 +3075,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -3889,7 +3100,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=cooling\"]"
           ]
@@ -3914,7 +3125,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -3939,7 +3150,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=heavy\"]"
           ]
@@ -3964,7 +3175,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -3989,7 +3200,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=factory\"]"
           ]
@@ -4014,7 +3225,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4091,7 +3302,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">Home</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">nav.home</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href=\"/\"]"
           ]
@@ -4117,7 +3328,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">nav.about</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"about\"]"
           ]
@@ -4143,7 +3354,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"industries\"]"
           ]
@@ -4169,7 +3380,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/products\">nav.products</a>",
           "target": [
             ".dark\\:text-primary-light.text-primary[href$=\"products\"]"
           ]
@@ -4195,7 +3406,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"our-services\"]"
           ]
@@ -4221,7 +3432,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"contact\"]"
           ]
@@ -4247,7 +3458,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">Register</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">nav.register</a>",
           "target": [
             "a[href$=\"register\"]"
           ]
@@ -4273,7 +3484,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"quote-order\"]"
           ]
@@ -4299,7 +3510,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4325,7 +3536,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4351,7 +3562,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=cooling\"]"
           ]
@@ -4377,7 +3588,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4403,7 +3614,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=heavy\"]"
           ]
@@ -4429,7 +3640,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4455,7 +3666,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=factory\"]"
           ]
@@ -4481,7 +3692,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ]
@@ -4507,7 +3718,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/quote-order\" class=\"btn-primary\">Submit Custom Request</a>",
+          "html": "<a href=\"/quote-order\" class=\"btn-primary\">products.help.submit</a>",
           "target": [
             ".btn-primary[href$=\"quote-order\"]"
           ]
@@ -4533,7 +3744,7 @@
             }
           ],
           "impact": null,
-          "html": "<a href=\"/contact\" class=\"btn-outline\">Speak to Expert</a>",
+          "html": "<a href=\"/contact\" class=\"btn-outline\">products.help.expert</a>",
           "target": [
             ".btn-outline"
           ]
@@ -4559,7 +3770,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"about\"]"
           ]
@@ -4585,7 +3796,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"industries\"]"
           ]
@@ -4611,7 +3822,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"products\"]"
           ]
@@ -4637,7 +3848,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"our-services\"]"
           ]
@@ -4663,7 +3874,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"contact\"]"
           ]
@@ -4689,7 +3900,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"quote-order\"]"
           ]
@@ -4849,7 +4060,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(1)"
           ]
@@ -4867,7 +4078,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(2)"
           ]
@@ -4885,7 +4096,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(3)"
           ]
@@ -4903,7 +4114,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(4)"
           ]
@@ -4921,7 +4132,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(5)"
           ]
@@ -4939,7 +4150,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a></li>",
           "target": [
             "li:nth-child(6)"
           ]
@@ -5158,7 +4369,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-contain\" style=\"color: transparent;\" src=\"http://localhost:4000/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-c...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-10"
           ]
@@ -5176,7 +4387,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".text-primary-700"
           ]
@@ -5194,9 +4405,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".p-2\\.5"
+            ".p-2"
           ]
         },
         {
@@ -5212,7 +4423,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">All Products</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">products.categories.all</button>",
           "target": [
             ".bg-primary-600"
           ]
@@ -5230,7 +4441,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">HVAC &amp; Ventilation</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.hvac</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(2)"
           ]
@@ -5248,7 +4459,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Testing &amp; Inspection</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.testing</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(3)"
           ]
@@ -5266,7 +4477,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Thermal Systems</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.thermal</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(4)"
           ]
@@ -5284,7 +4495,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Water Treatment</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.water</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(5)"
           ]
@@ -5302,7 +4513,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Heavy Machinery</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.machinery</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(6)"
           ]
@@ -5320,7 +4531,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Instrumentation</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.instrumentation</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(7)"
           ]
@@ -5338,7 +4549,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">Spare Parts</button>",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.spares</button>",
           "target": [
             ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(8)"
           ]
@@ -5356,9 +4567,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Central Ventilators &amp; Air Filters\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/valve.svg\">",
+          "html": "<img alt=\"products.ventilators\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/val...\">",
           "target": [
-            "img[src$=\"valve.svg\"]"
+            "img[alt=\"products.ventilators\"]"
           ]
         },
         {
@@ -5374,9 +4585,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Inspection &amp; Testing Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/sensor.svg\">",
+          "html": "<img alt=\"products.inspection\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/sen...\">",
           "target": [
-            "img[alt=\"Inspection & Testing Equipment\"]"
+            "img[alt=\"products.inspection\"]"
           ]
         },
         {
@@ -5392,9 +4603,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Water Cooling &amp; Heating Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/motor.svg\">",
+          "html": "<img alt=\"products.cooling\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/mot...\">",
           "target": [
-            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[src$=\"motor.svg\"][data-nimg=\"fill\"]"
+            "img[alt=\"products.cooling\"]"
           ]
         },
         {
@@ -5410,9 +4621,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Desalination &amp; Treatment Equipment\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.desalinatio...\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[data-nimg=\"fill\"][loading=\"lazy\"]"
+            "img[alt=\"products.desalination\"]"
           ]
         },
         {
@@ -5428,9 +4639,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Heavy Equipment &amp; Machinery Parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/motor.svg\">",
+          "html": "<img alt=\"products.heavy\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/mot...\">",
           "target": [
-            "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > .h-48.dark\\:bg-slate-800.overflow-hidden > .p-4[src$=\"motor.svg\"][data-nimg=\"fill\"]"
+            "img[alt=\"products.heavy\"]"
           ]
         },
         {
@@ -5446,9 +4657,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Measurement &amp; Control Systems\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/products/sensor.svg\">",
+          "html": "<img alt=\"products.measurement\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/products/sen...\">",
           "target": [
-            "img[alt=\"Measurement & Control Systems\"]"
+            "img[alt=\"products.measurement\"]"
           ]
         },
         {
@@ -5464,9 +4675,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Factory &amp; Plant Components\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.factory\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "img[alt=\"Factory & Plant Components\"]"
+            "img[alt=\"products.factory\"]"
           ]
         },
         {
@@ -5482,9 +4693,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Industrial Spare Parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;\" src=\"/images/home/company-overview.svg\">",
+          "html": "<img alt=\"products.spare_parts\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain p-4\" style=\"position:absolute;he...\" src=\"/images/home/company...\">",
           "target": [
-            "img[alt=\"Industrial Spare Parts\"]"
+            "img[alt=\"products.spare_parts\"]"
           ]
         },
         {
@@ -5500,7 +4711,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-contain\" style=\"color: transparent;\" src=\"/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-co...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-9"
           ]
@@ -5534,32 +4745,7 @@
               "id": "color-contrast",
               "data": {
                 "contrastRatio": 0,
-                "fontSize": "36.0pt (48px)",
-                "fontWeight": "bold",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "3:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element's background color could not be determined because it is overlapped by another element"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<h1 class=\"text-4xl md:text-5xl font-bold mb-4\">Our Products</h1>",
-          "target": [
-            "h1"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "15.0pt (20px)",
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
@@ -5572,7 +4758,257 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<p class=\"text-xl text-accent-100\">Comprehensive inventory of industrial components</p>",
+          "html": "<span class=\"text-xl font-bold text-primary dark:text-primary-light\">ARWAD</span>",
+          "target": [
+            ".space-x-2.rtl\\:space-x-reverse[href=\"/\"] > .dark\\:text-primary-light"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">nav.home</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href=\"/\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">nav.about</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href$=\"about\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">nav.industries</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href$=\"industries\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/products\">nav.products</a>",
+          "target": [
+            ".dark\\:text-primary-light.text-primary[href$=\"products\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">nav.services</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href$=\"our-services\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/contact\">nav.contact</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href$=\"contact\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">nav.register</a>",
+          "target": [
+            "a[href$=\"register\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">nav.quote</a>",
+          "target": [
+            ".text-slate-600.hover\\:text-primary[href$=\"quote-order\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "18.0pt (24px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<h1 class=\"text-4xl md:text-5xl font-bold mb-4\">products.title</h1>",
+          "target": [
+            "h1"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"text-xl text-accent-100\">products.subtitle</p>",
           "target": [
             ".text-accent-100"
           ],
@@ -5597,7 +5033,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<p class=\"text-accent-200 mt-2\">Comprehensive inventory for industrial applications</p>",
+          "html": "<p class=\"text-accent-200 mt-2\">products.tagline</p>",
           "target": [
             ".text-accent-200"
           ],
@@ -5611,29 +5047,322 @@
                 "contrastRatio": 0,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
-                "messageKey": "bgGradient",
+                "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
               },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-                  ]
-                }
-              ],
+              "relatedNodes": [],
               "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
+              "message": "Element's background color could not be determined because it is overlapped by another element"
             }
           ],
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<p class=\"text-lg text-secondary leading-relaxed\">products.overview</p>",
+          "target": [
+            ".leading-relaxed"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-primary-600 text-white shadow-md\">products.categories.all</button>",
+          "target": [
+            ".bg-primary-600"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.hvac</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(2)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.testing</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(3)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.thermal</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(4)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.water</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(5)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.machinery</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(6)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.instrumentation</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(7)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "10.0pt (13.3333px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<button class=\"px-6 py-2 rounded-full font-medium transition-all bg-background text-secondary hover:bg-surface-hover\">products.categories.spares</button>",
+          "target": [
+            ".hover\\:bg-surface-hover.px-6.transition-all:nth-child(8)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.ventilators</h3>",
+          "target": [
+            "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.ventilators</p>",
+          "target": [
+            "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > p"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"/quote-order?category=ventilators\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#ventilators > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.inspection</h3>",
+          "target": [
+            "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
         },
         {
           "any": [
@@ -5643,29 +5372,72 @@
                 "contrastRatio": 0,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
-                "messageKey": "bgGradient",
+                "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
               },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-                  ]
-                }
-              ],
+              "relatedNodes": [],
               "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
+              "message": "Element's background color could not be determined because it is overlapped by another element"
             }
           ],
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.inspection</p>",
+          "target": [
+            "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > p"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"/quote-order?category=inspection\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#inspection > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.cooling</h3>",
+          "target": [
+            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
         },
         {
           "any": [
@@ -5675,29 +5447,72 @@
                 "contrastRatio": 0,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
-                "messageKey": "bgGradient",
+                "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
               },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "a[href=\"/quote-order?category=cooling\"]"
-                  ]
-                }
-              ],
+              "relatedNodes": [],
               "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
+              "message": "Element's background color could not be determined because it is overlapped by another element"
             }
           ],
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.cooling</p>",
+          "target": [
+            "#cooling > .hover\\:shadow-xl.transition-shadow.h-full > p"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"/quote-order?category=cooling\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "a[href=\"/quote-order?category=cooling\"]"
           ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.desalination</h3>",
+          "target": [
+            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
         },
         {
           "any": [
@@ -5707,29 +5522,47 @@
                 "contrastRatio": 0,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
-                "messageKey": "bgGradient",
+                "messageKey": "bgOverlap",
                 "expectedContrastRatio": "4.5:1"
               },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-                  ]
-                }
-              ],
+              "relatedNodes": [],
               "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
+              "message": "Element's background color could not be determined because it is overlapped by another element"
             }
           ],
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<p class=\"text-secondary mb-4\">products.desc.desalination</p>",
+          "target": [
+            "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > p"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element's background color could not be determined because it is overlapped by another element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<a href=\"/quote-order?category=desalination\" class=\"btn-primary w-full text-center\">nav.quote</a>",
           "target": [
             "#desalination > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
           ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
         },
         {
           "any": [
@@ -5737,159 +5570,24 @@
               "id": "color-contrast",
               "data": {
                 "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "3:1"
               },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "a[href=\"/quote-order?category=heavy\"]"
-                  ]
-                }
-              ],
+              "relatedNodes": [],
               "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
+              "message": "Element's background color could not be determined because it is overlapped by another element"
             }
           ],
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<a href=\"/quote-order?category=heavy\" class=\"btn-primary w-full text-center\">Request Quote</a>",
+          "html": "<h3 class=\"text-xl font-semibold mb-3\">products.heavy</h3>",
           "target": [
-            "a[href=\"/quote-order?category=heavy\"]"
+            "#heavy > .hover\\:shadow-xl.transition-shadow.h-full > .mb-3.text-xl"
           ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<a href=\"/quote-order?category=measurement\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-          "target": [
-            "#measurement > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "a[href=\"/quote-order?category=factory\"]"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<a href=\"/quote-order?category=factory\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-          "target": [
-            "a[href=\"/quote-order?category=factory\"]"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-                  "target": [
-                    "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<a href=\"/quote-order?category=spare-parts\" class=\"btn-primary w-full text-center\">Request Quote</a>",
-          "target": [
-            "#spare-parts > .hover\\:shadow-xl.transition-shadow.h-full > .w-full.btn-primary.text-center"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<a href=\"/quote-order\" class=\"btn-primary\">Submit Custom Request</a>",
-                  "target": [
-                    ".btn-primary[href$=\"quote-order\"]"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<a href=\"/quote-order\" class=\"btn-primary\">Submit Custom Request</a>",
-          "target": [
-            ".btn-primary[href$=\"quote-order\"]"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
         }
       ]
     }

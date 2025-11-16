@@ -13,7 +13,7 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2025-11-16T00:27:42.254Z",
+  "timestamp": "2025-11-16T01:04:55.540Z",
   "url": "http://localhost:4000/contact",
   "toolOptions": {
     "runOnly": {
@@ -83,6 +83,23 @@
       "description": "Ensure every ARIA button, link and menuitem has an accessible name",
       "help": "ARIA commands must have an accessible name",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-command-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-deprecated-role",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure elements do not use deprecated roles",
+      "help": "Deprecated ARIA roles must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-deprecated-role?application=axeAPI",
       "nodes": []
     },
     {
@@ -159,6 +176,23 @@
       "nodes": []
     },
     {
+      "id": "aria-required-attr",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+      "help": "Required ARIA attributes must be provided",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
       "id": "aria-required-children",
       "impact": null,
       "tags": [
@@ -190,6 +224,23 @@
       "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
       "help": "Certain ARIA roles must be contained by particular parents",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-parent?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-roles",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ],
+      "description": "Ensure all elements with a role attribute use a valid value",
+      "help": "ARIA roles used must conform to valid values",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-roles?application=axeAPI",
       "nodes": []
     },
     {
@@ -727,7 +778,7 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -753,38 +804,9 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-allowed-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attributes are used correctly for the defined role"
-            }
-          ],
-          "none": [
-            {
-              "id": "aria-unsupported-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute is supported"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -818,7 +840,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -836,69 +858,9 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-conditional-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "ARIA attribute is allowed"
-            }
-          ],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-deprecated-role",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure elements do not use deprecated roles",
-      "help": "Deprecated ARIA roles must not be used",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-deprecated-role?application=axeAPI",
-      "nodes": [
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "deprecatedrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "minor",
-              "message": "ARIA role is not deprecated"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -970,7 +932,7 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -988,122 +950,9 @@
             }
           ],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
-          ]
-        },
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "aria-prohibited-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "ARIA attribute is allowed"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-required-attr",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
-      "help": "Required ARIA attributes must be provided",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-required-attr?application=axeAPI",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "aria-required-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "All required ARIA attributes are present"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aria-roles",
-      "impact": null,
-      "tags": [
-        "cat.aria",
-        "wcag2a",
-        "wcag412",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure all elements with a role attribute use a valid value",
-      "help": "ARIA roles used must conform to valid values",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-roles?application=axeAPI",
-      "nodes": [
-        {
-          "any": [],
-          "all": [],
-          "none": [
-            {
-              "id": "invalidrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA role is valid"
-            },
-            {
-              "id": "abstractrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Abstract roles are not used"
-            },
-            {
-              "id": "unsupportedrole",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA role is supported"
-            }
-          ],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1151,7 +1000,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -1183,44 +1032,9 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
-          ]
-        },
-        {
-          "any": [],
-          "all": [
-            {
-              "id": "aria-valid-attr-value",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute values are valid"
-            },
-            {
-              "id": "aria-errormessage",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
-            },
-            {
-              "id": "aria-level",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "aria-level values are valid"
-            }
-          ],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1254,7 +1068,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -1272,30 +1086,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "aria-valid-attr",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "ARIA attribute name is valid"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div aria-live=\"assertive\" id=\"__next-route-announcer__\" role=\"alert\" style=\"position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;\"></div>",
-          "target": [
-            [
-              "next-route-announcer",
-              "#__next-route-announcer__"
-            ]
+            ".p-2"
           ]
         }
       ]
@@ -1324,13 +1117,6 @@
         {
           "any": [
             {
-              "id": "button-has-visible-text",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Element has inner text that is visible to screen readers"
-            },
-            {
               "id": "aria-label",
               "data": null,
               "relatedNodes": [],
@@ -1341,7 +1127,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -1359,9 +1145,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
+            ".p-2"
           ]
         },
         {
@@ -1411,7 +1197,7 @@
               "data": null,
               "relatedNodes": [
                 {
-                  "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">Contact Us</h2>",
+                  "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">contact.title</h2>",
                   "target": [
                     "h2"
                   ]
@@ -1423,43 +1209,43 @@
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold mb-2\">Address</h3>",
+                  "html": "<h3 class=\"font-semibold mb-2\">contact.address</h3>",
                   "target": [
                     ".card:nth-child(1) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold mb-2\">Phone</h3>",
+                  "html": "<h3 class=\"font-semibold mb-2\">contact.phone</h3>",
                   "target": [
                     ".card:nth-child(2) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold mb-2\">Email</h3>",
+                  "html": "<h3 class=\"font-semibold mb-2\">contact.email</h3>",
                   "target": [
                     ".card:nth-child(3) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold mb-2\">Working Hours</h3>",
+                  "html": "<h3 class=\"font-semibold mb-2\">contact.hours</h3>",
                   "target": [
                     ".card:nth-child(4) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Quick Links</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.quick_links</h3>",
                   "target": [
                     "div:nth-child(2) > .text-lg.mb-4"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Contact Information</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.contact_info</h3>",
                   "target": [
                     "div:nth-child(3) > .text-lg.mb-4"
                   ]
                 },
                 {
-                  "html": "<h3 class=\"font-semibold text-lg mb-4\">Working Hours</h3>",
+                  "html": "<h3 class=\"font-semibold text-lg mb-4\">contact.hours</h3>",
                   "target": [
                     "div:nth-child(4) > .text-lg.mb-4"
                   ]
@@ -1517,16 +1303,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "3:1"
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
@@ -1542,22 +1328,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">Home</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">nav.home</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href=\"/\"]"
           ]
@@ -1567,22 +1353,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">nav.about</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"about\"]"
           ]
@@ -1592,22 +1378,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"industries\"]"
           ]
@@ -1617,22 +1403,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/products\">nav.products</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"products\"]"
           ]
@@ -1642,22 +1428,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"our-services\"]"
           ]
@@ -1667,22 +1453,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".dark\\:text-primary-light.text-primary[href$=\"contact\"]"
           ]
@@ -1692,22 +1478,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">Register</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">nav.register</a>",
           "target": [
             "a[href$=\"register\"]"
           ]
@@ -1717,22 +1503,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#475569",
+                "fgColor": "#0000ee",
                 "bgColor": "#ffffff",
-                "contrastRatio": 7.57,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.57"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"quote-order\"]"
           ]
@@ -1742,47 +1528,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#003886",
-                "bgColor": "#b3d1ff",
-                "contrastRatio": 7.05,
-                "fontSize": "10.5pt (14px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.05"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
-          "target": [
-            ".py-2"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "27.0pt (36px)",
+                "contrastRatio": 21,
+                "fontSize": "18.0pt (24px)",
                 "fontWeight": "bold",
                 "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">Contact Us</h2>",
+          "html": "<h2 class=\"text-3xl md:text-4xl font-bold text-primary mb-4\">contact.title</h2>",
           "target": [
             "h2"
           ]
@@ -1792,22 +1553,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 4.83,
-                "fontSize": "13.5pt (18px)",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.83"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-lg text-secondary max-w-3xl \">Get in touch with our team</p>",
+          "html": "<p class=\"text-lg text-secondary max-w-3xl \">contact.subtitle</p>",
           "target": [
             ".max-w-3xl"
           ]
@@ -1817,16 +1578,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1842,16 +1603,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "10.0pt (13.3333px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1867,16 +1628,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1892,16 +1653,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "10.0pt (13.3333px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1917,16 +1678,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "10.5pt (14px)",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1942,16 +1703,41 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#ffffff",
-                "contrastRatio": 17.4,
-                "fontSize": "15.0pt (20px)",
+                "fgColor": "#000000",
+                "bgColor": "#efefef",
+                "contrastRatio": 18.26,
+                "fontSize": "10.0pt (13.3333px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 17.4"
+              "message": "Element has sufficient color contrast of 18.26"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button type=\"submit\" class=\"btn-primary disabled:opacity-50 disabled:cursor-not-allowed\">Send Message</button>",
+          "target": [
+            ".btn-primary"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1967,16 +1753,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
+                "fgColor": "#000000",
                 "bgColor": "#ffffff",
-                "contrastRatio": 4.83,
+                "contrastRatio": 21,
                 "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.83"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -1992,22 +1778,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold mb-2\">Address</h3>",
+          "html": "<h3 class=\"font-semibold mb-2\">contact.address</h3>",
           "target": [
             ".card:nth-child(1) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
           ]
@@ -2017,22 +1803,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">ARWAD Trading</p>",
+          "html": "<p class=\"text-sm text-secondary\">brand.name</p>",
           "target": [
             ".card:nth-child(1) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .space-y-1 > p:nth-child(1)"
           ]
@@ -2042,16 +1828,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2067,16 +1853,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2092,22 +1878,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold mb-2\">Phone</h3>",
+          "html": "<h3 class=\"font-semibold mb-2\">contact.phone</h3>",
           "target": [
             ".card:nth-child(2) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
           ]
@@ -2117,16 +1903,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2142,16 +1928,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2167,22 +1953,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold mb-2\">Email</h3>",
+          "html": "<h3 class=\"font-semibold mb-2\">contact.email</h3>",
           "target": [
             ".card:nth-child(3) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
           ]
@@ -2192,16 +1978,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2217,22 +2003,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 16.21,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.21"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold mb-2\">Working Hours</h3>",
+          "html": "<h3 class=\"font-semibold mb-2\">contact.hours</h3>",
           "target": [
             ".card:nth-child(4) > .items-start.space-x-4.rtl\\:space-x-reverse > .flex-1 > .mb-2"
           ]
@@ -2242,16 +2028,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f5f7fa",
-                "contrastRatio": 4.5,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.5"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2267,22 +2053,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#0047b3",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 7.86,
-                "fontSize": "15.0pt (20px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "3:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "normal",
+                "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.86"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"font-bold text-xl text-primary-600 dark:text-primary-400\">ARWAD</span>",
+          "html": "<span class=\"font-bold text-xl text-primary-600 dark:text-primary-400\">brand.short</span>",
           "target": [
             ".space-y-4 > .space-x-2.items-center.rtl\\:space-x-reverse > span"
           ]
@@ -2292,22 +2078,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">ARWAD Trading is your trusted partner for industrial MRO solutions and supply chain excellence across the Middle East.</p>",
+          "html": "<p class=\"text-sm text-secondary\">footer.about</p>",
           "target": [
             ".grid-cols-1 > .space-y-4 > p"
           ]
@@ -2317,22 +2103,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Quick Links</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.quick_links</h3>",
           "target": [
             "div:nth-child(2) > .text-lg.mb-4"
           ]
@@ -2342,22 +2128,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"about\"]"
           ]
@@ -2367,22 +2153,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"industries\"]"
           ]
@@ -2392,22 +2178,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"products\"]"
           ]
@@ -2417,22 +2203,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"our-services\"]"
           ]
@@ -2442,22 +2228,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"contact\"]"
           ]
@@ -2467,22 +2253,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"quote-order\"]"
           ]
@@ -2492,22 +2278,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Contact Information</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">footer.contact_info</h3>",
           "target": [
             "div:nth-child(3) > .text-lg.mb-4"
           ]
@@ -2517,16 +2303,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2542,16 +2328,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
@@ -2567,16 +2353,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#0000ee",
+                "bgColor": "#ffffff",
+                "contrastRatio": 9.39,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 9.39"
             }
           ],
           "all": [],
@@ -2592,22 +2378,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#1a1a1a",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 16.63,
-                "fontSize": "13.5pt (18px)",
-                "fontWeight": "normal",
-                "expectedContrastRatio": "4.5:1"
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "14.0pt (18.72px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "3:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 16.63"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3 class=\"font-semibold text-lg mb-4\">Working Hours</h3>",
+          "html": "<h3 class=\"font-semibold text-lg mb-4\">contact.hours</h3>",
           "target": [
             "div:nth-child(4) > .text-lg.mb-4"
           ]
@@ -2617,16 +2403,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2642,16 +2428,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2667,16 +2453,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2692,16 +2478,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2717,16 +2503,16 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#4b5563",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 7.22,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 7.22"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
@@ -2742,22 +2528,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">© <!-- -->2025<!-- --> <!-- -->ARWAD Trading<!-- -->. <!-- -->All rights reserved.</p>",
+          "html": "<p class=\"text-sm text-secondary\">© <!-- -->2025<!-- --> <!-- -->brand.name<!-- -->. <!-- -->footer.rights</p>",
           "target": [
             ".md\\:flex-row > p:nth-child(1)"
           ]
@@ -2767,22 +2553,22 @@
             {
               "id": "color-contrast",
               "data": {
-                "fgColor": "#6b7280",
-                "bgColor": "#f8fafc",
-                "contrastRatio": 4.62,
-                "fontSize": "10.5pt (14px)",
+                "fgColor": "#000000",
+                "bgColor": "#ffffff",
+                "contrastRatio": 21,
+                "fontSize": "12.0pt (16px)",
                 "fontWeight": "normal",
                 "expectedContrastRatio": "4.5:1"
               },
               "relatedNodes": [],
               "impact": "serious",
-              "message": "Element has sufficient color contrast of 4.62"
+              "message": "Element has sufficient color contrast of 21"
             }
           ],
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<p class=\"text-sm text-secondary\">Powered by Jawareer</p>",
+          "html": "<p class=\"text-sm text-secondary\">footer.powered_by</p>",
           "target": [
             ".md\\:flex-row > p:nth-child(2)"
           ]
@@ -3101,7 +2887,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-contain\" style=\"color: transparent;\" src=\"http://localhost:4000/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-c...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-10"
           ]
@@ -3127,7 +2913,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-contain\" style=\"color: transparent;\" src=\"/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-co...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-9"
           ]
@@ -3305,7 +3091,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">Home</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/\">nav.home</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href=\"/\"]"
           ]
@@ -3331,7 +3117,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/about\">nav.about</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"about\"]"
           ]
@@ -3357,7 +3143,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"industries\"]"
           ]
@@ -3383,7 +3169,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/products\">nav.products</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"products\"]"
           ]
@@ -3409,7 +3195,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"our-services\"]"
           ]
@@ -3435,7 +3221,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-primary dark:text-primary-light\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".dark\\:text-primary-light.text-primary[href$=\"contact\"]"
           ]
@@ -3461,7 +3247,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">Register</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/register\">nav.register</a>",
           "target": [
             "a[href$=\"register\"]"
           ]
@@ -3487,7 +3273,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm font-medium transition-colors text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary-light\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".text-slate-600.hover\\:text-primary[href$=\"quote-order\"]"
           ]
@@ -3513,7 +3299,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"about\"]"
           ]
@@ -3539,7 +3325,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"industries\"]"
           ]
@@ -3565,7 +3351,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"products\"]"
           ]
@@ -3591,7 +3377,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"our-services\"]"
           ]
@@ -3617,7 +3403,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"contact\"]"
           ]
@@ -3643,7 +3429,7 @@
             }
           ],
           "impact": null,
-          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a>",
+          "html": "<a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a>",
           "target": [
             ".hover\\:text-primary-600.dark\\:hover\\:text-primary-400[href$=\"quote-order\"]"
           ]
@@ -3803,7 +3589,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">About</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/about\">nav.about</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(1)"
           ]
@@ -3821,7 +3607,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">Industries</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/industries\">nav.industries</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(2)"
           ]
@@ -3839,7 +3625,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">Products</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/products\">nav.products</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(3)"
           ]
@@ -3857,7 +3643,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">Our Services</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/our-services\">nav.services</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(4)"
           ]
@@ -3875,7 +3661,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">Contact</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/contact\">nav.contact</a></li>",
           "target": [
             "div:nth-child(2) > .space-y-2 > li:nth-child(5)"
           ]
@@ -3893,7 +3679,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">Request Quote</a></li>",
+          "html": "<li><a class=\"text-sm text-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors\" href=\"/quote-order\">nav.quote</a></li>",
           "target": [
             "li:nth-child(6)"
           ]
@@ -4112,7 +3898,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-contain\" style=\"color: transparent;\" src=\"http://localhost:4000/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" fetchpriority=\"high\" width=\"140\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"h-10 w-auto object-c...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-10"
           ]
@@ -4130,7 +3916,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"Switch Language\">AR</button>",
+          "html": "<button class=\"rounded-lg bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-200 dark:bg-primary-900/50 dark:text-primary-200 dark:hover:bg-primary-800/70 transition-colors\" aria-label=\"language.toggle\"></button>",
           "target": [
             ".py-2"
           ]
@@ -4148,9 +3934,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"rounded-lg bg-slate-100 p-2.5 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors text-slate-700 dark:text-slate-200\" aria-label=\"Toggle Theme\">",
+          "html": "<button class=\"rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden\" aria-label=\"Toggle menu\">",
           "target": [
-            ".bg-slate-100"
+            ".p-2"
           ]
         },
         {
@@ -4184,7 +3970,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-contain\" style=\"color: transparent;\" src=\"/images/brand/logo-light.svg\">",
+          "html": "<img alt=\"Arwad Logo\" loading=\"lazy\" width=\"120\" height=\"36\" decoding=\"async\" data-nimg=\"1\" class=\"h-9 w-auto object-co...\" style=\"color:transparent;ba...\" src=\"/images/brand/logo-l...\">",
           "target": [
             ".h-9"
           ]
@@ -4218,7 +4004,7 @@
               "id": "color-contrast",
               "data": {
                 "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
+                "fontSize": "10.0pt (13.3333px)",
                 "fontWeight": "normal",
                 "messageKey": "elmPartiallyObscured",
                 "expectedContrastRatio": "4.5:1"
@@ -4243,38 +4029,6 @@
             "textarea"
           ],
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [
-                {
-                  "html": "<button type=\"submit\" class=\"btn-primary disabled:opacity-50 disabled:cursor-not-allowed\">Send Message</button>",
-                  "target": [
-                    ".btn-primary"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element's background color could not be determined due to a background gradient"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<button type=\"submit\" class=\"btn-primary disabled:opacity-50 disabled:cursor-not-allowed\">Send Message</button>",
-          "target": [
-            ".btn-primary"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
         }
       ]
     }

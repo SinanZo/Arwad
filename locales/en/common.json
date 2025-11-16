@@ -38,6 +38,11 @@
     "home_title": "Ready to Optimize Your Supply Chain?",
     "home_subtitle": "Contact our team today to discuss your MRO requirements and discover how {brand} can support your operations."
   },
+  "home": {
+    "trusted_title": "Trusted by Industry Leaders",
+    "trusted_desc": "We partner with leading organizations across the Middle East to deliver excellence in MRO solutions and supply chain management",
+    "partner_logo": "Partner Logo"
+  },
   "about": {
     "title": "About ARWAD Trading",
     "subtitle": "Excellence in MRO & Supply Chain Management",

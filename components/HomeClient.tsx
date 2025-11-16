@@ -309,15 +309,15 @@ export default function HomeClient() {
       <section className="py-16 bg-surface">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Trusted by Industry Leaders</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('home.trusted_title') || 'Trusted by Industry Leaders'}</h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              We partner with leading organizations across the Middle East to deliver excellence in MRO solutions and supply chain management
+              {t('home.trusted_desc') || 'We partner with leading organizations across the Middle East to deliver excellence in MRO solutions and supply chain management'}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-20 bg-background rounded-lg flex items-center justify-center text-muted font-semibold">
-                Partner Logo
+              <div key={i} className="h-20 bg-background rounded-lg flex items-center justify-center text-secondary font-semibold">
+                {t('home.partner_logo') || 'Partner Logo'}
               </div>
             ))}
           </div>
