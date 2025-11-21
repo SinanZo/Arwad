@@ -17,6 +17,7 @@ import QuoteOrder from "./pages/QuoteOrder";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminQuotes from "./pages/admin/Quotes";
 import AdminContacts from "./pages/admin/Contacts";
+import AdminAnalytics from "./pages/admin/Analytics";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function Router() {
@@ -44,6 +45,11 @@ function Router() {
       <Route path="/admin/contacts">
         <ProtectedRoute requireAdmin>
           <AdminContacts />
+        </ProtectedRoute>
+      </Route>
+      <Route path="/admin/analytics">
+        <ProtectedRoute requireAdmin>
+          <AdminAnalytics />
         </ProtectedRoute>
       </Route>
       <Route path="/404" component={NotFound} />

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { useLocation, Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
-import { LayoutDashboard, FileText, MessageSquare, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, MessageSquare, BarChart3, LogOut, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { trpc } from '@/lib/trpc';
@@ -31,6 +31,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { name: 'Quote Requests', href: '/admin/quotes', icon: FileText },
     { name: 'Contact Messages', href: '/admin/contacts', icon: MessageSquare },
+    { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   ];
 
   const isActive = (href: string) => {
