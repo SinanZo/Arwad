@@ -93,3 +93,23 @@
 - [x] Optimize and add all images to project
 - [x] Test database connections and form submissions
 - [x] Verify all images display correctly and are properly sized
+
+## Phase 12: Admin Dashboard
+- [x] Update database schema with admin-related fields
+- [x] Create API endpoints for listing quotes with filters
+- [x] Create API endpoints for listing contacts with filters
+- [x] Create API endpoint for updating quote status
+- [x] Create API endpoint for updating contact status
+- [x] Create API endpoint for deleting records
+- [x] Build AdminLayout component with sidebar navigation
+- [x] Build DataTable component with sorting and filtering
+- [x] Build StatusBadge component for visual status indicators
+- [x] Build QuoteDetailModal for viewing full quote details
+- [x] Build ContactDetailModal for viewing full contact details
+- [x] Create Admin Dashboard overview page with statistics
+- [x] Create Admin Quotes page with table and filters
+- [x] Create Admin Contacts page with table and filters
+- [x] Add role-based access control (admin only)
+- [x] Add authentication check for admin routes
+- [x] Test all admin functionality
+- [x] Add data export functionality (CSV/Excel)

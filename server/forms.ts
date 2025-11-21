@@ -1,5 +1,6 @@
 import { getDb } from "./db";
 import { quoteRequests, contactSubmissions, InsertQuoteRequest, InsertContactSubmission } from "../drizzle/schema";
+import { eq } from "drizzle-orm";
 
 /**
  * Create a new quote request
@@ -49,4 +50,52 @@ export async function getAllContactSubmissions() {
   }
 
   return await db.select().from(contactSubmissions).orderBy(contactSubmissions.createdAt);
+}
+
+/**
+ * Update quote request status
+ */
+export async function updateQuoteStatus(id: number, status: "pending" | "processing" | "completed" | "cancelled") {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  return await db.update(quoteRequests).set({ status }).where(eq(quoteRequests.id, id));
+}
+
+/**
+ * Update contact submission status
+ */
+export async function updateContactStatus(id: number, status: "unread" | "read" | "replied") {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  return await db.update(contactSubmissions).set({ status }).where(eq(contactSubmissions.id, id));
+}
+
+/**
+ * Delete quote request
+ */
+export async function deleteQuoteRequest(id: number) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  return await db.delete(quoteRequests).where(eq(quoteRequests.id, id));
+}
+
+/**
+ * Delete contact submission
+ */
+export async function deleteContactSubmission(id: number) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  return await db.delete(contactSubmissions).where(eq(contactSubmissions.id, id));
 }
