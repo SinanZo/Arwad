@@ -1,4 +1,5 @@
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
+import { trpc } from '@/lib/trpc';
 import { useTranslation } from 'react-i18next';
 import { useLocation as useWouterLocation } from 'wouter';
 import { Plus } from 'lucide-react';
@@ -91,6 +92,33 @@ export default function QuoteOrder() {
     setItems(prev => prev.filter(item => item.id !== id));
   };
 
+  const submitQuoteMutation = trpc.forms.submitQuote.useMutation({
+    onSuccess: () => {
+      toast.success(t('quote.form.success'));
+      // Reset form
+      setFormData({
+        company: '',
+        contact: '',
+        email: '',
+        phone: '',
+        industry: '',
+      });
+      setItems([
+        {
+          id: '1',
+          partNumber: '',
+          description: '',
+          manufacturer: '',
+          quantity: '',
+          category: '',
+        },
+      ]);
+    },
+    onError: (error) => {
+      toast.error(error.message || t('quote.form.error'));
+    },
+  });
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -104,34 +132,21 @@ export default function QuoteOrder() {
       return;
     }
 
-    setIsSubmitting(true);
-
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log('Quote request submitted:', { formData, items });
-    toast.success(t('quote.form.success'));
-
-    // Reset form
-    setFormData({
-      company: '',
-      contact: '',
-      email: '',
-      phone: '',
-      industry: '',
+    // Submit via tRPC
+    submitQuoteMutation.mutate({
+      company: formData.company,
+      contact: formData.contact,
+      email: formData.email,
+      phone: formData.phone,
+      industry: formData.industry,
+      items: items.map(item => ({
+        partNumber: item.partNumber,
+        description: item.description,
+        manufacturer: item.manufacturer,
+        quantity: item.quantity,
+        category: item.category,
+      })),
     });
-    setItems([
-      {
-        id: '1',
-        partNumber: '',
-        description: '',
-        manufacturer: '',
-        quantity: '',
-        category: '',
-      },
-    ]);
-
-    setIsSubmitting(false);
   };
 
   return (
@@ -259,8 +274,8 @@ export default function QuoteOrder() {
 
             {/* Submit */}
             <div className="text-center">
-              <Button type="submit" size="lg" disabled={isSubmitting}>
-                {isSubmitting ? '...' : t('quote.form.submit')}
+              <Button type="submit" size="lg" disabled={submitQuoteMutation.isPending}>
+                {submitQuoteMutation.isPending ? '...' : t('quote.form.submit')}
               </Button>
             </div>
           </form>

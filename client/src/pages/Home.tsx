@@ -19,8 +19,32 @@ export default function Home() {
       subtitle: t('home.hero.subtitle'),
       ctaPrimary: { text: t('home.hero.cta1'), href: '/quote-order' },
       ctaSecondary: { text: t('home.hero.cta2'), href: '/industries' },
+      mediaType: 'video',
+      mediaSrc: '/videos/hero.mp4',
+    },
+    {
+      title: t('home.hero.title'),
+      subtitle: t('home.hero.subtitle'),
+      ctaPrimary: { text: t('home.hero.cta1'), href: '/quote-order' },
+      ctaSecondary: { text: t('home.hero.cta2'), href: '/industries' },
       mediaType: 'image',
       mediaSrc: '/images/home/hero-1.jpg',
+    },
+    {
+      title: t('home.hero.title'),
+      subtitle: t('home.hero.subtitle'),
+      ctaPrimary: { text: t('home.hero.cta1'), href: '/quote-order' },
+      ctaSecondary: { text: t('home.hero.cta2'), href: '/industries' },
+      mediaType: 'image',
+      mediaSrc: '/images/home/hero-2.jpg',
+    },
+    {
+      title: t('home.hero.title'),
+      subtitle: t('home.hero.subtitle'),
+      ctaPrimary: { text: t('home.hero.cta1'), href: '/quote-order' },
+      ctaSecondary: { text: t('home.hero.cta2'), href: '/industries' },
+      mediaType: 'image',
+      mediaSrc: '/images/home/hero-3.jpg',
     },
   ];
 

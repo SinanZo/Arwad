@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { trpc } from '@/lib/trpc';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { toast } from 'sonner';
@@ -29,27 +30,36 @@ export default function Contact() {
     message: '',
   });
 
+  const submitContactMutation = trpc.forms.submitContact.useMutation({
+    onSuccess: () => {
+      toast.success(t('contact.form.success'));
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        subject: '',
+        message: '',
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message || 'Failed to submit contact form');
+    },
+  });
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log('Contact form submitted:', formData);
-    toast.success(t('contact.form.success'));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      subject: '',
-      message: '',
+    // Submit via tRPC
+    submitContactMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      subject: formData.subject,
+      message: formData.message,
     });
-    
-    setIsSubmitting(false);
   };
 
   const handleChange = (field: string, value: string) => {
@@ -151,8 +161,8 @@ export default function Contact() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? '...' : t('contact.form.submit')}
+                  <Button type="submit" className="w-full" disabled={submitContactMutation.isPending}>
+                    {submitContactMutation.isPending ? '...' : t('contact.form.submit')}
                   </Button>
                 </form>
               </div>
