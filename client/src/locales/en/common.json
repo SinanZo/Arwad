@@ -1,0 +1,324 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "industries": "Industries",
+    "products": "Products",
+    "services": "Our Services",
+    "contact": "Contact",
+    "register": "Register",
+    "quote": "Quote Order"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "requestQuote": "Request a Quote",
+    "contactUs": "Contact Us",
+    "viewDetails": "View Details",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "addItem": "Add Item",
+    "remove": "Remove",
+    "poweredBy": "Powered by Jawareer"
+  },
+  "home": {
+    "hero": {
+      "title": "Availability. Reliability. Ownership.",
+      "subtitle": "Your Regional Partner for MRO, Spare Parts & Supply Chain Excellence",
+      "cta1": "Request a Quote",
+      "cta2": "View Industries"
+    },
+    "about": {
+      "title": "About ARWAD Trading",
+      "description": "ARWAD Trading is a leading regional provider of maintenance, repair, and operations (MRO) solutions, spare parts procurement, and comprehensive supply chain management services. We partner with industrial and infrastructure sectors to optimize costs, maximize equipment uptime, and deliver reliable technical support across the entire lifecycle of your operations."
+    },
+    "pillars": {
+      "title": "Our Core Values",
+      "ownership": {
+        "title": "Ownership",
+        "description": "We take full responsibility for delivering solutions that meet your operational needs with commitment and accountability."
+      },
+      "availability": {
+        "title": "Availability",
+        "description": "Round-the-clock support and rapid response times ensure your operations never face unnecessary downtime."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "Consistent quality, proven expertise, and dependable partnerships you can trust for mission-critical operations."
+      }
+    },
+    "industries": {
+      "title": "Industries We Serve",
+      "subtitle": "Comprehensive MRO solutions across key industrial and infrastructure sectors"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "End-to-end solutions designed to optimize your operations"
+    },
+    "products": {
+      "title": "Product Categories",
+      "subtitle": "One-stop source for industrial spare parts and equipment"
+    },
+    "contactTeaser": {
+      "title": "Ready to Optimize Your Operations?",
+      "description": "Get in touch with our team to discuss your MRO requirements and discover how we can support your business.",
+      "cta": "Get Started"
+    }
+  },
+  "about": {
+    "title": "About ARWAD",
+    "hero": "Your Trusted Partner in Industrial Excellence",
+    "overview": {
+      "title": "Who We Are",
+      "description": "ARWAD Trading stands as a premier regional partner specializing in maintenance, repair, and operations (MRO) services, spare parts procurement, and advanced supply chain management. We serve industrial and infrastructure sectors with a singular focus: reducing operational downtime, optimizing total cost of ownership, and enhancing equipment reliability through technical excellence and strategic supplier partnerships."
+    },
+    "values": {
+      "title": "Our Values",
+      "ownership": "Ownership - Full accountability for delivering results",
+      "availability": "Availability - Always ready when you need us",
+      "reliability": "Reliability - Consistent quality and performance",
+      "competence": "Competence - Deep technical expertise",
+      "knowledge": "Knowledge - Industry insights and best practices",
+      "integrity": "Integrity - Honest, transparent partnerships"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be the recognized regional leader in supply chain management, MRO services, and technical support for industrial and infrastructure sectors, setting the standard for operational excellence and customer partnership."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "To deliver the right part, at the right time, with unmatched technical excellence. We leverage our extensive supplier network, deep industry knowledge, and commitment to quality to ensure our clients achieve maximum uptime and operational efficiency."
+    },
+    "stats": {
+      "title": "Our Impact",
+      "engineers": "20,000+ Engineers & Workers Supported",
+      "factories": "700+ Factories Served",
+      "projects": "2,450+ Projects Completed",
+      "awards": "468+ Industry Awards"
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "subtitle": "Specialized MRO solutions tailored to your sector's unique requirements",
+    "water": {
+      "title": "Water & Desalination",
+      "description": "Supporting critical water infrastructure with specialized spare parts, maintenance solutions, and technical expertise for desalination plants, water treatment facilities, and distribution systems."
+    },
+    "power": {
+      "title": "Power Generation & Distribution",
+      "description": "Comprehensive MRO support for power plants, substations, and electrical distribution networks, ensuring reliable energy delivery with minimal downtime."
+    },
+    "manufacturing": {
+      "title": "Manufacturing (FMCG, Chemicals, Packaging)",
+      "description": "Optimizing production line efficiency through rapid spare parts delivery, process improvement consulting, and preventive maintenance solutions for diverse manufacturing operations."
+    },
+    "petrochemicals": {
+      "title": "Petrochemicals",
+      "description": "Specialized support for refineries and petrochemical facilities, providing critical components, safety equipment, and technical services for demanding operational environments."
+    },
+    "mining": {
+      "title": "Mining",
+      "description": "Heavy-duty equipment support, wear parts, and maintenance solutions designed for the harsh conditions and high-performance demands of mining operations."
+    },
+    "infrastructure": {
+      "title": "Buildings & Infrastructure",
+      "description": "Comprehensive facility management support, HVAC systems, building automation, and infrastructure maintenance solutions for commercial and industrial properties."
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Your one-stop source for industrial spare parts and equipment",
+    "intro": "ARWAD Trading provides comprehensive access to a vast inventory of industrial spare parts, equipment, and systems. Our extensive supplier network ensures rapid availability of critical components to keep your operations running smoothly.",
+    "categories": {
+      "ventilation": {
+        "title": "Central Ventilators & Air Filters",
+        "description": "Industrial ventilation systems, HVAC components, air filtration units, and climate control equipment for optimal facility environments."
+      },
+      "inspection": {
+        "title": "Inspection & Testing Equipment",
+        "description": "Precision instruments, diagnostic tools, testing devices, and quality control equipment for maintaining operational standards."
+      },
+      "spareParts": {
+        "title": "Spare Parts",
+        "description": "Comprehensive inventory of OEM and aftermarket spare parts for diverse industrial equipment and machinery."
+      },
+      "waterEquipment": {
+        "title": "Water Cooling & Heating Equipment",
+        "description": "Cooling towers, heat exchangers, boilers, and thermal management systems for industrial processes."
+      },
+      "waterTreatment": {
+        "title": "Water Desalination & Treatment Equipment",
+        "description": "Reverse osmosis systems, filtration units, chemical dosing equipment, and water quality monitoring devices."
+      },
+      "heavyEquipment": {
+        "title": "Heavy Equipment & Machinery Spare Parts",
+        "description": "Components for construction equipment, mining machinery, and heavy industrial vehicles."
+      },
+      "measurement": {
+        "title": "Measurement & Control Systems",
+        "description": "Sensors, transmitters, controllers, and automation components for process control and monitoring."
+      },
+      "industrial": {
+        "title": "Industrial Plant & Factory Spare Parts",
+        "description": "Comprehensive parts inventory for manufacturing plants, including motors, drives, bearings, seals, and mechanical components."
+      }
+    },
+    "requestQuote": "Request Quote for this Category"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions to optimize your operations",
+    "values": {
+      "integrity": {
+        "title": "Integrity",
+        "description": "We build lasting partnerships through honest communication, transparent processes, and ethical business practices."
+      },
+      "teamwork": {
+        "title": "Effective Team Work",
+        "description": "Collaborative approach combining our expertise with your operational knowledge to achieve optimal results."
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Rigorous quality control processes ensure every component and service meets the highest industry standards."
+      }
+    },
+    "procurement": {
+      "title": "Procurement & Supply Chain Management",
+      "description": "Our comprehensive procurement services leverage global supplier networks to deliver the right parts at competitive prices. We manage the entire supply chain from sourcing to delivery, reducing your administrative burden while ensuring quality and compliance. Our strategic inventory management and vendor consolidation services help optimize your working capital and streamline operations.",
+      "deliverables": [
+        "Strategic sourcing and vendor management",
+        "Inventory optimization and consignment programs",
+        "Supply chain analytics and reporting",
+        "Emergency procurement and expediting services"
+      ]
+    },
+    "customized": {
+      "title": "Customized Solutions",
+      "description": "Every operation has unique requirements. Our engineering team works closely with clients to develop tailored solutions that address specific challenges, whether it's custom fabrication, specialized equipment modifications, or integrated system designs. We combine technical expertise with practical experience to deliver solutions that enhance efficiency and reliability.",
+      "deliverables": [
+        "Custom engineering and design services",
+        "Equipment modification and retrofitting",
+        "Application-specific component selection",
+        "Technical documentation and training"
+      ]
+    },
+    "automation": {
+      "title": "Automation",
+      "description": "Modernize your operations with advanced automation solutions that improve productivity, reduce errors, and enhance safety. From simple control upgrades to complete system integration, we provide automation technologies that deliver measurable ROI. Our solutions include PLC programming, SCADA systems, instrumentation, and process control optimization.",
+      "deliverables": [
+        "Process automation design and implementation",
+        "Control system upgrades and integration",
+        "Instrumentation and sensor networks",
+        "Remote monitoring and diagnostics"
+      ]
+    },
+    "assessment": {
+      "title": "Manufacturing Process Assessment",
+      "description": "Our experienced engineers conduct comprehensive assessments of your manufacturing processes to identify opportunities for improvement. We analyze equipment performance, maintenance practices, energy consumption, and workflow efficiency to develop actionable recommendations that reduce costs and increase output. Our data-driven approach ensures measurable improvements.",
+      "deliverables": [
+        "Operational efficiency audits",
+        "Equipment condition assessments",
+        "Maintenance program optimization",
+        "Energy efficiency analysis and recommendations"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "description": "Have questions about our services or need technical support? Our team is ready to assist you with expert guidance and solutions tailored to your operational needs.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name (Optional)",
+      "subject": "Subject",
+      "message": "Message / Requirements",
+      "subjects": {
+        "products": "Products Inquiry",
+        "services": "Services Inquiry",
+        "general": "General Inquiry",
+        "support": "Technical Support"
+      },
+      "submit": "Send Message",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "address": {
+        "title": "Address",
+        "line1": "Business Bay",
+        "line2": "Dubai, United Arab Emirates"
+      },
+      "contact": {
+        "title": "Phone & Email",
+        "phone": "+971 4 XXX XXXX",
+        "email": "info@arwad.org"
+      },
+      "hours": {
+        "title": "Working Hours",
+        "weekdays": "Sunday - Thursday: 8:00 AM - 6:00 PM",
+        "weekend": "Saturday: 9:00 AM - 2:00 PM"
+      }
+    }
+  },
+  "register": {
+    "title": "Account",
+    "login": {
+      "title": "Login",
+      "email": "Email Address",
+      "password": "Password",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create one here"
+    },
+    "signup": {
+      "title": "Create Account",
+      "name": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "company": "Company Name",
+      "role": "Role / Position",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in here"
+    },
+    "account": {
+      "title": "Account Details",
+      "welcome": "Welcome back",
+      "email": "Email",
+      "company": "Company",
+      "role": "Role",
+      "resetPassword": "Reset Password",
+      "logout": "Logout"
+    }
+  },
+  "quote": {
+    "title": "Request a Quote",
+    "subtitle": "Submit your requirements and our team will respond promptly",
+    "intro": "ARWAD Trading's quote process is designed for efficiency and accuracy. Simply provide your requirements below, and our technical team will prepare a detailed quotation with competitive pricing and delivery timelines.",
+    "form": {
+      "company": "Company Name",
+      "contact": "Contact Person",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "industry": "Industry",
+      "selectIndustry": "Select your industry",
+      "items": {
+        "title": "Quote Items",
+        "partNumber": "Product / Part Number",
+        "description": "Description",
+        "manufacturer": "Manufacturer",
+        "quantity": "Quantity",
+        "category": "Category (Optional)",
+        "selectCategory": "Select category"
+      },
+      "addItem": "Add Another Item",
+      "submit": "Submit Quote Request",
+      "success": "Quote request submitted successfully! We'll contact you soon.",
+      "error": "Please fill in all required fields."
+    }
+  }
+}
