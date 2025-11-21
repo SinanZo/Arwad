@@ -1,10 +1,12 @@
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { APP_TITLE } from '@/const';
+import { APP_TITLE, APP_LOGO_LIGHT, APP_LOGO_DARK } from '@/const';
 
 export default function Footer() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -22,7 +24,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-primary">{APP_TITLE}</h3>
+            <img 
+              src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+              alt={APP_TITLE} 
+              className="h-12 w-auto mb-4"
+            />
             <p className="text-sm text-muted-foreground mb-4">
               {t('home.about.description').substring(0, 150)}...
             </p>

@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { trpc } from '@/lib/trpc';
 import { toast } from 'sonner';
+import { APP_LOGO_LIGHT, APP_LOGO_DARK } from '@/const';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -13,6 +15,7 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const [location, setLocation] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   
@@ -61,7 +64,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           {/* Logo */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <Link href="/admin">
-              <a className="text-xl font-bold text-primary">ARWAD Admin</a>
+              <a className="flex items-center gap-2">
+                <img 
+                  src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+                  alt="ARWAD Admin" 
+                  className="h-10 w-auto"
+                />
+              </a>
             </Link>
             <Button
               variant="ghost"

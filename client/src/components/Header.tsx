@@ -5,7 +5,7 @@ import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useI18n } from '@/contexts/I18nContext';
-import { APP_LOGO, APP_TITLE } from '@/const';
+import { APP_LOGO_LIGHT, APP_LOGO_DARK, APP_TITLE } from '@/const';
 
 export default function Header() {
   const [location] = useLocation();
@@ -34,12 +34,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" onClick={closeMobileMenu}>
             <div className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              {APP_LOGO && (
-                <img src={APP_LOGO} alt={APP_TITLE} className="h-10 w-auto" />
-              )}
-              <span className="font-bold text-lg text-primary hidden sm:inline">
-                {APP_TITLE}
-              </span>
+              <img 
+                src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+                alt={APP_TITLE} 
+                className="h-10 w-auto"
+              />
             </div>
           </Link>
 
