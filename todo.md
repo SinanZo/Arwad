@@ -224,5 +224,14 @@
 ## Phase 27: Fix Vercel Asset Loading Error
 - [x] Update vite.config.ts for proper base URL
 - [x] Update vercel.json configuration
-- [ ] Push fixes to GitHub
+- [x] Push fixes to GitHub
 - [ ] Redeploy on Vercel
+
+## Phase 28: Fix /admin Route on Vercel - Adapt to Vercel Serverless
+- [x] Analyze current server architecture and identify conversion requirements
+- [x] Create Vercel serverless API structure in /api directory
+- [x] Convert tRPC endpoints to Vercel serverless functions
+- [x] Update vercel.json configuration for serverless functions
+- [x] Update build scripts for Vercel deployment
+- [x] Test API endpoints compatibility with Vercel
+- [x] Update deployment documentation with Vercel-specific instructions

@@ -1,0 +1,9 @@
+node_modules
+.git
+*.log
+.env*
+.manus
+arwad-trading-static
+*.md
+!README.md
+tsconfig.tsbuildinfo
