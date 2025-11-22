@@ -1,8 +1,21 @@
-// Note: This template uses a placeholder email service.
-// In production, integrate with your SMTP service (SendGrid, AWS SES, etc.)
-// For now, emails are logged to console and owner is notified via Manus notification system.
+// SendGrid Email Service Integration
+// Sends automated confirmation emails for quote requests and contact form submissions
 
+import sgMail from '@sendgrid/mail';
 import { notifyOwner } from './_core/notification';
+
+// Initialize SendGrid with API key from environment
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || '';
+const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'noreply@arwad.org';
+const FROM_NAME = process.env.SENDGRID_FROM_NAME || 'ARWAD Trading';
+
+// Only initialize if API key is provided
+if (SENDGRID_API_KEY) {
+  sgMail.setApiKey(SENDGRID_API_KEY);
+  console.log('[Email] SendGrid initialized successfully');
+} else {
+  console.warn('[Email] SendGrid API key not found. Email sending will be disabled.');
+}
 
 interface QuoteEmailData {
   customerName: string;
@@ -108,15 +121,33 @@ export async function sendQuoteConfirmationEmail(data: QuoteEmailData): Promise<
 </html>
   `;
 
-  // TODO: Integrate with your SMTP service (SendGrid, AWS SES, Mailgun, etc.)
-  // For now, log the email content
-  console.log('[Email] Quote Confirmation Email');
-  console.log('To:', data.customerEmail);
-  console.log('Subject:', subject);
-  console.log('HTML Content Length:', htmlContent.length, 'characters');
-  
-  // In production, replace with:
-  // await yourEmailService.send({ to: data.customerEmail, subject, html: htmlContent });
+  // Send email via SendGrid
+  if (SENDGRID_API_KEY) {
+    try {
+      await sgMail.send({
+        to: data.customerEmail,
+        from: {
+          email: FROM_EMAIL,
+          name: FROM_NAME,
+        },
+        subject: subject,
+        html: htmlContent,
+      });
+      console.log(`[Email] Quote confirmation sent to ${data.customerEmail}`);
+    } catch (error) {
+      console.error('[Email] Failed to send quote confirmation:', error);
+      // Don't throw - we don't want to fail the entire request if email fails
+      // Just log the error and notify owner
+      await notifyOwner({
+        title: 'Email Send Failed',
+        content: `Failed to send quote confirmation email to ${data.customerEmail}. Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      });
+    }
+  } else {
+    // Fallback: Log to console if SendGrid is not configured
+    console.log('[Email] SendGrid not configured. Quote confirmation email would be sent to:', data.customerEmail);
+    console.log('[Email] Subject:', subject);
+  }
 }
 
 /**
@@ -198,13 +229,30 @@ export async function sendContactConfirmationEmail(data: ContactEmailData): Prom
 </html>
   `;
 
-  // TODO: Integrate with your SMTP service (SendGrid, AWS SES, Mailgun, etc.)
-  // For now, log the email content
-  console.log('[Email] Contact Confirmation Email');
-  console.log('To:', data.email);
-  console.log('Subject:', subject);
-  console.log('HTML Content Length:', htmlContent.length, 'characters');
-  
-  // In production, replace with:
-  // await yourEmailService.send({ to: data.email, subject, html: htmlContent });
+  // Send email via SendGrid
+  if (SENDGRID_API_KEY) {
+    try {
+      await sgMail.send({
+        to: data.email,
+        from: {
+          email: FROM_EMAIL,
+          name: FROM_NAME,
+        },
+        subject: subject,
+        html: htmlContent,
+      });
+      console.log(`[Email] Contact confirmation sent to ${data.email}`);
+    } catch (error) {
+      console.error('[Email] Failed to send contact confirmation:', error);
+      // Don't throw - we don't want to fail the entire request if email fails
+      await notifyOwner({
+        title: 'Email Send Failed',
+        content: `Failed to send contact confirmation email to ${data.email}. Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      });
+    }
+  } else {
+    // Fallback: Log to console if SendGrid is not configured
+    console.log('[Email] SendGrid not configured. Contact confirmation email would be sent to:', data.email);
+    console.log('[Email] Subject:', subject);
+  }
 }
