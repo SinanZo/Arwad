@@ -66,7 +66,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <Link href="/admin">
               <a className="flex items-center gap-2">
                 <img 
-                  src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+                  src={APP_LOGO_DARK} 
                   alt="ARWAD Admin" 
                   className="h-10 w-auto"
                 />

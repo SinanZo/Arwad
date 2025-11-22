@@ -35,7 +35,7 @@ export default function Header() {
           <Link href="/" onClick={closeMobileMenu}>
             <div className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <img 
-                src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+                src={APP_LOGO_DARK} 
                 alt={APP_TITLE} 
                 className="h-10 w-auto"
               />

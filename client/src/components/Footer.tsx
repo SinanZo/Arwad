@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <img 
-              src={theme === 'dark' ? APP_LOGO_DARK : APP_LOGO_LIGHT} 
+              src={APP_LOGO_DARK} 
               alt={APP_TITLE} 
               className="h-12 w-auto mb-4"
             />

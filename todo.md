@@ -180,3 +180,15 @@
 - [x] Integrate email sending into quote API endpoint
 - [x] Integrate email sending into contact API endpoint
 - [x] Test email delivery for both forms
+
+## Phase 21: Static HTML Build for cPanel
+- [x] Build production static files
+- [x] Create cPanel deployment documentation
+- [x] Package files as zip for easy upload
+- [x] Test static build locally
+
+## Phase 22: Logo and Dark Mode Fixes
+- [x] Use single logo (dark version) across entire website
+- [x] Remove theme-based logo switching
+- [x] Fix dark mode toggle not working in mobile/responsive view
+- [x] Test on mobile breakpoints
