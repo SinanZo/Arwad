@@ -1,6 +1,7 @@
 import { getDb } from "./db";
 import { quoteRequests, contactSubmissions, InsertQuoteRequest, InsertContactSubmission } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
+import { sendQuoteConfirmationEmail, sendContactConfirmationEmail } from "./email";
 
 /**
  * Create a new quote request
@@ -12,6 +13,23 @@ export async function createQuoteRequest(data: InsertQuoteRequest) {
   }
 
   const result = await db.insert(quoteRequests).values(data);
+  
+  // Send confirmation email to customer
+  try {
+    await sendQuoteConfirmationEmail({
+      customerName: data.contact,
+      customerEmail: data.email,
+      company: data.company,
+      phone: data.phone,
+      industry: data.industry,
+      items: data.items as Array<{ partNumber: string; description: string; quantity: number }>,
+    });
+    console.log('[Quote] Confirmation email sent to:', data.email);
+  } catch (error) {
+    console.error('[Quote] Failed to send confirmation email:', error);
+    // Don't fail the request if email fails
+  }
+  
   return result;
 }
 
@@ -37,6 +55,22 @@ export async function createContactSubmission(data: InsertContactSubmission) {
   }
 
   const result = await db.insert(contactSubmissions).values(data);
+  
+  // Send confirmation email to customer
+  try {
+    await sendContactConfirmationEmail({
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      subject: data.subject,
+      message: data.message,
+    });
+    console.log('[Contact] Confirmation email sent to:', data.email);
+  } catch (error) {
+    console.error('[Contact] Failed to send confirmation email:', error);
+    // Don't fail the request if email fails
+  }
+  
   return result;
 }
 
