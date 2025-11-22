@@ -253,3 +253,9 @@
 - [x] Updated Header.tsx with proper mobile theme toggle
 - [x] Updated vercel.json with correct SPA routing configuration
 - [x] Tested and verified all fixes working
+
+## Phase 31: Update Favicon
+- [x] Locate current logo file
+- [x] Copy logo-dark.png to public directory as favicon.png
+- [x] Update index.html to reference /favicon.png
+- [x] Favicon now matches ARWAD Trading logo
