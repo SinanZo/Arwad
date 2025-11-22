@@ -249,12 +249,14 @@
     "info": {
       "address": {
         "title": "Address",
-        "line1": "Business Bay",
-        "line2": "Dubai, United Arab Emirates"
+        "line1": "102, Al Qouz 3",
+        "line2": "Bur Dubai, United Arab Emirates"
       },
       "contact": {
         "title": "Phone & Email",
-        "phone": "+971 4 XXX XXXX",
+        "phone": "+971-50-1028312",
+        "mobile": "+971-50-1028312",
+        "tel": "+971-4-45780055",
         "email": "info@arwad.org"
       },
       "hours": {
