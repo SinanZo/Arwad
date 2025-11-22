@@ -160,3 +160,8 @@
 ## Phase 17: Add Jawareer Link to Footer
 - [x] Add Jawareer link to footer pointing to www.jawareer.info
 - [x] Test link functionality
+
+## Phase 18: Update Powered By to Jawareer
+- [x] Replace "Powered by Manus" with "Powered by Jawareer"
+- [x] Link Jawareer to www.jawareer.info
+- [x] Test link functionality

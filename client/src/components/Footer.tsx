@@ -88,14 +88,13 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               © {currentYear} {APP_TITLE}. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>{t('common.poweredBy')}</span>
-              <span>•</span>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span>Powered by</span>
               <a 
                 href="https://www.jawareer.info" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors font-medium"
               >
                 Jawareer
               </a>
