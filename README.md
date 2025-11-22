@@ -1,331 +1,217 @@
-# ARWAD Trading — Next.js App Router Starter
+# ARWAD Trading - Corporate Website
 
-This project is a minimal corporate website scaffold using Next.js 14 (App Router), TypeScript and TailwindCSS with `next-themes` and bilingual EN/AR support (RTL).
-
-Run locally:
-
-```powershell
-npm install
-npm run dev
-```
-
-Pages included:
-- Home, About, Industries, Products, Our Services, Contact, Register, Quote Order
-
-API routes (mock):
-- `POST /api/contact` — receives contact form
-- `POST /api/quote` — receives RFQ
-# ARWAD Trading (أرواد) - Corporate Website
-
-A modern, fully-featured Next.js application for ARWAD Trading (أرواد), showcasing MRO solutions, spare parts, and supply chain management services.
+Modern, production-ready corporate website for ARWAD Trading, a regional MRO (Maintenance, Repair, and Operations), spare parts, and supply chain management company serving industrial and infrastructure sectors.
 
 ## Features
 
-- ✅ **Next.js 14+** with App Router
-- ✅ **TypeScript** for type safety
-- ✅ **Tailwind CSS** for styling
-- ✅ **Light/Dark Mode** with smooth transitions
-- ✅ **English/Arabic** support with RTL layout
-- ✅ **Responsive Design** (mobile, tablet, desktop)
-- ✅ **SEO Optimized** with metadata
-- ✅ **Reusable Components** architecture
-- ✅ **Mock Authentication** system
-- ✅ **Contact & Quote Forms** with API routes
+### Core Functionality
+- ✅ **Bilingual Support**: Full English/Arabic translations with RTL layout support
+- ✅ **Light/Dark Mode**: Theme toggle with industrial color palette (deep blue & red)
+- ✅ **Fully Responsive**: Mobile-first design that works on all devices
+- ✅ **SEO Optimized**: Meta tags, Open Graph, and semantic HTML
+- ✅ **Modern Stack**: React 19, TypeScript, Tailwind CSS 4, shadcn/ui
 
-## Project Structure
+### Pages
+1. **Home** (`/`) - Hero slider, about snapshot, core values, industries, services, products
+2. **About** (`/about`) - Company overview, values, vision/mission, statistics
+3. **Industries** (`/industries`) - 6 industry sectors with detailed descriptions
+4. **Products** (`/products`) - 8 product categories with filterable tabs
+5. **Our Services** (`/our-services`) - 4 detailed service offerings
+6. **Contact** (`/contact`) - Contact form and company information
+7. **Register** (`/register`) - Login/signup with mock authentication
+8. **Quote Order** (`/quote-order`) - Dynamic RFQ form with multiple items
 
-```
-New Arwad/
-├── app/
-│   ├── about/
-│   │   └── page.tsx
-│   ├── api/
-│   │   ├── contact/
-│   │   │   └── route.ts
-│   │   └── quote/
-│   │       └── route.ts
-│   ├── contact/
-│   │   └── page.tsx
-│   ├── industries/
-│   │   └── page.tsx
-│   ├── our-services/
-│   │   └── page.tsx
-│   ├── products/
-│   │   └── page.tsx
-│   ├── quote-order/
-│   │   └── page.tsx
-│   ├── register/
-│   │   └── page.tsx
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx (Home)
-├── components/
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   ├── HeroSlider.tsx
-│   ├── InfoCard.tsx
-│   ├── IndustryCard.tsx
-│   ├── ProductCard.tsx
-│   ├── QuoteItemRow.tsx
-│   ├── SectionTitle.tsx
-│   ├── ServiceCard.tsx
-│   ├── StatCard.tsx
-│   ├── ThemeProvider.tsx
-│   └── ValueCard.tsx
-├── contexts/
-│   ├── AuthContext.tsx
-│   └── LanguageContext.tsx
-├── locales/
-│   ├── en/
-│   │   └── common.json
-│   └── ar/
-│       └── common.json
-├── public/
-│   └── images/ (placeholder paths)
-├── .eslintrc.json
-├── .gitignore
-├── next.config.js
-├── package.json
-├── postcss.config.js
-├── tailwind.config.ts
-└── tsconfig.json
-```
+## Tech Stack
+
+- **Frontend Framework**: React 19 with TypeScript
+- **Routing**: Wouter (lightweight React router)
+- **Styling**: Tailwind CSS 4 with OKLCH color format
+- **UI Components**: shadcn/ui
+- **Internationalization**: i18next, react-i18next
+- **Animations**: Framer Motion
+- **Build Tool**: Vite 7
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+ installed
-- npm, yarn, or pnpm package manager
-
 ### Installation
 
-1. **Install dependencies:**
-
-```powershell
-npm install
-```
-
-Or with yarn:
-
-```powershell
-yarn install
-```
-
-Or with pnpm:
-
-```powershell
+```bash
+# Install dependencies
 pnpm install
 ```
 
 ### Development
 
-2. **Run the development server:**
-
-```powershell
-npm run dev
-```
-
-Or:
-
-```powershell
-yarn dev
-```
-
-Or:
-
-```powershell
+```bash
+# Start development server
 pnpm dev
 ```
 
-3. **Open your browser:**
+The site will be available at `http://localhost:3000`
 
-Navigate to [http://localhost:3000](http://localhost:3000)
+### Build for Production
 
-The application will automatically reload when you make changes to the code.
+```bash
+# Create production build
+pnpm build
 
-### Building for Production
-
-4. **Build the application:**
-
-```powershell
-npm run build
+# Preview production build
+pnpm preview
 ```
 
-5. **Start the production server:**
+## Project Structure
 
-```powershell
-npm run start
 ```
-
-## Environment Setup
-
-No environment variables are required for the basic setup. The application runs entirely on the frontend with mock data for authentication and form submissions.
-
-For production deployment, you would typically add:
-
-- Database connection strings
-- Email service API keys (for contact forms)
-- Authentication service credentials
-- CDN URLs for images
-
-## Key Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` | Home page with hero, services, industries overview |
-| `/about` | About ARWAD (أرواد) - vision, mission, values |
-| `/industries` | Detailed industry sectors served |
-| `/products` | Product catalog with filtering |
-| `/our-services` | Service offerings and capabilities |
-| `/contact` | Contact form and information |
-| `/register` | Login/Register and account management |
-| `/quote-order` | Request for quote form |
-
-## Internationalization (i18n)
-
-The application supports English and Arabic with automatic RTL layout switching.
-
-**To add translations:**
-
-1. Edit `locales/en/common.json` for English
-2. Edit `locales/ar/common.json` for Arabic
-3. Use the `t()` function from `useLanguage()` hook in components
-
-Example:
-```tsx
-const { t } = useLanguage()
-return <h1>{t('hero.title')}</h1>
+client/
+├── public/
+│   └── images/          # Placeholder image paths
+│       ├── home/
+│       ├── about/
+│       ├── industries/
+│       ├── products/
+│       ├── services/
+│       ├── contact/
+│       └── quote/
+├── src/
+│   ├── components/      # Reusable components
+│   │   ├── ui/         # shadcn/ui components
+│   │   ├── Cards.tsx   # Card components
+│   │   ├── Header.tsx  # Navigation header
+│   │   ├── Footer.tsx  # Site footer
+│   │   ├── Layout.tsx  # Page layout wrapper
+│   │   ├── HeroSlider.tsx
+│   │   ├── SectionTitle.tsx
+│   │   ├── QuoteItemRow.tsx
+│   │   └── SEO.tsx     # SEO meta tags
+│   ├── contexts/       # React contexts
+│   │   ├── ThemeContext.tsx
+│   │   └── I18nContext.tsx
+│   ├── locales/        # Translation files
+│   │   ├── en/
+│   │   │   └── common.json
+│   │   └── ar/
+│   │       └── common.json
+│   ├── pages/          # Page components
+│   │   ├── Home.tsx
+│   │   ├── About.tsx
+│   │   ├── Industries.tsx
+│   │   ├── Products.tsx
+│   │   ├── Services.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Register.tsx
+│   │   └── QuoteOrder.tsx
+│   ├── lib/            # Utilities
+│   │   └── i18n.ts
+│   ├── App.tsx         # Main app with routing
+│   ├── main.tsx        # Entry point
+│   └── index.css       # Global styles & theme
 ```
-
-## Theme System
-
-Light/Dark mode is managed by `next-themes` with CSS variables defined in `app/globals.css`.
-
-**Color scheme:**
-- Primary: Engineering blue (#0056e0)
-- Accent: Strong red (#e60000)
-- Backgrounds and surfaces adapt based on theme
-
-## Responsive Design
-
-All components are built mobile-first with breakpoints:
-- Mobile: default (< 768px)
-- Tablet: md (768px+)
-- Desktop: lg (1024px+)
-
-## Image Assets
-
-All image paths are placeholders. To add real images:
-
-1. Place images in `public/images/` directory
-2. Organize by section: `home/`, `industries/`, `products/`, etc.
-3. Update image paths in components
-
-Example structure:
-```
-public/
-  images/
-    home/
-      hero-industrial-1.jpg
-      hero-industrial-2.jpg
-    industries/
-      water.jpg
-      power.jpg
-      manufacturing.jpg
-    products/
-      ventilators.jpg
-      inspection.jpg
-```
-
-## Form Handling
-
-Contact and quote forms submit to API routes:
-- `/api/contact` - Contact form submissions
-- `/api/quote` - Quote request submissions
-
-Currently, these log to console. For production:
-
-1. Add email service integration (SendGrid, AWS SES, etc.)
-2. Add database storage (PostgreSQL, MongoDB, etc.)
-3. Add validation middleware
-4. Implement rate limiting
-
-## Authentication
-
-The authentication system is **mock only** for demonstration purposes:
-- Uses localStorage for session persistence
-- No real password hashing or validation
-- For production, integrate a proper auth service (NextAuth.js, Auth0, Firebase Auth, etc.)
 
 ## Customization
 
-### Branding
+### Replacing Placeholder Images
 
-Update logo and brand colors in:
-- `components/Header.tsx` - Logo component
-- `components/Footer.tsx` - Footer logo
-- `app/globals.css` - CSS color variables
-- `tailwind.config.ts` - Tailwind color palette
+All images are referenced with placeholder paths. Replace them with actual images:
 
-### Content
+1. Add your images to `client/public/images/` following the directory structure
+2. Ensure images are high-resolution (recommended 1920×1080 for hero images)
+3. Use appropriate aspect ratios:
+   - Hero images: 16:9 landscape
+   - Industry/Product cards: Square or 16:9
+   - About images: 16:9
 
-All text content is managed through:
-- Translation files in `locales/`
-- Page components in `app/*/page.tsx`
+Example paths to replace:
+- `/images/home/hero-1.jpg` - Main hero image/video
+- `/images/industries/water.jpg` - Water & Desalination
+- `/images/products/ventilation.jpg` - Ventilation products
+- etc.
 
-### Styling
+### Updating Logo
 
-Global styles: `app/globals.css`
-Component-specific styles: Use Tailwind utility classes
+The logo is controlled via the `APP_LOGO` constant in `client/src/const.ts`:
+
+```typescript
+export const APP_LOGO = '/logo.png'; // Update this path
+export const APP_TITLE = 'ARWAD Trading';
+```
+
+**Note**: After changing the logo in code, users must update the favicon separately via the Management Dashboard if they want the favicon to match.
+
+### Color Customization
+
+The industrial color palette is defined in `client/src/index.css`:
+
+- **Primary**: Deep engineering blue (OKLCH format)
+- **Secondary**: Strong red for CTAs
+- **Background**: Light grey (light mode) / Dark charcoal (dark mode)
+
+Modify the CSS variables in `:root` and `.dark` sections to change colors.
+
+### Translations
+
+Add or modify translations in:
+- `client/src/locales/en/common.json` - English
+- `client/src/locales/ar/common.json` - Arabic
+
+The i18n system automatically handles RTL layout for Arabic.
+
+## Features in Detail
+
+### Internationalization (i18n)
+
+- Language switcher in header toggles between English and Arabic
+- RTL layout automatically applied for Arabic
+- All text content translated
+- Language preference saved to localStorage
+
+### Theme System
+
+- Light/Dark mode toggle in header
+- Industrial color palette optimized for both modes
+- Theme preference saved to localStorage
+- Smooth transitions between themes
+
+### Forms
+
+All forms include:
+- Client-side validation
+- Success/error toast notifications
+- Mock submission (console.log)
+- Form reset after submission
+
+**Contact Form**: Name, email, phone, company, subject, message
+**Quote Form**: Company info + dynamic item rows (part number, description, manufacturer, quantity, category)
+**Register/Login**: Mock authentication stored in localStorage
+
+### Mock Authentication
+
+The Register page includes a simple mock authentication system:
+- Login/Signup tabs
+- User data stored in localStorage
+- Account management page when logged in
+- No real backend required
 
 ## Browser Support
 
-- Chrome (latest)
+- Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
-- Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Performance
+## Notes
 
-- Automatic code splitting
-- Image optimization (when using next/image)
-- CSS optimization in production
-- Tree-shaking unused code
-
-## Deployment
-
-### Vercel (Recommended)
-
-```powershell
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Other Platforms
-
-Build the application and deploy the `.next` folder:
-
-```powershell
-npm run build
-```
-
-Compatible with:
-- Netlify
-- AWS Amplify
-- Digital Ocean App Platform
-- Any Node.js hosting
-
-## Support & Development
-
-**Powered by Jawareer**
-
-For questions or support, contact the development team.
+- All content is original and does not copy from arwad.org
+- Forms are front-end only with mock submissions
+- Authentication is mock-only (localStorage)
+- Images are placeholders - replace with actual assets
+- No real backend or database required
+- All routes are client-side (SPA)
 
 ## License
 
-© 2024 ARWAD Trading (أرواد). All rights reserved.
+© 2024 ARWAD Trading. All rights reserved.
+Powered by Jawareer.
+
+## Support
+
+For questions or support, please contact the development team.
