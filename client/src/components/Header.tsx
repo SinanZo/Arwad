@@ -85,7 +85,7 @@ export default function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Controls */}
           <div className="flex lg:hidden items-center gap-2">
             <Button
               variant="ghost"
@@ -98,7 +98,11 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleTheme}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (toggleTheme) toggleTheme();
+              }}
               title={theme === 'light' ? 'Dark mode' : 'Light mode'}
             >
               {theme === 'light' ? (
