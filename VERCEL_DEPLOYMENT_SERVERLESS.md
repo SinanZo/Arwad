@@ -39,6 +39,11 @@ VITE_APP_LOGO=/logo-dark.svg
 OWNER_NAME=Admin
 OWNER_OPEN_ID=your-manus-open-id
 
+# SendGrid Email Service (for automated confirmations)
+SENDGRID_API_KEY=SG.your_sendgrid_api_key_here
+SENDGRID_FROM_EMAIL=noreply@arwad.org
+SENDGRID_FROM_NAME=ARWAD Trading
+
 # Manus OAuth (if using Manus authentication)
 OAUTH_SERVER_URL=https://oauth.manus.im
 VITE_OAUTH_PORTAL_URL=https://portal.manus.im
