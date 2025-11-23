@@ -42,76 +42,157 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* LIGHT MODE with fallbacks */
 :root {
-  /* Industrial Blue & Red Color Palette - Light Mode */
-  --primary: oklch(0.45 0.15 250); /* Deep Engineering Blue */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.55 0.22 25); /* Strong Red for CTAs */
-  --secondary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.45 0.15 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --chart-1: oklch(0.65 0.12 250);
-  --chart-2: oklch(0.55 0.15 250);
-  --chart-3: oklch(0.45 0.15 250);
-  --chart-4: oklch(0.55 0.22 25);
-  --chart-5: oklch(0.45 0.20 25);
   --radius: 0.5rem;
+
+  /* Primary / secondary */
+  --primary: #1e3a8a;
+  --primary: oklch(0.45 0.15 250);
+  --primary-foreground: #f9fafb;
+  --primary-foreground: oklch(0.98 0 0);
+
+  --secondary: #b91c1c;
+  --secondary: oklch(0.55 0.22 25);
+  --secondary-foreground: #f9fafb;
+  --secondary-foreground: oklch(0.98 0 0);
+
+  /* Charts */
+  --chart-1: #2563eb;
+  --chart-1: oklch(0.65 0.12 250);
+  --chart-2: #1d4ed8;
+  --chart-2: oklch(0.55 0.15 250);
+  --chart-3: #1e3a8a;
+  --chart-3: oklch(0.45 0.15 250);
+  --chart-4: #dc2626;
+  --chart-4: oklch(0.55 0.22 25);
+  --chart-5: #b91c1c;
+  --chart-5: oklch(0.45 0.20 25);
+
+  /* Surfaces */
+  --background: #f9fafb;
   --background: oklch(0.98 0.005 250);
+  --foreground: #111827;
   --foreground: oklch(0.25 0.02 250);
+
+  --card: #ffffff;
   --card: oklch(1 0 0);
+  --card-foreground: #111827;
   --card-foreground: oklch(0.25 0.02 250);
+
+  --popover: #ffffff;
   --popover: oklch(1 0 0);
+  --popover-foreground: #111827;
   --popover-foreground: oklch(0.25 0.02 250);
+
+  --muted: #e5e7eb;
   --muted: oklch(0.94 0.01 250);
+  --muted-foreground: #6b7280;
   --muted-foreground: oklch(0.50 0.02 250);
+
+  --accent: #1e3a8a;
   --accent: oklch(0.45 0.15 250);
+  --accent-foreground: #f9fafb;
   --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: #b91c1c;
   --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: #f9fafb;
   --destructive-foreground: oklch(0.98 0 0);
+
+  --border: #e5e7eb;
   --border: oklch(0.88 0.01 250);
+  --input: #e5e7eb;
   --input: oklch(0.88 0.01 250);
+  --ring: #1e3a8a;
   --ring: oklch(0.45 0.15 250);
+
+  /* Sidebar */
+  --sidebar: #ffffff;
   --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: #111827;
   --sidebar-foreground: oklch(0.25 0.02 250);
+  --sidebar-accent: #e5e7eb;
   --sidebar-accent: oklch(0.94 0.01 250);
+  --sidebar-accent-foreground: #111827;
   --sidebar-accent-foreground: oklch(0.25 0.02 250);
+  --sidebar-border: #e5e7eb;
   --sidebar-border: oklch(0.88 0.01 250);
+  --sidebar-ring: #1e3a8a;
   --sidebar-ring: oklch(0.45 0.15 250);
 }
 
+/* DARK MODE with fallbacks */
 .dark {
-  /* Industrial Blue & Red Color Palette - Dark Mode */
-  --primary: oklch(0.60 0.15 250); /* Lighter Blue for Dark Mode */
+  --primary: #60a5fa;
+  --primary: oklch(0.60 0.15 250);
+  --primary-foreground: #020617;
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.60 0.20 25); /* Adjusted Red for Dark Mode */
+
+  --secondary: #f97373;
+  --secondary: oklch(0.60 0.20 25);
+  --secondary-foreground: #020617;
   --secondary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.60 0.15 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
+
+  --chart-1: #60a5fa;
   --chart-1: oklch(0.65 0.12 250);
+  --chart-2: #3b82f6;
   --chart-2: oklch(0.55 0.15 250);
+  --chart-3: #1d4ed8;
   --chart-3: oklch(0.45 0.15 250);
+  --chart-4: #f97373;
   --chart-4: oklch(0.60 0.20 25);
+  --chart-5: #f97373;
   --chart-5: oklch(0.50 0.18 25);
-  --background: oklch(0.18 0.02 250); /* Dark Charcoal */
+
+  --background: #020617;
+  --background: oklch(0.18 0.02 250);
+  --foreground: #e5e7eb;
   --foreground: oklch(0.92 0.01 250);
+
+  --card: #020617;
   --card: oklch(0.22 0.02 250);
+  --card-foreground: #e5e7eb;
   --card-foreground: oklch(0.92 0.01 250);
+
+  --popover: #020617;
   --popover: oklch(0.22 0.02 250);
+  --popover-foreground: #e5e7eb;
   --popover-foreground: oklch(0.92 0.01 250);
+
+  --muted: #111827;
   --muted: oklch(0.28 0.02 250);
+  --muted-foreground: #9ca3af;
   --muted-foreground: oklch(0.65 0.02 250);
+
+  --accent: #60a5fa;
   --accent: oklch(0.60 0.15 250);
+  --accent-foreground: #020617;
   --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: #f97373;
   --destructive: oklch(0.60 0.20 25);
+  --destructive-foreground: #020617;
   --destructive-foreground: oklch(0.98 0 0);
+
+  --border: #1f2937;
   --border: oklch(0.30 0.02 250);
+  --input: #1f2937;
   --input: oklch(0.30 0.02 250);
+  --ring: #60a5fa;
   --ring: oklch(0.60 0.15 250);
+
+  --sidebar: #020617;
   --sidebar: oklch(0.22 0.02 250);
+  --sidebar-foreground: #e5e7eb;
   --sidebar-foreground: oklch(0.92 0.01 250);
+  --sidebar-accent: #111827;
   --sidebar-accent: oklch(0.28 0.02 250);
+  --sidebar-accent-foreground: #e5e7eb;
   --sidebar-accent-foreground: oklch(0.92 0.01 250);
+  --sidebar-border: #1f2937;
   --sidebar-border: oklch(0.30 0.02 250);
+  --sidebar-ring: #60a5fa;
   --sidebar-ring: oklch(0.60 0.15 250);
 }
 
@@ -136,24 +217,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -164,16 +232,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 }
