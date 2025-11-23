@@ -266,3 +266,9 @@
 - [x] Add contact information and action buttons
 - [x] Update NotFound.tsx component with full redesign
 - [x] Tested and verified 404 page displays correctly
+
+## Phase 33: Fix Mobile Dark Mode on Live Site
+- [x] Debug mobile dark mode toggle issue
+- [x] Simplify event handler implementation (removed preventDefault/stopPropagation)
+- [x] Fixed onClick handler to directly call toggleTheme
+- [ ] Deploy fix to production

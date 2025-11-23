@@ -98,11 +98,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (toggleTheme) toggleTheme();
-              }}
+              onClick={toggleTheme}
               title={theme === 'light' ? 'Dark mode' : 'Light mode'}
             >
               {theme === 'light' ? (
