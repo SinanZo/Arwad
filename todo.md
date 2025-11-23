@@ -272,3 +272,10 @@
 - [x] Simplify event handler implementation (removed preventDefault/stopPropagation)
 - [x] Fixed onClick handler to directly call toggleTheme
 - [ ] Deploy fix to production
+
+## Phase 34: Fix Dark Mode Colors Not Changing
+- [x] Check CSS variables in index.css for dark mode
+- [x] Verify ThemeContext implementation
+- [x] Fix custom variant syntax for Tailwind CSS 4
+- [x] Changed from @custom-variant dark (&:is(.dark *)) to (.dark &)
+- [ ] Deploy fix to production
